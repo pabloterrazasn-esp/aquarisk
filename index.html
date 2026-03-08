@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TerraNava | Agua, territorio y evidencia para decisiones públicas</title>
+<meta name="description" content="TerraNava es una ONG técnica orientada al agua, el riesgo territorial, la cooperación especializada y la producción de herramientas y criterios para decisiones públicas en Europa y América Latina."/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231d4ed8'/%3E%3Cpath d='M12 34c8-8 14-5 20-10 6-5 12-3 20-10' fill='none' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M12 44c8-8 14-5 20-10 6-5 12-3 20-10' fill='none' stroke='rgba(255,255,255,.45)' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Forum&display=swap" rel="stylesheet"/>
+<style>
+/* ── Reset & Variables ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f1f5f9;--surface:#ffffff;--card:#ffffff;--border:#e2e8f0;
+  --accent:#1d4ed8;--accent2:#0f172a;--sky:#38bdf8;
+  --text:#0f172a;--muted:#64748b;--light:#f8fafc;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit;transition:color .2s}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:3px}
+
+/* ── Animations ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade{opacity:0;transform:translateY(20px)}.fade.is-visible{animation:fadeUp .6s ease forwards}
+
+/* ── Layout ── */
+.shell{max-width:1200px;margin:0 auto;padding:0 32px}
+
+/* ══════════════════════════════════════════
+   1. TOP BAR
+   ══════════════════════════════════════════ */
+.topbar{background:var(--accent2);border-bottom:1px solid rgba(255,255,255,.06)}
+.topbar .shell{display:flex;align-items:center;justify-content:space-between;height:38px}
+.topbar-left{display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.55)}
+.topbar-left a{color:rgba(255,255,255,.7);transition:color .15s}.topbar-left a:hover{color:#fff}
+.topbar-left span{color:rgba(255,255,255,.25)}
+.lang-sw{display:flex;gap:6px;font-size:11px;font-weight:600;letter-spacing:.04em}
+.lang-sw a{color:rgba(255,255,255,.45);padding:2px 5px;border-radius:3px;transition:all .15s;cursor:pointer}
+.lang-sw a:hover{color:rgba(255,255,255,.8)}
+.lang-sw a.active{color:#fff;background:rgba(255,255,255,.1)}
+
+/* ══════════════════════════════════════════
+   2. HEADER STICKY
+   ══════════════════════════════════════════ */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border);transition:box-shadow .2s}
+.site-header.scrolled{box-shadow:0 1px 8px rgba(0,0,0,.06)}
+.header-row{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-name{font-family:'Forum',serif;font-size:24px;color:var(--accent2);line-height:1}
+.brand-sub{font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);line-height:1.2;margin-top:2px}
+.nav{display:flex;align-items:center;gap:4px}
+.nav a{font-size:13px;font-weight:600;color:var(--accent2);padding:8px 14px;border-radius:6px;transition:all .15s;letter-spacing:.02em}
+.nav a:hover{background:rgba(29,78,216,.05);color:var(--accent)}
+.nav a[aria-current="page"]{color:var(--accent)}
+.nav a.nav-cta{background:var(--accent);color:#fff;padding:8px 20px;margin-left:4px}
+.nav a.nav-cta:hover{background:#1e40af}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--accent2);margin:5px 0;border-radius:2px;transition:all .2s}
+
+/* ══════════════════════════════════════════
+   3. HERO
+   ══════════════════════════════════════════ */
+.hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#1d4ed8 100%);position:relative;overflow:hidden;min-height:80vh;display:flex;align-items:center;padding:100px 0 80px}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
+.hero-content{max-width:720px;position:relative;z-index:1}
+.hero-pill{display:inline-block;background:rgba(56,189,248,.12);color:var(--sky);border:1px solid rgba(56,189,248,.25);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 18px;border-radius:4px;margin-bottom:28px;animation:fadeUp .6s ease .05s both}
+.hero h1{font-family:'Forum',serif;font-size:clamp(38px,5.5vw,62px);color:#fff;line-height:1.08;letter-spacing:-.02em;margin-bottom:24px;animation:fadeUp .6s ease .15s both}
+.hero h1 em{font-style:normal;color:var(--sky)}
+.hero-lead{font-size:17px;color:rgba(255,255,255,.7);line-height:1.85;max-width:620px;margin-bottom:36px;animation:fadeUp .6s ease .25s both}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .6s ease .35s both}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;padding:14px 30px;border-radius:8px;border:none;cursor:pointer;transition:all .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-white{background:#fff;color:var(--accent2)}.btn-white:hover{background:var(--sky);color:var(--accent2)}
+.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25)}.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4)}
+
+/* ══════════════════════════════════════════
+   4. METRICS BAR
+   ══════════════════════════════════════════ */
+.metrics{background:#1e293b;border-bottom:1px solid rgba(255,255,255,.06)}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.metric{padding:22px 28px;text-align:center;border-right:1px solid rgba(255,255,255,.08)}
+.metric:last-child{border-right:none}
+.metric-val{font-size:32px;font-weight:700;color:#fff;line-height:1}
+.metric-val small{font-size:18px;font-weight:600;color:var(--sky);margin-left:2px}
+.metric-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.45);margin-top:6px}
+
+/* ══════════════════════════════════════════
+   5-13. SECTIONS
+   ══════════════════════════════════════════ */
+.section{padding:96px 0}
+.section-alt{background:var(--bg)}
+.section-white{background:var(--surface)}
+.section-dark{background:linear-gradient(135deg,var(--accent2) 0%,#1e3a5f 100%);color:#fff}
+
+/* Section headers */
+.sec-head{max-width:700px;margin-bottom:48px}
+.eyebrow{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);margin-bottom:12px}
+.section-dark .eyebrow{color:var(--sky)}
+h2{font-family:'Forum',serif;font-size:clamp(28px,3.5vw,46px);line-height:1.1;letter-spacing:-.01em;margin-bottom:16px}
+.section-dark h2{color:#fff}
+.sec-lead{font-size:17px;color:var(--muted);line-height:1.85}
+.section-dark .sec-lead{color:rgba(255,255,255,.7)}
+
+/* ── Pillar cards (section 5) ── */
+.pillar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pillar{background:var(--light);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:12px;padding:24px}
+.pillar-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:10px}
+.pillar p{font-size:15px;color:var(--muted);line-height:1.75}
+
+/* ── Split layout (sections 6, 10) ── */
+.split{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
+.split h2{margin-bottom:18px}
+.text-link{font-size:14px;font-weight:700;color:var(--accent);display:inline-flex;align-items:center;gap:6px;margin-top:16px;transition:gap .2s}
+.text-link:hover{gap:10px}
+.text-link::after{content:'→'}
+
+/* ── Principle cards ── */
+.principles{display:flex;flex-direction:column;gap:14px}
+.principle{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:22px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.principle-num{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:4px}
+.principle h3{font-size:19px;font-weight:600;margin-bottom:6px}
+.principle p{font-size:14.5px;color:var(--muted);line-height:1.75}
+
+/* ── Work field cards (section 7) ── */
+.fields-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.field-card{background:var(--light);border:1px solid var(--border);border-radius:14px;padding:28px;transition:all .25s}
+.field-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.field-num{width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.field-card h3{font-size:20px;font-weight:600;margin-bottom:8px}
+.field-card p{font-size:15px;color:var(--muted);line-height:1.78}
+
+/* ── Method steps (section 8) ── */
+.steps-wrap{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:36px}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{background:var(--light);border:1px solid var(--border);border-radius:12px;padding:22px;position:relative}
+.step-num{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:8px}
+.step h3{font-size:17px;font-weight:600;margin-bottom:6px}
+.step p{font-size:14px;color:var(--muted);line-height:1.75}
+/* connector arrow */
+.step:not(:last-child)::after{content:'→';position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:var(--border);font-size:18px;font-weight:300}
+
+/* ── AquaRisk showcase (section 9) ── */
+.showcase-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
+.showcase-features{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px}
+.showcase-features h3{font-size:16px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:16px;text-transform:uppercase;letter-spacing:.06em}
+.feature-item{padding:12px 16px;background:rgba(255,255,255,.05);border-radius:10px;margin-bottom:10px;font-size:15px;color:rgba(255,255,255,.82);display:flex;align-items:center;gap:12px}
+.feature-item:last-child{margin-bottom:0}
+.feature-dot{width:7px;height:7px;border-radius:50%;background:var(--sky);flex-shrink:0}
+.section-dark .btn-white{background:#fff;color:var(--accent2)}.section-dark .btn-white:hover{background:var(--sky)}
+.section-dark .btn-ghost{border-color:rgba(255,255,255,.2);color:#fff}.section-dark .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4)}
+
+/* ── Data panels (section 10) ── */
+.data-panels{display:flex;flex-direction:column;gap:14px}
+.data-panel{background:var(--light);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:22px}
+.data-panel h3{font-size:17px;font-weight:600;margin-bottom:6px}
+.data-panel p{font-size:14.5px;color:var(--muted);line-height:1.75;margin-bottom:12px}
+.pill-row{display:flex;flex-wrap:wrap;gap:6px}
+.data-pill{background:rgba(29,78,216,.06);color:var(--accent);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600}
+
+/* ── Territory cards (section 11) ── */
+.territory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.territory{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px;transition:all .25s}
+.territory:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.territory-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);margin-bottom:10px}
+.territory h3{font-family:'Forum',serif;font-size:23px;margin-bottom:8px}
+.territory p{font-size:15px;color:var(--muted);line-height:1.75}
+
+/* ── Contact CTA (section 12) ── */
+.contact-cta{background:var(--accent2);border-radius:20px;padding:56px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;position:relative;overflow:hidden}
+.contact-cta::before{content:'';position:absolute;bottom:0;right:0;width:400px;height:400px;background:radial-gradient(circle,rgba(56,189,248,.1),transparent 65%);pointer-events:none}
+.contact-cta .eyebrow{color:var(--sky)}
+.contact-cta h2{color:#fff;margin-bottom:14px}
+.contact-cta .sec-lead{color:rgba(255,255,255,.7);margin-bottom:28px}
+.contact-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:24px;position:relative;z-index:1}
+.contact-line{padding:14px 0;border-top:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;gap:2px}
+.contact-line:first-child{border-top:none;padding-top:0}
+.contact-line-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4)}
+.contact-line-val{font-size:16px;color:#fff}
+.contact-line-val a{color:#fff;border-bottom:1px solid rgba(255,255,255,.2);transition:border-color .2s}
+.contact-line-val a:hover{border-color:var(--sky)}
+
+/* ══════════════════════════════════════════
+   13. FOOTER
+   ══════════════════════════════════════════ */
+.site-footer{background:var(--accent2);border-top:1px solid rgba(255,255,255,.06);padding:24px 0}
+.footer-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-copy{font-size:13px;color:rgba(255,255,255,.5)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.5);transition:color .15s}
+.footer-links a:hover{color:#fff}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+@media(max-width:1024px){
+  .pillar-grid{grid-template-columns:repeat(2,1fr)}
+  .steps-grid{grid-template-columns:repeat(2,1fr)}
+  .step:not(:last-child)::after{display:none}
+  .showcase-grid{grid-template-columns:1fr}
+  .contact-cta{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .shell{padding:0 20px}
+  .section{padding:64px 0}
+  .topbar .shell{flex-direction:column;height:auto;padding:8px 20px;gap:4px}
+  .nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);flex-direction:column;padding:16px 20px;gap:0;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+  .nav.open{display:flex}
+  .nav a{padding:12px 0;border-radius:0;border-bottom:1px solid var(--border);width:100%}
+  .nav a.nav-cta{margin-left:0;margin-top:8px;text-align:center;border-bottom:none}
+  .hamburger{display:block}
+  .hero{min-height:auto;padding:64px 0 56px}
+  .hero h1{font-size:clamp(32px,8vw,44px)}
+  .metrics-grid{grid-template-columns:repeat(2,1fr)}
+  .metric{border-bottom:1px solid rgba(255,255,255,.06)}
+  .pillar-grid{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr;gap:32px}
+  .fields-grid{grid-template-columns:1fr}
+  .territory-grid{grid-template-columns:1fr}
+  .contact-cta{padding:36px 24px;grid-template-columns:1fr}
+  .footer-row{flex-direction:column;text-align:center}
+  .footer-links{flex-wrap:wrap;justify-content:center}
+}
+@media(max-width:480px){
+  .metrics-grid{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column}
+  .hero-btns .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ 1. TOP BAR ═══ -->
+<div class="topbar">
+  <div class="shell">
+    <div class="topbar-left">
+      <a href="mailto:contacto@terranava.org">contacto@terranava.org</a>
+      <span>·</span>
+      <a href="tel:+34662541767">+34 662 541 767</a>
+      <span>·</span>
+      <span>Madrid, España</span>
+    </div>
+    <div class="lang-sw" aria-label="Selección de idioma">
+      <a class="active" data-lang="es" href="#">ES</a>
+      <a data-lang="en" href="#">EN</a>
+      <a data-lang="ru" href="#">RU</a>
+      <a data-lang="fr" href="#">FR</a>
+      <a data-lang="de" href="#">DE</a>
+      <a data-lang="it" href="#">IT</a>
+      <a data-lang="pt" href="#">PT</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2. HEADER ═══ -->
+<header class="site-header">
+  <div class="shell">
+    <div class="header-row">
+      <a class="brand" href="/">
+        <div>
+          <div class="brand-name">TerraNava</div>
+          <div class="brand-sub">Agua, territorio y cooperación técnica</div>
+        </div>
+      </a>
+      <button class="hamburger" aria-label="Menú" onclick="document.querySelector('.nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a href="#" aria-current="page">Inicio</a>
+        <a href="#mision">Sobre TerraNava</a>
+        <a href="#campos">Ejes de intervención</a>
+        <a href="#datos">Datos y metodología</a>
+        <a href="aquarisk-ong.html">AquaRisk</a>
+        <a class="nav-cta" href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ 3. HERO ═══ -->
+<section class="hero">
+  <div class="shell">
+    <div class="hero-content">
+      <div class="hero-pill">ONG técnica para agua y territorio</div>
+      <h1>Agua, territorio y <em>evidencia</em> para decisiones públicas</h1>
+      <p class="hero-lead">TerraNava fortalece decisiones públicas e institucionales vinculadas con gestión hídrica, cuencas, riesgo de inundación y planificación territorial. Combinamos lectura hidrológica, criterios metodológicos, datos trazables e instrumentos abiertos para Europa y América Latina.</p>
+      <div class="hero-btns">
+        <a class="btn btn-white" href="#mision">Conocer nuestra misión</a>
+        <a class="btn btn-ghost" href="aquarisk-ong.html">Explorar AquaRisk →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4. METRICS BAR ═══ -->
+<div class="metrics">
+  <div class="shell">
+    <div class="metrics-grid">
+      <div class="metric">
+        <div class="metric-val">2</div>
+        <div class="metric-label">Continentes · Europa y América Latina</div>
+      </div>
+      <div class="metric">
+        <div class="metric-val">4</div>
+        <div class="metric-label">Ejes de intervención institucional</div>
+      </div>
+      <div class="metric">
+        <div class="metric-val">6<small>+</small></div>
+        <div class="metric-label">Fuentes de datos trazables</div>
+      </div>
+      <div class="metric">
+        <div class="metric-val">1</div>
+        <div class="metric-label">Plataforma abierta · AquaRisk</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5. PILARES ═══ -->
+<section class="section section-white">
+  <div class="shell">
+    <div class="sec-head">
+      <div class="eyebrow">Marco institucional</div>
+      <h2>Una organización orientada a utilidad pública, trazabilidad y rigor técnico</h2>
+    </div>
+    <div class="pillar-grid">
+      <article class="pillar">
+        <div class="pillar-label">Mandato</div>
+        <p>Apoyar decisiones institucionales sobre agua, riesgo y territorio con base técnica verificable.</p>
+      </article>
+      <article class="pillar">
+        <div class="pillar-label">Base de trabajo</div>
+        <p>Fuentes oficiales, datos derivados TerraNava y metodología pública con trazabilidad.</p>
+      </article>
+      <article class="pillar">
+        <div class="pillar-label">Ámbito</div>
+        <p>Europa y América Latina, con pilotos replicables y lectura territorial diferenciada.</p>
+      </article>
+      <article class="pillar">
+        <div class="pillar-label">Instrumentos</div>
+        <p>Análisis aplicado, formación, datos y herramientas abiertas integradas al trabajo institucional.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6. MISIÓN Y PRINCIPIOS ═══ -->
+<section class="section section-alt" id="mision">
+  <div class="shell">
+    <div class="split">
+      <div>
+        <div class="eyebrow">Misión institucional</div>
+        <h2>TerraNava trabaja sobre problemas materiales, no sobre declaraciones generales</h2>
+        <p class="sec-lead">No hay planificación seria sin lectura del agua, del relieve, de la exposición territorial y de la capacidad institucional para intervenir. TerraNava ordena su trabajo en torno a diagnóstico, cooperación técnica, transferencia metodológica y herramientas con utilidad pública.</p>
+        <a class="text-link" href="#campos">Ver campos de trabajo</a>
+      </div>
+      <div class="principles">
+        <article class="principle">
+          <div class="principle-num">Principio 01</div>
+          <h3>Trazabilidad</h3>
+          <p>Las fuentes y los criterios de producción de indicadores deben poder leerse, citarse y discutirse públicamente.</p>
+        </article>
+        <article class="principle">
+          <div class="principle-num">Principio 02</div>
+          <h3>Utilidad institucional</h3>
+          <p>El valor del trabajo técnico se mide por su capacidad de ordenar decisiones reales, no por el volumen de lenguaje.</p>
+        </article>
+        <article class="principle">
+          <div class="principle-num">Principio 03</div>
+          <h3>Cooperación prudente</h3>
+          <p>La interlocución con administraciones, universidades y redes técnicas exige claridad, sobriedad y metodología defendible.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7. CAMPOS DE TRABAJO ═══ -->
+<section class="section section-white" id="campos">
+  <div class="shell">
+    <div class="sec-head">
+      <div class="eyebrow">Capacidades institucionales</div>
+      <h2>Campos de trabajo prioritarios</h2>
+      <p class="sec-lead">La organización articula capacidades hidrológicas, territoriales y metodológicas para responder a problemas de agua y riesgo con lectura institucional.</p>
+    </div>
+    <div class="fields-grid">
+      <article class="field-card">
+        <div class="field-num">01</div>
+        <h3>Gestión del agua y cuencas</h3>
+        <p>Diagnóstico hidrológico, balances de recursos, sequías, escasez hídrica, hidrogeología y lectura funcional de cuencas con fines de gestión.</p>
+      </article>
+      <article class="field-card">
+        <div class="field-num">02</div>
+        <h3>Riesgo de inundación y resiliencia territorial</h3>
+        <p>Análisis de amenaza, exposición y prioridad de intervención, con capacidad para mapas, tableros y herramientas de soporte institucional.</p>
+      </article>
+      <article class="field-card">
+        <div class="field-num">03</div>
+        <h3>Planificación y cumplimiento técnico</h3>
+        <p>Acompañamiento a procesos regulatorios, evaluación hidrológica, ordenación de decisiones sobre agua y territorio.</p>
+      </article>
+      <article class="field-card">
+        <div class="field-num">04</div>
+        <h3>Formación, datos y herramientas abiertas</h3>
+        <p>Transferencia metodológica, instrumentos abiertos, documentación pública y soporte a procesos de cooperación técnica.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 8. MÉTODO ═══ -->
+<section class="section section-alt" id="metodo">
+  <div class="shell">
+    <div class="sec-head">
+      <div class="eyebrow">Método de trabajo</div>
+      <h2>De la lectura territorial a la transferencia de capacidades</h2>
+    </div>
+    <div class="steps-wrap">
+      <div class="steps-grid">
+        <article class="step">
+          <div class="step-num">Paso 01</div>
+          <h3>Diagnóstico</h3>
+          <p>Caracterización de cuencas, actores, infraestructuras, usos del suelo y amenazas.</p>
+        </article>
+        <article class="step">
+          <div class="step-num">Paso 02</div>
+          <h3>Asistencia técnica</h3>
+          <p>Definición de criterios, metodologías y soportes analíticos para planificación.</p>
+        </article>
+        <article class="step">
+          <div class="step-num">Paso 03</div>
+          <h3>Formación</h3>
+          <p>Trabajo con instituciones y equipos locales para dejar capacidades instaladas.</p>
+        </article>
+        <article class="step">
+          <div class="step-num">Paso 04</div>
+          <h3>Instrumentos</h3>
+          <p>Generación de productos, herramientas y soportes para sostenibilidad.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 9. AQUARISK SHOWCASE ═══ -->
+<section class="section section-dark" id="aquarisk">
+  <div class="shell">
+    <div class="showcase-grid">
+      <div>
+        <div class="eyebrow">Herramienta institucional</div>
+        <h2>AquaRisk: análisis hidrológico cuantitativo abierto</h2>
+        <p class="sec-lead">AquaRisk concentra herramientas de análisis hidrológico y territorial dentro del marco institucional de TerraNava. Curvas IDF, modelo lluvia-escorrentía SCS, balance hídrico y delimitación de cuencas con datos ERA5 en tiempo real.</p>
+        <div class="hero-btns" style="margin-top:28px">
+          <a class="btn btn-white" href="aquarisk-ong.html">Abrir AquaRisk</a>
+          <a class="btn btn-ghost" href="#campos">Ver ejes de intervención</a>
+        </div>
+      </div>
+      <div class="showcase-features">
+        <h3>Funciones principales</h3>
+        <div class="feature-item"><span class="feature-dot"></span>Curvas IDF con períodos de retorno T2–T100</div>
+        <div class="feature-item"><span class="feature-dot"></span>Modelo lluvia-escorrentía SCS Curva Número</div>
+        <div class="feature-item"><span class="feature-dot"></span>Delimitación de cuencas en tiempo real (MGHydro API)</div>
+        <div class="feature-item"><span class="feature-dot"></span>Balance hídrico Thornthwaite-Mather con datos ERA5</div>
+        <div class="feature-item"><span class="feature-dot"></span>100% abierto · Sin registro · Metodología OMM-168</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 10. DATOS Y METODOLOGÍA ═══ -->
+<section class="section section-white" id="datos">
+  <div class="shell">
+    <div class="split">
+      <div>
+        <div class="eyebrow">Datos y metodología</div>
+        <h2>Una capa pública de fuentes, criterios y limitaciones</h2>
+        <p class="sec-lead">El sitio debe poder mostrar no solo lo que TerraNava hace, sino también sobre qué datos trabaja, cómo los ordena y con qué límites deben leerse los resultados. Esa capa metodológica es central para credibilidad institucional y cooperación técnica.</p>
+        <a class="text-link" href="aquarisk-ong.html">Ver AquaRisk</a>
+      </div>
+      <div class="data-panels">
+        <article class="data-panel">
+          <h3>Fuentes base</h3>
+          <p>Datos oficiales, derivados y herramientas organizadas con criterios de trazabilidad y versionado.</p>
+          <div class="pill-row">
+            <span class="data-pill">ERA5 · ECMWF</span>
+            <span class="data-pill">HydroSHEDS</span>
+            <span class="data-pill">HydroBASINS</span>
+            <span class="data-pill">INE Bolivia</span>
+            <span class="data-pill">OpenStreetMap</span>
+            <span class="data-pill">HydroRIVERS</span>
+          </div>
+        </article>
+        <article class="data-panel">
+          <h3>Arquitectura</h3>
+          <p>AquaRisk como pieza dentro de un sistema más amplio. La plataforma técnica se integra al marco institucional junto con metodología, datos y lectura territorial.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 11. TERRITORIOS ═══ -->
+<section class="section section-alt" id="territorios">
+  <div class="shell">
+    <div class="sec-head">
+      <div class="eyebrow">Territorios de trabajo</div>
+      <h2>Prioridades territoriales y observatorio en construcción</h2>
+      <p class="sec-lead">La prioridad es construir pilotos bien documentados, replicables y metodológicamente defendibles.</p>
+    </div>
+    <div class="territory-grid">
+      <article class="territory">
+        <div class="territory-label">Piloto Bolivia</div>
+        <h3>Municipio, cuenca y riesgo</h3>
+        <p>Bolivia funciona como primer caso para integrar estadística oficial, lectura municipal, HydroBASINS y herramientas hidrológico-territoriales públicas.</p>
+      </article>
+      <article class="territory">
+        <div class="territory-label">Escala regional</div>
+        <h3>Europa y América Latina</h3>
+        <p>La arquitectura del sitio y de AquaRisk se diseña para poder replicarse en otros países sin rehacer el motor institucional.</p>
+      </article>
+      <article class="territory">
+        <div class="territory-label">Cooperación</div>
+        <h3>Diálogo con redes técnicas</h3>
+        <p>Administraciones, universidades, organizaciones territoriales y cooperación especializada forman el espacio natural de interlocución.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 12. CONTACTO CTA ═══ -->
+<section class="section section-white" id="contacto">
+  <div class="shell">
+    <div class="contact-cta">
+      <div>
+        <div class="eyebrow">Contacto institucional</div>
+        <h2>Canal abierto para cooperación técnica y diálogo especializado</h2>
+        <p class="sec-lead">TerraNava puede conversar sobre agua, cuencas, riesgo de inundación, fortalecimiento institucional, herramientas abiertas y producción de datos para lectura territorial.</p>
+        <a class="btn btn-white" href="mailto:contacto@terranava.org">Escribir a TerraNava</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-line">
+          <span class="contact-line-label">Correo electrónico</span>
+          <span class="contact-line-val"><a href="mailto:contacto@terranava.org">contacto@terranava.org</a></span>
+        </div>
+        <div class="contact-line">
+          <span class="contact-line-label">Teléfono</span>
+          <span class="contact-line-val"><a href="tel:+34662541767">+34 662 541 767</a></span>
+        </div>
+        <div class="contact-line">
+          <span class="contact-line-label">Base operativa</span>
+          <span class="contact-line-val">Madrid, España</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 13. FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="shell">
+    <div class="footer-row">
+      <p class="footer-copy">© 2026 TerraNava · ONG técnica para agua, territorio, cooperación especializada y herramientas abiertas.</p>
+      <div class="footer-links">
+        <a href="#">Inicio</a>
+        <a href="#mision">Sobre TerraNava</a>
+        <a href="#campos">Ejes</a>
+        <a href="#datos">Datos</a>
+        <a href="aquarisk-ong.html">AquaRisk</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ JS ═══ -->
+<script>
+// Sticky header shadow
+const hdr=document.querySelector('.site-header');
+window.addEventListener('scroll',()=>{hdr.classList.toggle('scrolled',window.scrollY>10)},{passive:true});
+
+// Scroll fade-in
+const fades=document.querySelectorAll('.fade');
+if('IntersectionObserver' in window){
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target)}})},{threshold:.15});
+  fades.forEach(el=>obs.observe(el));
+}
+
+// Close mobile nav on link click
+document.querySelectorAll('.nav a').forEach(a=>{a.addEventListener('click',()=>{document.querySelector('.nav').classList.remove('open')})});
+</script>
+</body>
+</html>
