@@ -1,2 +1,5 @@
 .claude/
 .DS_Store
+.playwright-cli/
+output/
+aquarisk-hostinger.zip

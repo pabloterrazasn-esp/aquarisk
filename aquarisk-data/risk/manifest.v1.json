@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "countries": {
+    "bolivia": {
+      "municipality_geojson": "/aquarisk-data/risk/bolivia/municipios.v1.geojson",
+      "rivers_geojson": "/aquarisk-data/risk/bolivia/rivers.v1.geojson",
+      "summary": "/aquarisk-data/risk/bolivia/summary.v1.json"
+    }
+  }
+}
