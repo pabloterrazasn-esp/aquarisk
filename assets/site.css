@@ -1057,6 +1057,60 @@ body[data-page="home"] .home-section .lead{
   font-size:16px;
   line-height:1.82;
 }
+.home-ods{
+  background:#eef4f2;
+  border-top:1px solid rgba(14,34,49,.06);
+}
+.home-ods-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.home-ods-card{
+  display:grid;
+  grid-template-columns:104px 1fr;
+  gap:20px;
+  align-items:start;
+  padding:22px;
+  background:#fff;
+  border:1px solid rgba(14,34,49,.08);
+  border-radius:18px;
+}
+.home-ods-card img{
+  width:104px;
+  height:104px;
+  object-fit:contain;
+  border-radius:14px;
+}
+.home-ods-card strong{
+  display:block;
+  color:var(--home-water-strong);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.home-ods-card h3{
+  margin:0 0 10px;
+  font-size:28px;
+}
+.home-ods-card p{
+  color:#4b5a67;
+  font-size:16px;
+  line-height:1.82;
+}
+.home-ods-note{
+  margin-top:18px;
+  color:#5c6b77;
+  font-size:13px;
+  line-height:1.8;
+}
+.home-ods-note a{
+  color:var(--home-navy);
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
 .home-closing{
   position:relative;
   color:#fff;
@@ -1205,6 +1259,9 @@ body[data-page="home"] .home-section .lead{
   .home-fields-grid{
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
+  .home-ods-grid{
+    grid-template-columns:1fr;
+  }
   .home-field-card-large{
     grid-column:span 2;
     grid-row:auto;
@@ -1277,6 +1334,13 @@ body[data-page="home"] .home-section .lead{
   .home-method-grid,
   .home-fields-grid{
     grid-template-columns:1fr;
+  }
+  .home-ods-card{
+    grid-template-columns:88px 1fr;
+  }
+  .home-ods-card img{
+    width:88px;
+    height:88px;
   }
   .home-field-card-large{
     grid-column:auto;
@@ -1374,6 +1438,15 @@ body[data-page="home"] .home-section .lead{
   .home-contact-card{
     padding-left:20px;
     padding-right:20px;
+  }
+  .home-ods-card{
+    grid-template-columns:1fr;
+    gap:14px;
+    padding:20px;
+  }
+  .home-ods-card img{
+    width:84px;
+    height:84px;
   }
   .home-contact-row{
     grid-template-columns:1fr;
