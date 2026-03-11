@@ -1,0 +1,56 @@
+{
+  "version": "v1",
+  "presets": {
+    "tarija": {
+      "kind": "skadi-bbox",
+      "label": "Tarija backbone",
+      "country": "bolivia",
+      "dataset": "srtm-skadi",
+      "name": "tarija-backbone",
+      "bbox": "-65.20,-22.05,-63.85,-20.80",
+      "description": "Fallback publico inmediato para Tarija y Guadalquivir Bolivia."
+    },
+    "bolivia-core": {
+      "kind": "skadi-bbox",
+      "label": "Bolivia backbone ligero",
+      "country": "bolivia",
+      "dataset": "srtm-skadi",
+      "name": "bolivia-core-sample",
+      "bbox": "-69.80,-22.95,-57.30,-9.30",
+      "description": "Caja amplia de Bolivia para adquisicion base ligera. Usar con cautela por volumen."
+    },
+    "spain-guadalquivir": {
+      "kind": "skadi-bbox",
+      "label": "España · Guadalquivir",
+      "country": "spain",
+      "dataset": "srtm-skadi",
+      "name": "spain-guadalquivir-backbone",
+      "bbox": "-7.60,36.20,-1.80,38.80",
+      "description": "Fallback abierto para la cuenca del Guadalquivir."
+    },
+    "spain-ebro": {
+      "kind": "skadi-bbox",
+      "label": "España · Ebro",
+      "country": "spain",
+      "dataset": "srtm-skadi",
+      "name": "spain-ebro-backbone",
+      "bbox": "-3.50,40.20,1.10,43.20",
+      "description": "Fallback abierto para la cuenca del Ebro."
+    },
+    "spain-duero": {
+      "kind": "skadi-bbox",
+      "label": "España · Duero",
+      "country": "spain",
+      "dataset": "srtm-skadi",
+      "name": "spain-duero-backbone",
+      "bbox": "-8.60,40.90,-1.80,43.40",
+      "description": "Fallback abierto para la cuenca del Duero."
+    },
+    "spain-premium-template": {
+      "kind": "url-manifest",
+      "label": "España premium · plantilla",
+      "manifest_template": "tools/templates/spain-cnig-dem.example.json",
+      "description": "Copia una plantilla para cargar DEM oficial o premium de Espana."
+    }
+  }
+}

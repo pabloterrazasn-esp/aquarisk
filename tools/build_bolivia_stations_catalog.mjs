@@ -15,6 +15,8 @@ const HYDRO_STATS_SOURCE = 'https://anda.ine.gob.bo/index.php/catalog/209';
 const HYDRO_REPORT_SOURCE = 'https://senamhi.gob.bo/redCuentas/2023/INFORME%20RENDICION%20PUBLICA%20DE%20CUENTAS%20FINAL%202023.pdf';
 const HYDRO_LEVELS_SOURCE = 'https://senamhi.gob.bo/meteorologia/boletines/reporte_de_niveles/2025/03/reporte_de_niveles_09032025.pdf';
 const HYDRO_FORECAST_SOURCE = 'https://senamhi.gob.bo/meteorologia/boletines/pronostico_hidrologico/2025/03/pronostico_hidrologico_09032025.pdf';
+const LAST_VERIFIED_AT = '2026-03-10';
+const SOURCE_PRIORITY = 'oficial_primero_con_fallback_abierto_trazable';
 
 const STATUS_COLORS = {
   operativa: '#1d4ed8',
@@ -477,6 +479,7 @@ function buildMeteorologicalStations(meteoCatalog, municipalityIndex) {
         station_name: station.name,
         network_type: 'meteorological',
         network_label: 'Meteorológica oficial',
+        operator: 'SENAMHI Bolivia',
         marker_color: TYPE_COLORS.meteorological,
         status_color: STATUS_COLORS.operativa,
         operational_status: 'operativa',
@@ -500,7 +503,12 @@ function buildMeteorologicalStations(meteoCatalog, municipalityIndex) {
         series_scope: 'Referencia climática utilizable',
         series_available: false,
         location_quality: 'coordenada pública SENAMHI',
+        confidence: 'high',
         quality_flag: 'Dato oficial público · ubicación utilizable en AquaRisk',
+        is_official_coordinate: true,
+        last_verified_at: LAST_VERIFIED_AT,
+        source_priority: SOURCE_PRIORITY,
+        service_level: 'L3',
         lat: point.lat,
         lon: point.lon,
         summary_text: `${station.name} se integra como estación meteorológica pública SENAMHI. AquaRisk la usa como referencia climática con trazabilidad explícita; la operación estadística nacional ANDA/INE reporta 36 estaciones meteorológicas de monitoreo.`,
@@ -529,6 +537,7 @@ function buildHydrologicalStations(hydrologicalRecords, municipalityIndex, river
         station_name: station.name,
         network_type: 'hydrological',
         network_label: 'Hidrológica oficial',
+        operator: 'SENAMHI Bolivia / INE-ANDA',
         marker_color: TYPE_COLORS.hydrological,
         status_color: STATUS_COLORS[station.operational_status] || STATUS_COLORS['pendiente de verificación'],
         operational_status: station.operational_status,
@@ -556,9 +565,14 @@ function buildHydrologicalStations(hydrologicalRecords, municipalityIndex, river
         location_quality: useSnap
           ? `${station.location_quality} · ajustada al cauce HydroRIVERS`
           : station.location_quality,
+        confidence: useSnap ? 'medium' : 'medium',
         quality_flag: useSnap
           ? 'Ubicación derivada TerraNava · topónimo oficial + ajuste al cauce'
           : 'Ubicación derivada TerraNava · topónimo oficial',
+        is_official_coordinate: false,
+        last_verified_at: LAST_VERIFIED_AT,
+        source_priority: SOURCE_PRIORITY,
+        service_level: 'L3',
         lat: point.lat,
         lon: point.lon,
         reference_lat: rawPoint.lat,
@@ -604,6 +618,12 @@ async function main() {
     version: 'v1',
     generated_at: new Date().toISOString(),
     country: 'Bolivia',
+    coverage_level: 'Nacional Bolivia',
+    service_level: 'L3',
+    source_priority: SOURCE_PRIORITY,
+    last_verified_at: LAST_VERIFIED_AT,
+    recommended_use: 'Lectura de cobertura observacional, trazabilidad institucional y apoyo a informes preliminares.',
+    limits: 'La presencia de una estacion no implica disponibilidad inmediata de series completas ni coordenada oficial exacta en todos los casos.',
     station_count: features.length,
     meteorological_public_reference_count: meteoFeatures.length,
     meteorological_stats_reference_count: 36,

@@ -629,7 +629,7 @@ body[data-page="home"] .topbar{
   left:0;
   right:0;
   z-index:25;
-  background:rgba(7,24,35,.32);
+  background:rgba(7,24,35,.62);
   border-bottom:1px solid rgba(255,255,255,.12);
   backdrop-filter:blur(14px);
 }
@@ -639,7 +639,7 @@ body[data-page="home"] .site-header{
   left:0;
   right:0;
   z-index:26;
-  background:rgba(7,24,35,.46);
+  background:rgba(7,24,35,.76);
   border-bottom:1px solid rgba(255,255,255,.08);
   backdrop-filter:blur(14px);
 }
@@ -925,6 +925,17 @@ body[data-page="home"] .home-section .lead{
 .home-section-head-light .home-tag{
   color:var(--home-water);
 }
+body[data-page="home"] .home-method .home-section-head h2,
+body[data-page="home"] .home-method .home-section-head .lead,
+body[data-page="home"] .home-method .home-method-item h3,
+body[data-page="home"] .home-closing h2,
+body[data-page="home"] .home-closing .lead{
+  color:#fff;
+}
+body[data-page="home"] .home-method .home-section-head .lead,
+body[data-page="home"] .home-closing .lead{
+  color:rgba(255,255,255,.84);
+}
 .home-method-grid{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -946,7 +957,7 @@ body[data-page="home"] .home-section .lead{
   color:#fff;
 }
 .home-method-item p{
-  color:rgba(255,255,255,.78);
+  color:rgba(255,255,255,.84);
   font-size:16px;
   line-height:1.82;
 }

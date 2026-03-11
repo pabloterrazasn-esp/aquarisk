@@ -1,1 +1,248 @@
-{"version":"v1","generated_at":"2026-03-09T19:42:09.747Z","geometry_manifest":"/aquarisk-data/manifest/atlas.json","climate_reference":{"json":"/aquarisk-data/config/climate-reference.v1.json","js":"/aquarisk-data/config/climate-reference.v1.js"},"dem_engine":{"bolivia":{"morphometry_guide":"/aquarisk-data/dem/bolivia/morphometry-guide.v1.json","summary":"/aquarisk-data/dem/bolivia/summary.v1.json"}},"guide_basins":{"climate":"/aquarisk-data/climate/guide-basins.v1.json","history":{"bolivia":"/aquarisk-data/history/guide-basins/chunks/bolivia.v1.json","spain":"/aquarisk-data/history/guide-basins/chunks/spain.v1.json"}},"hybas":{"sa":{"levels":{"04":{"climate_index":"/aquarisk-data/climate/hybas/sa/lev04/index.v1.json","history_dir":"/aquarisk-data/history/hybas/sa/lev04/chunks/","chunk_prefix_length":4},"05":{"climate_index":"/aquarisk-data/climate/hybas/sa/lev05/index.v1.json","history_dir":"/aquarisk-data/history/hybas/sa/lev05/chunks/","chunk_prefix_length":4},"06":{"climate_index":"/aquarisk-data/climate/hybas/sa/lev06/index.v1.json","history_dir":"/aquarisk-data/history/hybas/sa/lev06/chunks/","chunk_prefix_length":4},"07":{"climate_index":"/aquarisk-data/climate/hybas/sa/lev07/index.v1.json","history_dir":"/aquarisk-data/history/hybas/sa/lev07/chunks/","chunk_prefix_length":4},"08":{"climate_index":"/aquarisk-data/climate/hybas/sa/lev08/index.v1.json","history_dir":"/aquarisk-data/history/hybas/sa/lev08/chunks/","chunk_prefix_length":4}}},"eu":{"levels":{"04":{"climate_index":"/aquarisk-data/climate/hybas/eu/lev04/index.v1.json","history_dir":"/aquarisk-data/history/hybas/eu/lev04/chunks/","chunk_prefix_length":4},"05":{"climate_index":"/aquarisk-data/climate/hybas/eu/lev05/index.v1.json","history_dir":"/aquarisk-data/history/hybas/eu/lev05/chunks/","chunk_prefix_length":4},"06":{"climate_index":"/aquarisk-data/climate/hybas/eu/lev06/index.v1.json","history_dir":"/aquarisk-data/history/hybas/eu/lev06/chunks/","chunk_prefix_length":4},"07":{"climate_index":"/aquarisk-data/climate/hybas/eu/lev07/index.v1.json","history_dir":"/aquarisk-data/history/hybas/eu/lev07/chunks/","chunk_prefix_length":4},"08":{"climate_index":"/aquarisk-data/climate/hybas/eu/lev08/index.v1.json","history_dir":"/aquarisk-data/history/hybas/eu/lev08/chunks/","chunk_prefix_length":4}}}}}
+{
+  "version": "v1",
+  "generated_at": "2026-03-10T12:26:45.630Z",
+  "product_label": "AquaRisk · TerraNava",
+  "product_promise": "Plataforma tecnica de apoyo a decision hidrologica y territorial",
+  "service_level": "L3",
+  "coverage_level": "Bolivia activo · España hidrologia beta con premium en preparacion",
+  "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+  "source_priority_policy": "oficial_primero_con_fallback_abierto_trazable",
+  "country": "multi-country",
+  "last_verified_at": "2026-03-10",
+  "coverage_matrix": "embedded:countries",
+  "countries": {
+    "bolivia": {
+      "label": "Bolivia",
+      "status": "active",
+      "stage": "Bolivia v1 consolidado",
+      "coverage_level": "Cobertura nacional base + piloto reforzado Tarija",
+      "service_level": "L3",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-10",
+      "recommended_use": "Apoyo tecnico defendible para lectura territorial, cribado hidrologico, formulacion y cooperacion.",
+      "limits": "No equivale a modelacion calibrada ni a servicio oficial de alerta.",
+      "notes": [
+        "Tarija funciona como laboratorio de mayor detalle dentro del despliegue Bolivia.",
+        "Las estaciones hidrologicas sin coordenada oficial se mantienen como derivado TerraNava con trazabilidad explicita."
+      ],
+      "modules": {
+        "observation": {
+          "label": "Observacion y estaciones",
+          "status": "active",
+          "coverage": "Nacional Bolivia",
+          "service_level": "L3",
+          "recommended_use": "Lectura de cobertura observacional, proximidad y respaldo institucional.",
+          "limits": "No todas las estaciones implican disponibilidad inmediata de series completas."
+        },
+        "basins_relief": {
+          "label": "Cuencas y relieve",
+          "status": "active",
+          "coverage": "Nacional + detalle Tarija",
+          "service_level": "L3",
+          "recommended_use": "Lectura de cuencas, relieve, hidrografia y navegacion territorial.",
+          "limits": "Las capas DEM publicadas son derivadas ligeras para web, no el DEM crudo."
+        },
+        "climate_hydrology": {
+          "label": "Clima e hidrologia",
+          "status": "active",
+          "coverage": "Nacional Bolivia",
+          "service_level": "L2",
+          "recommended_use": "Screening hidroclimatico, historicos mensuales y balance preliminar.",
+          "limits": "La salida debe contrastarse con series observadas y revision experta cuando el caso lo exija."
+        },
+        "risk_exposure": {
+          "label": "Riesgo y exposicion",
+          "status": "active",
+          "coverage": "Piloto municipal Bolivia",
+          "service_level": "L2",
+          "recommended_use": "Priorizacion institucional y lectura comparativa municipal.",
+          "limits": "La exposicion municipal total no equivale a poblacion expuesta directa."
+        },
+        "reports_traceability": {
+          "label": "Informes y trazabilidad",
+          "status": "active",
+          "coverage": "Bolivia con soporte Tarija",
+          "service_level": "L3",
+          "recommended_use": "Briefings tecnicos preliminares e informes de apoyo a cooperacion.",
+          "limits": "No reemplaza estudios regulatorios ni modelacion calibrada."
+        }
+      }
+    },
+    "spain": {
+      "label": "España",
+      "status": "active",
+      "stage": "España hidrologia beta activa · premium v1 en preparacion",
+      "coverage_level": "Cuencas guia e historicos locales precargados + atlas regional Europa",
+      "service_level": "L2",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-10",
+      "recommended_use": "Screening hidrologico por cuencas precargadas, lectura territorial e informes preliminares por unidad hidrologica.",
+      "limits": "No equivale todavia a un despliegue premium nacional; DEM, estaciones, hidrografia e informes QA siguen en preparacion.",
+      "notes": [
+        "España ya publica cuencas guia con series historicas locales precargadas y navegacion HydroBASINS.",
+        "El estandar premium sigue condicionado a DEM, estaciones oficiales trazables, hidrografia reforzada e informes QA."
+      ],
+      "modules": {
+        "observation": {
+          "label": "Observacion y estaciones",
+          "status": "planned",
+          "coverage": "Inventario en preparacion",
+          "service_level": "L1",
+          "recommended_use": "Definir red y trazabilidad premium.",
+          "limits": "Sin catalogo premium publicado todavia."
+        },
+        "basins_relief": {
+          "label": "Cuencas y relieve",
+          "status": "active",
+          "coverage": "Cuencas guia España + atlas regional Europa",
+          "service_level": "L2",
+          "recommended_use": "Lectura de cuencas, subcuencas y estructura de drenaje con historicos locales precargados.",
+          "limits": "El DEM premium nacional sigue en preparacion; la base actual prioriza arquitectura basin-first y atlas regional."
+        },
+        "climate_hydrology": {
+          "label": "Clima e hidrologia",
+          "status": "active",
+          "coverage": "Cuencas guia España con historicos locales precargados",
+          "service_level": "L2",
+          "recommended_use": "Screening hidrologico, lectura estacional e historicos mensuales por cuenca.",
+          "limits": "No sustituye modelacion calibrada ni un servicio operacional oficial."
+        },
+        "risk_exposure": {
+          "label": "Riesgo y exposicion",
+          "status": "planned",
+          "coverage": "No activo",
+          "service_level": "L1",
+          "recommended_use": "Pendiente de backbone y QA.",
+          "limits": "No debe usarse publicamente aun."
+        },
+        "reports_traceability": {
+          "label": "Informes y trazabilidad",
+          "status": "active",
+          "coverage": "Informes preliminares por cuenca España",
+          "service_level": "L2",
+          "recommended_use": "Briefings tecnicos preliminares con fuentes, niveles de servicio y limites visibles.",
+          "limits": "El formato premium nacional sigue en preparacion y no debe presentarse como expediente regulatorio."
+        }
+      }
+    }
+  },
+  "geometry_manifest": "/aquarisk-data/manifest/atlas.json",
+  "climate_reference": {
+    "json": "/aquarisk-data/config/climate-reference.v1.json",
+    "js": "/aquarisk-data/config/climate-reference.v1.js"
+  },
+  "dem_engine": {
+    "bolivia": {
+      "morphometry_guide": "/aquarisk-data/dem/bolivia/morphometry-guide.v1.json",
+      "summary": "/aquarisk-data/dem/bolivia/summary.v1.json",
+      "country": "Bolivia",
+      "coverage_level": "Bolivia v1 con foco Tarija",
+      "service_level": "L2",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-10"
+    }
+  },
+  "terrain_overlays": {
+    "tarija": {
+      "summary": "/aquarisk-data/dem/tarija/summary.v1.json",
+      "relief_manifest": "/aquarisk-data/dem/tarija/relief/manifest.v1.json",
+      "slope_manifest": "/aquarisk-data/dem/tarija/slope/manifest.v1.json",
+      "hydro_unit_id": "6060762840",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "coverage_level": "Tarija regional",
+      "service_level": "L2",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-10"
+    }
+  },
+  "guide_basins": {
+    "climate": "/aquarisk-data/climate/guide-basins.v1.json",
+    "history": {
+      "bolivia": "/aquarisk-data/history/guide-basins/chunks/bolivia.v1.json",
+      "spain": "/aquarisk-data/history/guide-basins/chunks/spain.v1.json"
+    }
+  },
+  "hybas": {
+    "sa": {
+      "levels": {
+        "04": {
+          "climate_index": "/aquarisk-data/climate/hybas/sa/lev04/index.v1.json",
+          "history_dir": "/aquarisk-data/history/hybas/sa/lev04/chunks/",
+          "chunk_prefix_length": 4
+        },
+        "05": {
+          "climate_index": "/aquarisk-data/climate/hybas/sa/lev05/index.v1.json",
+          "history_dir": "/aquarisk-data/history/hybas/sa/lev05/chunks/",
+          "chunk_prefix_length": 4
+        },
+        "06": {
+          "climate_index": "/aquarisk-data/climate/hybas/sa/lev06/index.v1.json",
+          "history_dir": "/aquarisk-data/history/hybas/sa/lev06/chunks/",
+          "chunk_prefix_length": 4
+        },
+        "07": {
+          "climate_index": "/aquarisk-data/climate/hybas/sa/lev07/index.v1.json",
+          "history_dir": "/aquarisk-data/history/hybas/sa/lev07/chunks/",
+          "chunk_prefix_length": 4
+        },
+        "08": {
+          "climate_index": "/aquarisk-data/climate/hybas/sa/lev08/index.v1.json",
+          "history_dir": "/aquarisk-data/history/hybas/sa/lev08/chunks/",
+          "chunk_prefix_length": 4
+        }
+      }
+    },
+    "eu": {
+      "levels": {
+        "04": {
+          "climate_index": "/aquarisk-data/climate/hybas/eu/lev04/index.v1.json",
+          "history_dir": "/aquarisk-data/history/hybas/eu/lev04/chunks/",
+          "chunk_prefix_length": 4
+        },
+        "05": {
+          "climate_index": "/aquarisk-data/climate/hybas/eu/lev05/index.v1.json",
+          "history_dir": "/aquarisk-data/history/hybas/eu/lev05/chunks/",
+          "chunk_prefix_length": 4
+        },
+        "06": {
+          "climate_index": "/aquarisk-data/climate/hybas/eu/lev06/index.v1.json",
+          "history_dir": "/aquarisk-data/history/hybas/eu/lev06/chunks/",
+          "chunk_prefix_length": 4
+        },
+        "07": {
+          "climate_index": "/aquarisk-data/climate/hybas/eu/lev07/index.v1.json",
+          "history_dir": "/aquarisk-data/history/hybas/eu/lev07/chunks/",
+          "chunk_prefix_length": 4
+        },
+        "08": {
+          "climate_index": "/aquarisk-data/climate/hybas/eu/lev08/index.v1.json",
+          "history_dir": "/aquarisk-data/history/hybas/eu/lev08/chunks/",
+          "chunk_prefix_length": 4
+        }
+      }
+    }
+  },
+  "stations": {
+    "bolivia": {
+      "geojson": "/aquarisk-data/stations/bolivia/stations.v1.geojson",
+      "summary": "/aquarisk-data/stations/bolivia/summary.v1.json",
+      "country": "Bolivia",
+      "coverage_level": "Nacional Bolivia",
+      "service_level": "L3",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-10"
+    },
+    "tarija": {
+      "geojson": "/aquarisk-data/stations/tarija/stations.v1.geojson",
+      "summary": "/aquarisk-data/stations/tarija/summary.v1.json",
+      "region": "bolivia",
+      "scope": "department_tarija",
+      "country": "Bolivia",
+      "coverage_level": "Tarija observacional prioritaria",
+      "service_level": "L3",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-10"
+    }
+  }
+}

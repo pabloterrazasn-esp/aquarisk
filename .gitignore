@@ -1,5 +1,10 @@
 .claude/
 .DS_Store
+._*
 .playwright-cli/
 output/
 aquarisk-hostinger.zip
+workspace-data
+qa
+releases
+media-source

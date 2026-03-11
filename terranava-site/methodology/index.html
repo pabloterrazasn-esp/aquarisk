@@ -6,7 +6,7 @@
 <title>Datos y metodologia | TerraNava</title>
 <meta name="description" content="Fuentes, criterios metodologicos, categorias de dato y principios de calidad usados por TerraNava en su trabajo institucional y en AquaRisk."/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='white'/%3E%3Cpath d='M12 38c8-8 14-5 20-10 6-5 12-3 20-10' fill='none' stroke='%230f4c97' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M12 46c8-8 14-5 20-10 6-5 12-3 20-10' fill='none' stroke='%2317365d' stroke-width='2.8' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E"/>
-<link rel="stylesheet" href="/assets/site.css"/>
+<link rel="stylesheet" href="/assets/site.css?v=20260310-3"/>
 </head>
 <body data-page="methodology">
 <div class="topbar">
@@ -54,7 +54,7 @@
         <div>
           <div class="eyebrow">Datos y metodologia</div>
           <h1 class="page-title">Fuentes, criterios y limites de lectura</h1>
-          <p class="lead">TerraNava publica esta pagina para dejar explicito sobre que datos trabaja, como clasifica sus productos y con que criterios deben interpretarse mapas, indicadores y herramientas. La credibilidad institucional depende tambien de exponer metodologia, trazabilidad y limitaciones.</p>
+          <p class="lead">TerraNava publica esta pagina para dejar explicito sobre que datos trabaja, como clasifica sus productos, con que niveles de servicio comunica sus salidas y bajo que criterios deben interpretarse mapas, indicadores y herramientas. La credibilidad institucional depende tambien de exponer metodologia, trazabilidad y limitaciones.</p>
         </div>
         <div class="stack">
           <article class="note-panel">
@@ -76,7 +76,7 @@
       <div class="section-head">
         <div class="eyebrow">Categorias de dato</div>
         <h2>Como clasifica TerraNava la informacion que publica</h2>
-        <p class="lead">La organizacion separa tres grandes niveles para evitar ambiguedad entre dato oficial, cruce derivado e interpretacion experimental.</p>
+        <p class="lead">La organizacion separa grandes categorias para evitar ambiguedad entre dato oficial, cruce derivado, herramienta abierta y salida experimental.</p>
       </div>
       <div class="method-grid">
         <article class="method-box">
@@ -106,9 +106,41 @@
   <section class="section section-alt">
     <div class="shell">
       <div class="section-head">
+        <div class="eyebrow">Niveles de servicio</div>
+        <h2>Como declara TerraNava el alcance de cada salida</h2>
+        <p class="lead">AquaRisk no debe sugerir que todas sus capas valen lo mismo. Por eso TerraNava adopta una escala interna de servicio para distinguir contexto cartografico, screening tecnico, apoyo defendible y validacion observacional especifica.</p>
+      </div>
+      <div class="method-grid">
+        <article class="method-box">
+          <div class="fact-label">L1</div>
+          <h3>Contexto cartografico</h3>
+          <p>Capas base para leer relieve, hidrografia, limites y estructura territorial. No bastan por si solas para afirmar amenaza o soporte regulatorio.</p>
+        </article>
+        <article class="method-box">
+          <div class="fact-label">L2</div>
+          <h3>Diagnostico orientativo</h3>
+          <p>Indicadores y derivados utiles para cribado tecnico inicial, priorizacion y lectura comparativa.</p>
+        </article>
+        <article class="method-box">
+          <div class="fact-label">L3</div>
+          <h3>Apoyo tecnico defendible</h3>
+          <p>Informes preliminares y salidas con trazabilidad visible, fuentes declaradas y limites de uso explicitados.</p>
+        </article>
+        <article class="method-box">
+          <div class="fact-label">L4-L5</div>
+          <h3>Piloto casi operacional y validacion</h3>
+          <p>Niveles reservados para modulos o paises con mayor respaldo observacional, verificacion y disciplina de mantenimiento.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="shell">
+      <div class="section-head">
         <div class="eyebrow">Fuentes principales</div>
         <h2>Base de datos, cartografia y capas de trabajo</h2>
-        <p class="lead">Las fuentes cambian por territorio y modulo, pero la logica de trabajo es estable: identificar fuente, documentar version, separar origen y derivacion, y exponer limitaciones de uso.</p>
+        <p class="lead">Las fuentes cambian por territorio y modulo, pero la logica de trabajo es estable: identificar fuente, documentar version, separar origen y derivacion, exponer limitaciones y aplicar la regla institucional de oficial primero con fallback abierto trazable.</p>
       </div>
       <div class="source-table-wrap">
         <table class="data-table">
@@ -189,9 +221,36 @@
           </article>
           <article class="brief-panel">
             <div class="fact-label">Escalabilidad</div>
-            <p>La estructura usada en Bolivia se prepara para replicarse en otros paises separando fuente estadistica, geometria territorial, hidrologia base y reglas de derivacion.</p>
+            <p>La estructura usada en Bolivia se prepara para replicarse en otros paises separando fuente estadistica, geometria territorial, hidrologia base, niveles de servicio y reglas de derivacion.</p>
           </article>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-head">
+        <div class="eyebrow">Cobertura y secuencia</div>
+        <h2>Bolivia activo, España hidrologia beta con premium en preparacion</h2>
+        <p class="lead">TerraNava no busca abrir paises sin respaldo minimo. La secuencia actual usa Bolivia como cobertura activa y Tarija como laboratorio reforzado, mientras España ya publica cuencas historicas precargadas y avanza hacia un caso premium por su mayor exigencia tecnica e institucional.</p>
+      </div>
+      <div class="brief-grid">
+        <article class="fact-block">
+          <div class="fact-label">Bolivia</div>
+          <h3>Cobertura activa</h3>
+          <p>Base nacional de trabajo con atlas, climatologia, estaciones y pilotos institucionales. Tarija concentra el mayor detalle actual.</p>
+        </article>
+        <article class="fact-block">
+          <div class="fact-label">España</div>
+          <h3>Despliegue premium</h3>
+          <p>Se prepara como benchmark europeo y no debe presentarse como cobertura premium defendible hasta cumplir su checklist completo de DEM, estaciones, hidrografia, informes y QA. La fase actual ya habilita cuencas guia e historicos locales precargados como backbone basin-first.</p>
+        </article>
+        <article class="fact-block">
+          <div class="fact-label">Regla comun</div>
+          <h3>No abrir por apariencia</h3>
+          <p>Ningun pais deberia activarse publicamente si no tiene backbone DEM, subcuencas, red hidrica, catalogo observacional, metodologia y disclaimer visibles.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -243,6 +302,6 @@
   </div>
 </footer>
 
-<script src="/assets/site.js"></script>
+<script src="/assets/site.js?v=20260310-2"></script>
 </body>
 </html>
