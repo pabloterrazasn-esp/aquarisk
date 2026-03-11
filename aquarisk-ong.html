@@ -221,6 +221,25 @@
   .tool-sync-note{font-size:11px;color:var(--muted);line-height:1.6;flex:1 1 240px}
   .tool-sync-note.is-ok{color:var(--accent2)}
   .tool-sync-note.is-warn{color:var(--warn)}
+  .guide-morphometry-panel{
+    margin-top:18px;padding:16px 18px;border:1px solid var(--border);
+    border-radius:12px;background:linear-gradient(180deg,#fff 0%,#f8fafc 100%);
+  }
+  .guide-morphometry-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap;margin-bottom:14px}
+  .guide-morphometry-head p{margin:0}
+  .guide-morphometry-kicker{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+  .guide-morphometry-title{font-family:var(--serif);font-size:22px;color:var(--accent2);letter-spacing:-.02em}
+  .guide-morphometry-sub{font-size:12px;line-height:1.7;color:var(--muted);max-width:720px}
+  .guide-morphometry-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:14px}
+  .guide-meta-chip{border:1px solid var(--border);border-radius:10px;padding:10px 12px;background:#fff}
+  .guide-meta-label{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+  .guide-meta-value{font-size:18px;font-weight:700;color:var(--accent2)}
+  .guide-meta-sub{font-size:11px;line-height:1.55;color:var(--muted);margin-top:4px}
+  .guide-morphometry-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .guide-chart-card{border:1px solid var(--border);border-radius:12px;padding:12px;background:#fff}
+  .guide-chart-title{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .guide-chart-note{font-size:11px;line-height:1.7;color:var(--muted);margin-top:8px}
+  .guide-morphometry-note{margin-top:12px;font-size:11px;line-height:1.8;color:#475569}
 
   /* ── CN TABLE ── */
   details summary{color:var(--accent2);font-size:13px;cursor:pointer;padding:8px 0;font-weight:600}
@@ -289,6 +308,7 @@
   .overlay-raster-swatch.slope{background:linear-gradient(90deg,rgba(248,250,252,.88) 0%,rgba(222,235,209,.95) 24%,rgba(244,208,140,.95) 54%,rgba(220,148,93,.96) 78%,rgba(133,41,51,.98) 100%)}
   .overlay-marker-swatch{display:inline-block;width:13px;height:13px;border-radius:999px;flex-shrink:0}
   .overlay-marker-swatch.tarija-stations{background:radial-gradient(circle at 35% 35%, #ffffff 0 24%, #0f766e 25% 64%, #2563eb 65% 100%);border:1px solid rgba(15,118,110,.34);box-shadow:0 0 0 2px rgba(15,118,110,.12)}
+  .overlay-marker-swatch.spain-stations{background:radial-gradient(circle at 35% 35%, #ffffff 0 24%, #0b4f6c 25% 62%, #1d4ed8 63% 100%);border:1px solid rgba(11,79,108,.34);box-shadow:0 0 0 2px rgba(29,78,216,.12)}
   .river-search-box{display:flex;gap:6px;flex:1;min-width:220px;max-width:420px}
   .river-search-box input{flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:12px;font-family:var(--sans);font-size:13px;background:var(--bg);color:var(--text);outline:none}
   .river-search-box input:focus{border-color:var(--accent)}
@@ -336,6 +356,8 @@
     .history-head{grid-template-columns:1fr}
     .history-stats{justify-content:flex-start}
     .state-head{grid-template-columns:1fr}
+    .guide-morphometry-meta{grid-template-columns:1fr 1fr}
+    .guide-morphometry-grid{grid-template-columns:1fr}
   }
   .outlet-marker{cursor:pointer;transition:all .2s}
   .outlet-marker:hover .outlet-ring{stroke-width:3;r:14}
@@ -427,6 +449,84 @@
   }
   .btn-export:hover{background:var(--gold);transform:translateY(-1px)}
   .btn-export svg{flex-shrink:0}
+  .report-preview-overlay{
+    position:fixed;inset:0;z-index:2500;background:rgba(15,23,42,.74);
+    display:none;align-items:stretch;justify-content:center;padding:18px;
+    backdrop-filter:blur(4px)
+  }
+  .report-preview-overlay.is-open{display:flex}
+  .report-preview-shell{
+    width:min(1180px,100%);display:flex;flex-direction:column;min-height:0
+  }
+  .report-preview-toolbar{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:14px 20px;background:#0f172a;color:#fff;border-radius:18px 18px 0 0;
+    border-bottom:1px solid rgba(255,255,255,.12);flex-wrap:wrap
+  }
+  .report-preview-title{font-size:14px;font-weight:700;letter-spacing:.02em}
+  .report-preview-subtitle{font-size:12px;color:rgba(255,255,255,.72);margin-top:4px}
+  .report-preview-actions{display:flex;gap:10px;flex-wrap:wrap}
+  .report-preview-actions button{
+    border:1px solid rgba(255,255,255,.18);background:#fff;color:#0f172a;
+    border-radius:999px;padding:9px 14px;font:600 12px var(--sans);cursor:pointer
+  }
+  .report-preview-actions button.secondary{background:transparent;color:#fff}
+  .report-preview-body{
+    min-height:0;overflow:auto;background:#e2e8f0;padding:26px 18px 36px;
+    border-radius:0 0 18px 18px
+  }
+  .report-preview-card{
+    max-width:1180px;margin:0 auto;background:#fff;border-radius:18px;
+    box-shadow:0 24px 60px rgba(15,23,42,.16);padding:30px 34px
+  }
+  .report-preview-note{font-size:12px;color:#64748b;margin:10px auto 0;max-width:1180px}
+  .tn-figure-section{display:grid;gap:18px}
+  .tn-figure{border:1px solid #dce6d4;border-radius:8px;background:#fff;padding:14px}
+  .tn-figure-header{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:12px}
+  .tn-figure-code{font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+  .tn-figure-title{font-family:var(--serif);font-size:22px;color:#0f172a;line-height:1.15;letter-spacing:-.02em}
+  .tn-figure-subtitle{font-size:11px;color:#64748b;line-height:1.7;margin-top:4px;max-width:760px}
+  .tn-figure-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:#eef4ff;border:1px solid #c7d6f7;color:#17365d;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+  .tn-figure-frame{border:1px solid #ced7e5;background:#f8fafc;padding:12px}
+  .tn-figure-canvas{position:relative;background:#fff;border:1px solid #cbd5e1;min-height:360px}
+  .tn-figure-canvas svg{display:block;width:100%;height:auto}
+  .tn-figure-map-controls{position:absolute;left:14px;top:14px;display:grid;gap:8px}
+  .tn-figure-north{width:58px;height:58px;border-radius:999px;border:1px solid #cbd5e1;background:rgba(255,255,255,.88);display:flex;align-items:center;justify-content:center;font:700 11px var(--sans);color:#17365d;box-shadow:0 8px 20px rgba(15,23,42,.08)}
+  .tn-figure-scale{padding:6px 10px;border:1px solid #cbd5e1;background:rgba(255,255,255,.88);font-size:10px;color:#334155;line-height:1.4}
+  .tn-figure-grid{display:grid;grid-template-columns:1fr 280px;gap:12px}
+  .tn-figure-grid.is-premium{grid-template-columns:1.2fr .8fr}
+  .tn-figure-aside{display:grid;gap:10px}
+  .tn-figure-box{border:1px solid #dce6d4;background:#fff;padding:10px 12px}
+  .tn-figure-box-label{font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:6px}
+  .tn-figure-box p,.tn-figure-box li{font-size:11px;color:#334155;line-height:1.65}
+  .tn-figure-box ul{margin:0;padding-left:16px}
+  .tn-legend-list{display:grid;gap:6px}
+  .tn-legend-item{display:flex;align-items:center;gap:8px;font-size:11px;color:#334155}
+  .tn-swatch{display:inline-block;flex:0 0 auto}
+  .tn-swatch-fill{width:14px;height:14px;border:1px solid rgba(15,23,42,.14);background:#cfd8e3}
+  .tn-swatch-fill-climate{width:14px;height:14px;border:1px solid rgba(15,23,42,.14);background:linear-gradient(135deg,#fef3c7 0%,#bbf7d0 100%)}
+  .tn-swatch-line{width:24px;height:0;border-top:3px solid #2a7fcb}
+  .tn-swatch-line-river{width:24px;height:0;border-top:4px solid #0f5fb8}
+  .tn-swatch-line-river-secondary{width:24px;height:0;border-top:2px solid #7ea8da}
+  .tn-swatch-dot{width:12px;height:12px;border-radius:999px;background:#f59e0b;border:1px solid rgba(15,23,42,.18)}
+  .tn-swatch-dot-hydro{width:12px;height:12px;border-radius:999px;background:#0f766e;border:1px solid rgba(15,23,42,.18)}
+  .tn-swatch-dot-meteo{width:12px;height:12px;border-radius:999px;background:#f59e0b;border:1px solid rgba(15,23,42,.18)}
+  .tn-figure-footer{display:grid;grid-template-columns:1.1fr .9fr;gap:12px;margin-top:12px}
+  .tn-figure-note{font-size:10.5px;color:#64748b;line-height:1.7;margin-top:8px}
+  .tn-json-box{border:1px solid #dce6d4;background:#f8fafc;padding:12px}
+  .tn-json-title{font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:8px}
+  .tn-json-box pre{margin:0;white-space:pre-wrap;word-break:break-word;font:10px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;color:#334155;max-height:260px;overflow:auto}
+  body.print-map-mode{background:#e2e8f0}
+  .print-map-shell{max-width:1180px;margin:0 auto;padding:22px 18px 36px}
+  .print-map-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#0f172a;color:#fff;padding:14px 18px;border-radius:16px 16px 0 0}
+  .print-map-toolbar .title{font-size:14px;font-weight:700;letter-spacing:.02em}
+  .print-map-toolbar .sub{font-size:12px;color:rgba(255,255,255,.72);margin-top:4px}
+  .print-map-toolbar .actions{display:flex;gap:10px;flex-wrap:wrap}
+  .print-map-toolbar button{border:1px solid rgba(255,255,255,.18);background:#fff;color:#0f172a;border-radius:999px;padding:9px 14px;font:600 12px var(--sans);cursor:pointer}
+  .print-map-toolbar button.secondary{background:transparent;color:#fff}
+  .print-map-card{background:#fff;border-radius:0 0 16px 16px;padding:26px 28px;box-shadow:0 24px 60px rgba(15,23,42,.16)}
+  #print-report-preview{display:block!important}
+  body.report-preview-open{overflow:hidden}
 
   /* ── DATA SOURCE CHIPS ── */
   .source-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
@@ -633,10 +733,12 @@
   @media print{
     header,footer,.tabs-bar,.stats-bar,.inst-strip,.btn-export,.back-link,
     .region-switcher,.method-row,.period-toggles,.btn,.btn-ghost,
-    main, #print-report + footer { display:none!important }
+    main, #print-report + footer, #report-preview-overlay { display:none!important }
     body{background:#fff!important;color:#000!important;font-family:var(--sans)}
     #print-report{display:block!important}
     .pr-header{margin-bottom:20px}
+    .tn-json-box{display:none!important}
+    .tn-figure{break-inside:avoid-page}
   }
   .print-header{display:none}
 
@@ -653,6 +755,12 @@
     .inst-strip{display:none}
     .risk-panel-grid{grid-template-columns:1fr}
     .stations-panel-grid{grid-template-columns:1fr}
+    .report-preview-overlay{padding:0}
+    .report-preview-toolbar{border-radius:0;padding:14px 16px}
+    .report-preview-body{padding:14px 10px 24px;border-radius:0}
+    .report-preview-card{padding:20px 16px;border-radius:14px}
+    .tn-figure-grid,.tn-figure-grid.is-premium,.tn-figure-footer{grid-template-columns:1fr}
+    .tn-figure-canvas{min-height:260px}
   }
 
   /* MGHydro Watershed Map */
@@ -1453,6 +1561,55 @@
           </div>
         </div>
       </div>
+      <div id="guide-morphometry-panel" class="guide-morphometry-panel" style="display:none">
+        <div class="guide-morphometry-head">
+          <div>
+            <p class="guide-morphometry-kicker">Perfil morfométrico precalculado</p>
+            <p class="guide-morphometry-title" id="guide-morphometry-title">—</p>
+          </div>
+          <div class="guide-meta-chip" style="min-width:220px">
+            <div class="guide-meta-label">Base y nivel</div>
+            <div class="guide-meta-value" id="guide-morphometry-level" style="font-size:15px">—</div>
+            <div class="guide-meta-sub" id="guide-morphometry-source">—</div>
+          </div>
+        </div>
+        <p class="guide-morphometry-sub" id="guide-morphometry-sub">—</p>
+        <div class="guide-morphometry-meta">
+          <div class="guide-meta-chip">
+            <div class="guide-meta-label">Longitud de cauce</div>
+            <div class="guide-meta-value" id="guide-morphometry-length">—</div>
+            <div class="guide-meta-sub">Derivado guía por unidad activa</div>
+          </div>
+          <div class="guide-meta-chip">
+            <div class="guide-meta-label">Pendiente del eje</div>
+            <div class="guide-meta-value" id="guide-morphometry-slope">—</div>
+            <div class="guide-meta-sub">Lectura morfométrica relativa</div>
+          </div>
+          <div class="guide-meta-chip">
+            <div class="guide-meta-label">Tiempo de concentración</div>
+            <div class="guide-meta-value" id="guide-morphometry-tc">—</div>
+            <div class="guide-meta-sub">Promedio Kirpich · Témez · SCS lag</div>
+          </div>
+          <div class="guide-meta-chip">
+            <div class="guide-meta-label">Firma de respuesta</div>
+            <div class="guide-meta-value" id="guide-morphometry-response" style="font-size:15px">—</div>
+            <div class="guide-meta-sub" id="guide-morphometry-family">—</div>
+          </div>
+        </div>
+        <div class="guide-morphometry-grid">
+          <div class="guide-chart-card">
+            <div class="guide-chart-title">Perfil longitudinal relativo</div>
+            <div id="guide-profile-chart"></div>
+            <p class="guide-chart-note">0–100 % del eje principal. La curva expresa gradiente relativo y no elevaciones absolutas.</p>
+          </div>
+          <div class="guide-chart-card">
+            <div class="guide-chart-title">Curva hipsométrica relativa</div>
+            <div id="guide-hypsometry-chart"></div>
+            <p class="guide-chart-note">Relación entre área acumulada y elevación relativa para comparar organización del relieve.</p>
+          </div>
+        </div>
+        <p class="guide-morphometry-note" id="guide-morphometry-note">—</p>
+      </div>
     </div>
 
     <!-- dummy SVG for backward compat (hidden) -->
@@ -1724,6 +1881,36 @@
         </div>
       </div>
       <p id="coverage-matrix-note" style="font-size:12px;color:var(--muted);line-height:1.7;margin-top:12px">Política de fuente: oficial primero y fallback abierto trazable. La matriz real de cobertura se carga desde manifiestos del sistema y se actualiza con cada verificación.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:#fff">
+        <div style="flex:1 1 280px">
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Fuentes visibles</div>
+          <div style="font-size:14px;line-height:1.65;color:var(--text);margin-top:6px">TerraNava mantiene una página pública con acceso directo a bases de datos, cartografía y portales oficiales usados en AquaRisk y en la preparación de derivados.</div>
+        </div>
+        <a href="/data-sources/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:8px;background:var(--accent2);color:#fff;font-weight:600;text-decoration:none">Fuentes y acceso a datos</a>
+      </div>
+
+      <div style="margin-top:18px;padding-top:18px;border-top:1px solid var(--border)">
+        <div class="risk-section-heading" style="margin-top:0">
+          <div>
+            <h4 style="font-size:22px">Cobertura y trazabilidad activas</h4>
+            <p>El panel siguiente resume el módulo actual, su cobertura, su nivel de servicio y el estado del backbone por país para evitar lecturas fuera de alcance.</p>
+          </div>
+        </div>
+        <div id="coverage-current-context" style="border:1px solid var(--border);border-radius:10px;padding:14px;background:#fff"></div>
+        <div id="country-module-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px"></div>
+      </div>
+
+      <div style="margin-top:18px;padding-top:18px;border-top:1px solid var(--border)">
+        <div class="risk-section-heading" style="margin-top:0">
+          <div>
+            <h4 style="font-size:22px">España premium v1 · backbone en preparación</h4>
+            <p>España funciona como caso premium de referencia. El despliegue público completo solo debe activarse cuando DEM, estaciones, hidrografía, QA e informes pasen el checklist visible.</p>
+          </div>
+        </div>
+        <div id="spain-premium-summary" style="border:1px solid var(--border);border-radius:10px;padding:14px;background:#fff"></div>
+        <div id="spain-premium-checklist" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:14px"></div>
+        <div id="spain-premium-sources" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px"></div>
+      </div>
     </div>
 
     <!-- MÉTODOS -->
@@ -1948,7 +2135,7 @@
         <div style="font-size:12px;color:#6b7c5e;margin-top:4px">Plataforma de Análisis Hidrológico · terranava.org</div>
       </div>
       <div style="text-align:right">
-        <div style="font-size:18px;font-weight:700;color:#0f172a">INFORME TÉCNICO DE REFERENCIA HIDROLÓGICA</div>
+        <div style="font-size:18px;font-weight:700;color:#0f172a">INFORME TÉCNICO PRELIMINAR · REFERENCIA HIDROLÓGICA Y TERRITORIAL</div>
         <div style="font-size:11px;color:#6b7c5e;margin-top:4px">Ref: <span id="pr-ref">AQR-2026</span> · Versión 2.2 · Fecha: <span id="pr-date"></span></div>
         <div id="pr-meta-line" style="font-size:10px;color:#6b7c5e;margin-top:6px">Cobertura y fuente cargando...</div>
         <div id="pr-level-badge" style="margin-top:6px;display:inline-block;background:#dbeafe;color:#0f172a;font-size:10px;font-weight:700;padding:2px 10px;border-radius:3px;letter-spacing:.05em">LECTURA TÉCNICA PRELIMINAR · NIVEL L2</div>
@@ -1957,52 +2144,63 @@
   </div>
 
   <div id="pr-scope-section" style="display:none;margin-bottom:24px">
-    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">1. OBJETO DEL INFORME, UNIDAD ANALIZADA Y TRAZABILIDAD</div>
+    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">1. ALCANCE, UNIDAD ANALIZADA Y TRAZABILIDAD</div>
     <div id="pr-scope-content"></div>
   </div>
 
   <div id="pr-exec-section" style="display:none;margin-bottom:24px">
-    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">2. SÍNTESIS DE SITUACIÓN</div>
+    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">2. SÍNTESIS EJECUTIVA DE LA UNIDAD ANALIZADA</div>
     <div id="pr-exec-content"></div>
   </div>
 
+  <div id="pr-trace-section" style="display:none;margin-bottom:24px">
+    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">3. FICHA DE COBERTURA Y TRAZABILIDAD OPERATIVA</div>
+    <div id="pr-trace-content"></div>
+  </div>
+
+  <div id="pr-map-section" style="display:none;margin-bottom:24px">
+    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">4. SISTEMA CARTOGRÁFICO DE REFERENCIA</div>
+    <div id="pr-map-content"></div>
+    <script id="pr-map-state-json" type="application/json"></script>
+  </div>
+
   <div id="pr-basin-section" style="display:none;margin-bottom:24px">
-    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">3. CARACTERIZACIÓN MORFOMÉTRICA DE LA UNIDAD HIDROLÓGICA</div>
+    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">5. CARACTERIZACIÓN MORFOMÉTRICA Y RESPUESTA FÍSICA DE LA CUENCA</div>
     <div id="pr-basin-content"></div>
   </div>
 
   <div id="pr-climate-section" style="display:none;margin-bottom:24px">
-    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">4. CONDICIONES CLIMÁTICAS E INTERPRETACIÓN HIDROLÓGICA DE REFERENCIA</div>
+    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">6. BASE CLIMÁTICA E INTERPRETACIÓN HIDROLÓGICA</div>
     <div id="pr-climate-content"></div>
   </div>
 
   <div id="pr-municipal-section" style="display:none;margin-bottom:24px">
-    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">5. CONTEXTO TERRITORIAL MUNICIPAL · PILOTO BOLIVIA</div>
+    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">7. CONTEXTO TERRITORIAL Y REFERENCIA MUNICIPAL · PILOTO BOLIVIA</div>
     <div id="pr-municipal-content"></div>
   </div>
 
   <div id="pr-wb-section" style="display:none;margin-bottom:24px">
-    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">6. BALANCE HÍDRICO MENSUAL DE REFERENCIA</div>
+    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">8. BALANCE HÍDRICO MENSUAL DE REFERENCIA</div>
     <div id="pr-wb-content"></div>
   </div>
 
   <div id="pr-idf-section" style="display:none;margin-bottom:24px">
-    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">7. PRECIPITACIÓN DE DISEÑO — CURVAS IDF</div>
+    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">9. PRECIPITACIÓN DE DISEÑO · CURVAS IDF</div>
     <div id="pr-idf-content"></div>
   </div>
 
   <div id="pr-scs-section" style="display:none;margin-bottom:24px">
-    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">8. RESPUESTA LLUVIA–ESCORRENTÍA — MÉTODO SCS CURVA NÚMERO</div>
+    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">10. RESPUESTA LLUVIA–ESCORRENTÍA · MÉTODO SCS CURVA NÚMERO</div>
     <div id="pr-scs-content"></div>
   </div>
 
   <div id="pr-gumbel-section" style="display:none;margin-bottom:24px">
-    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">9. FRECUENCIA DE PRECIPITACIÓN EXTREMA — DISTRIBUCIÓN GUMBEL (EV-I)</div>
+    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">11. FRECUENCIA DE PRECIPITACIÓN EXTREMA — DISTRIBUCIÓN GUMBEL (EV-I)</div>
     <div id="pr-gumbel-content"></div>
   </div>
 
   <div style="margin-bottom:24px">
-    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">10. MÉTODOS, FUENTES, ALCANCES Y LIMITACIONES</div>
+    <div style="font-size:14px;font-weight:700;color:#0f172a;border-bottom:1px solid #dce6d4;padding-bottom:6px;margin-bottom:12px">12. MÉTODOS, FUENTES, ALCANCE Y LIMITACIONES</div>
     <table style="width:100%;border-collapse:collapse;font-size:11px">
       <thead><tr style="background:#0f172a;color:#fff"><th style="padding:6px 10px;text-align:left">Componente</th><th style="padding:6px 10px;text-align:left">Método aplicado</th><th style="padding:6px 10px;text-align:left">Referencia técnica</th></tr></thead>
       <tbody>
@@ -2015,12 +2213,12 @@
       </tbody>
     </table>
     <div style="margin-top:10px;background:#f6f8f5;border-radius:6px;padding:10px 12px;font-size:11px;color:#475569;line-height:1.65">
-      Este documento organiza la información disponible para la unidad analizada en un formato de apoyo técnico. Puede emplearse para lectura hidrológica preliminar, línea base territorial, priorización institucional y formulación inicial, pero no sustituye estudios de detalle, aforos específicos, campañas de campo ni documentación regulatoria de validación formal. Su nivel de servicio y su cobertura deben leerse junto con las fichas metodológicas activas.
+      Este documento reúne la información disponible para la unidad analizada y la ordena como insumo de apoyo técnico para lectura hidrológica preliminar, línea base territorial, priorización institucional y formulación inicial. No sustituye estudios de detalle, aforos específicos, campañas de campo ni expedientes sometidos a validación regulatoria. Su interpretación debe hacerse junto con el nivel de servicio declarado, la cobertura activa y las fichas metodológicas vigentes.
     </div>
   </div>
 
   <div style="border:1px solid #dce6d4;border-radius:6px;padding:14px;margin-bottom:16px">
-    <div style="font-size:12px;font-weight:700;color:#0f172a;margin-bottom:8px">REVISIÓN TÉCNICA Y CONFORMIDAD</div>
+    <div style="font-size:12px;font-weight:700;color:#0f172a;margin-bottom:8px">REVISIÓN TÉCNICA Y VALIDACIÓN DE USO</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px">
       <div>
         <div style="border-bottom:1px solid #000;height:40px;margin-bottom:6px"></div>
@@ -2036,7 +2234,33 @@
   </div>
 
   <div style="background:#f6f8f5;border-radius:6px;padding:10px 14px;font-size:10px;color:#6b7c5e;line-height:1.65">
-    <strong>NOTA DE USO Y LIMITACIONES:</strong> Este documento fue generado automáticamente por AquaRisk v2.2 (TerraNava, 2026) y debe interpretarse como una referencia técnica preliminar. Los resultados se apoyan en datos disponibles, criterios metodológicos explícitos y métodos hidrológicos de referencia, pero requieren contraste con información de campo, series observadas y revisión profesional competente antes de utilizarse en diseño, gestión operativa o tramitación formal. El informe no reemplaza estudios regulatorios oficiales ni expedientes sujetos a validación normativa. Su lectura debe hacerse junto con el nivel de servicio, la cobertura declarada y la política de fuente visibles en el encabezado. Cita sugerida: TerraNava (2026). AquaRisk v2.2 [Software]. https://terranava.org/aquarisk. Datos climáticos: ERA5 / calibración local TerraNava / referencias SENAMHI Bolivia cuando corresponda. Cuencas: Lehner et al. (2008), HydroSHEDS v1.0.
+    <strong>NOTA DE USO Y LIMITACIONES:</strong> Este documento fue generado automáticamente por AquaRisk v2.2 (TerraNava, 2026) como salida técnica preliminar de apoyo a decisión. Su contenido se basa en fuentes disponibles, criterios metodológicos explícitos y derivados hidrológicos con trazabilidad visible, pero requiere contraste con trabajo de campo, series observadas, cartografía oficial y revisión profesional competente antes de ser utilizado en diseño, operación, tramitación formal o validación regulatoria. El informe no reemplaza estudios oficiales ni dictámenes emitidos por autoridad competente. Su lectura debe hacerse junto con el nivel de servicio, la cobertura declarada y la política de fuente visibles en el encabezado. Cita sugerida: TerraNava (2026). AquaRisk v2.2 [Software]. https://terranava.org/aquarisk. Datos climáticos: ERA5 / calibración local TerraNava / referencias SENAMHI Bolivia cuando corresponda. Cuencas: Lehner et al. (2008), HydroSHEDS v1.0.
+  </div>
+</div>
+
+<div id="report-preview-overlay" class="report-preview-overlay" aria-hidden="true">
+  <div class="report-preview-shell">
+    <div class="report-preview-toolbar">
+      <div>
+        <div class="report-preview-title">Vista previa del informe hidrológico</div>
+        <div class="report-preview-subtitle">Revise el contenido y use imprimir para guardar el documento como PDF.</div>
+      </div>
+      <div class="report-preview-actions">
+        <button type="button" onclick="printReportFromPreview()">Imprimir / Guardar PDF</button>
+        <button type="button" onclick="openReportFigureRoute('stations')">Abrir figura estaciones</button>
+        <button type="button" onclick="openReportFigureRoute('climate')">Abrir figura clima</button>
+        <button type="button" onclick="openReportFigureRoute('premium')">Abrir figura premium</button>
+        <button type="button" class="secondary" onclick="copyReportMapState()">Copiar estado cartográfico</button>
+        <button type="button" class="secondary" onclick="openReportPreviewWindow(true)">Abrir en otra ventana</button>
+        <button type="button" class="secondary" onclick="closeReportPreviewOverlay()">Cerrar</button>
+      </div>
+    </div>
+    <div class="report-preview-body">
+      <div class="report-preview-card">
+        <div id="report-preview-content"></div>
+      </div>
+      <p class="report-preview-note">La vista previa conserva el formato del informe técnico dentro de AquaRisk y evita depender de ventanas emergentes.</p>
+    </div>
   </div>
 </div>
 
@@ -2545,30 +2769,33 @@ function getActiveHydroContext() {
   const datasetId = ws ? resolveGuideDatasetId(ws) : null;
   const riskRef = getRiskReferenceByWsId(datasetId);
   const demRecord = ws ? getDemMorphometryRecord(ws) : null;
+  const guideMorphometry = ws ? getGuideMorphometryRecord(ws) : null;
   const atlasMetrics = ws?.atlasMorphometry?.metrics || null;
   const demMetrics = demRecord?.metrics || null;
+  const guideMetrics = guideMorphometry?.metrics || null;
   const outletMeta = resolveWatershedOutletMeta(ws);
   const areaFromCard = parseLooseNumber(document.getElementById('bs-area')?.textContent);
   const tcFromCard = parseLooseNumber(document.getElementById('bs2-tc')?.textContent);
-  const areaKm2 = Number(demMetrics?.area_km2) || Number(atlasMetrics?.area_km2) || Number(ws?.area) || areaFromCard || Number(mgLastWs?.areaSqkm) || null;
-  const lengthKm = Number(demMetrics?.main_channel_length_km) || Number(atlasMetrics?.main_channel_length_km) || Number(ws?.length) || null;
-  const slopePct = Number(demMetrics?.main_channel_slope_pct) || Number(atlasMetrics?.main_channel_slope_pct) || Number(ws?.slope) || Number(riskRef?.slope) || null;
+  const areaKm2 = Number(demMetrics?.area_km2) || Number(atlasMetrics?.area_km2) || Number(guideMetrics?.area_km2) || Number(ws?.area) || areaFromCard || Number(mgLastWs?.areaSqkm) || null;
+  const lengthKm = Number(demMetrics?.main_channel_length_km) || Number(atlasMetrics?.main_channel_length_km) || Number(guideMetrics?.main_channel_length_km) || Number(ws?.length) || null;
+  const slopePct = Number(demMetrics?.main_channel_slope_pct) || Number(atlasMetrics?.main_channel_slope_pct) || Number(guideMetrics?.main_channel_slope_pct) || Number(ws?.slope) || Number(riskRef?.slope) || null;
   const tcEstimated = !tcFromCard && lengthKm && slopePct
-    ? estimateTcFromMorphometry(lengthKm, slopePct, areaKm2, Number(demMetrics?.cn_ref) || Number(atlasMetrics?.cn_ref) || Number(ws?.cnRef) || riskRef?.CNref || 75)
+    ? estimateTcFromMorphometry(lengthKm, slopePct, areaKm2, Number(demMetrics?.cn_ref) || Number(atlasMetrics?.cn_ref) || Number(guideMetrics?.cn_ref) || Number(ws?.cnRef) || riskRef?.CNref || 75)
     : null;
-  const demTcHours = Number(demMetrics?.tc_estimate?.mean_hours) || Number(atlasMetrics?.tc_estimate?.mean_hours) || Number(ws?.tcHours) || null;
+  const demTcHours = Number(demMetrics?.tc_estimate?.mean_hours) || Number(atlasMetrics?.tc_estimate?.mean_hours) || Number(guideMetrics?.tc_estimate?.mean_hours) || Number(ws?.tcHours) || null;
 
   return {
     wsName: ws?.displayName || ws?.name || mgLastWs?.riverName || 'unidad activa',
     areaKm2,
     areaHa: areaKm2 ? areaKm2 * 100 : null,
     tcHours: tcFromCard || demTcHours || tcEstimated?.tcHours || null,
-    tcSource: tcFromCard ? 'panel' : (demRecord ? 'dem_engine' : (atlasMetrics?.tc_estimate?.mean_hours ? 'atlas_morphometry' : (tcEstimated ? 'morphometry' : null))),
+    tcSource: tcFromCard ? 'panel' : (demRecord ? 'dem_engine' : (atlasMetrics?.tc_estimate?.mean_hours ? 'atlas_morphometry' : (guideMetrics?.tc_estimate?.mean_hours ? 'guide_morphometry' : (tcEstimated ? 'morphometry' : null)))),
     tcMethods: tcEstimated?.methods || null,
-    cnRef: Number(demMetrics?.cn_ref) || Number(atlasMetrics?.cn_ref) || Number(ws?.cnRef) || riskRef?.CNref || null,
+    cnRef: Number(demMetrics?.cn_ref) || Number(atlasMetrics?.cn_ref) || Number(guideMetrics?.cn_ref) || Number(ws?.cnRef) || riskRef?.CNref || null,
     lengthKm,
     slopePct,
     demRecord,
+    guideMorphometry,
     atlasMorphometry: ws?.atlasMorphometry || null,
     outletMeta,
   };
@@ -2595,6 +2822,11 @@ function updateScsDemTrace(context = null) {
   if (!trace) return;
 
   if (!context?.demRecord) {
+    if (context?.guideMorphometry?.metrics?.main_channel_length_km) {
+      const metrics = context.guideMorphometry.metrics;
+      trace.textContent = `${context.guideMorphometry.source_label}: A ${Math.round(metrics.area_km2).toLocaleString('es-BO')} km² · L ${Number(metrics.main_channel_length_km).toFixed(1)} km · S ${Number(metrics.main_channel_slope_pct).toFixed(2)} % · Tc ${Number(metrics.tc_estimate?.mean_hours || context.tcHours).toFixed(2)} h. Calidad: ${context.guideMorphometry.quality_flag} · ${context.guideMorphometry.confidence_label || 'Preliminar'}.`;
+      return;
+    }
     if (context?.atlasMorphometry?.metrics?.main_channel_length_km) {
       const metrics = context.atlasMorphometry.metrics;
       trace.textContent = `${context.atlasMorphometry.source_label}: A ${Math.round(metrics.area_km2).toLocaleString('es-BO')} km² · L ${Number(metrics.main_channel_length_km).toFixed(1)} km · S ${Number(metrics.main_channel_slope_pct).toFixed(2)} % · Tc ${Number(metrics.tc_estimate?.mean_hours || context.tcHours).toFixed(2)} h. Calidad: ${context.atlasMorphometry.quality_flag} · ${context.atlasMorphometry.confidence_label || 'Preliminar'}.`;
@@ -2655,6 +2887,8 @@ function applyCurrentContextToSCS() {
         ? ` · Tc ${Number(context.tcHours).toFixed(2)} h (motor DEM piloto)`
         : context.tcSource === 'morphometry'
         ? ` · Tc ${Number(context.tcHours).toFixed(2)} h (estimado por morfometría)`
+        : context.tcSource === 'guide_morphometry'
+        ? ` · Tc ${Number(context.tcHours).toFixed(2)} h (morfometría relativa precargada)`
         : ` · Tc ${Number(context.tcHours).toFixed(2)} h`)
     : '';
   setToolSyncNote(
@@ -3520,21 +3754,29 @@ const atlasJsonCache = new Map();
 const atlasFeatureIndexCache = new Map();
 const atlasPmtilesSupportCache = new Map();
 const climateSeriesCache = new Map();
+const AQUARISK_DATA_VERSION = '20260311-spain-stations-2';
 const AQUARISK_CLIMATE_ENDPOINT = '/aquarisk-api/historical-climate.php';
 const hybasClimateIndexCache = new Map();
 const localHistoryShardCache = new Map();
 const hydroRiversOverlayCache = new Map();
 const climateLineDataCache = new Map();
 const demMorphometryCache = new Map();
+const guideMorphometryCache = new Map();
 let climateDatasetManifest = null;
 let guideClimateCatalog = null;
 let climateLinesCatalog = null;
 let demMorphometryCatalog = null;
 let demMorphometrySummary = null;
+let guideMorphometryCatalog = null;
+let guideMorphometrySummary = null;
 let terrainOverlayCatalog = null;
 let terrainOverlaySummary = null;
 let tarijaStationsCatalog = null;
 let tarijaStationsSummary = null;
+let spainStationsCatalog = null;
+let spainStationsSummary = null;
+let spainStationsInventory = null;
+let spainSourceInventory = null;
 let coverageMatrixCatalog = null;
 let climateLineOverlayGroups = { temperature: null, precipitation: null };
 let climateLineLayers = { temperature: null, precipitation: null };
@@ -3542,12 +3784,89 @@ let terrainOverlayGroups = { relief: null, slope: null };
 let terrainOverlayLayers = { relief: null, slope: null };
 let tarijaStationsOverlay = null;
 let tarijaStationsOverlayLayer = null;
+let spainHydroStationsOverlay = null;
+let spainHydroStationsOverlayLayer = null;
 const terrainOverlayManifestCache = new Map();
 const tarijaStationsDataCache = new Map();
+const spainStationsDataCache = new Map();
+const sourceInventoryCache = new Map();
 const coverageMatrixCache = new Map();
 const CLIMATE_MONTHS = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
 const CLIMATE_MONTHS_FULL = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 const PRELOADED_HYDROLOGY_REGIONS = new Set(['bolivia', 'spain']);
+const GUIDE_MORPHOMETRY_LAST_VERIFIED_AT = '2026-03-11';
+const GUIDE_MORPHOMETRY_FAMILY_PRESETS = {
+  tropical_lowland: {
+    kc: 1.56,
+    drainageDensity: 0.42,
+    profile: [100, 96, 91, 84, 76, 66, 55, 43, 30, 16, 0],
+    hypsometry: [100, 97, 93, 87, 79, 69, 56, 42, 28, 14, 0],
+    label: 'Llanura húmeda con pendiente longitudinal baja y amplia capacidad de almacenamiento.',
+  },
+  chaco_transition: {
+    kc: 1.44,
+    drainageDensity: 0.58,
+    profile: [100, 95, 89, 81, 72, 61, 49, 36, 24, 11, 0],
+    hypsometry: [100, 95, 90, 83, 75, 65, 53, 40, 26, 12, 0],
+    label: 'Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas.',
+  },
+  andean_valley: {
+    kc: 1.34,
+    drainageDensity: 0.88,
+    profile: [100, 93, 86, 77, 67, 55, 42, 29, 17, 7, 0],
+    hypsometry: [100, 92, 84, 75, 65, 54, 42, 29, 17, 8, 0],
+    label: 'Cabeceras andinas con fuertes gradientes relativos y valle de transición marcado.',
+  },
+  high_plateau: {
+    kc: 1.48,
+    drainageDensity: 0.34,
+    profile: [100, 98, 95, 91, 84, 74, 61, 45, 28, 13, 0],
+    hypsometry: [100, 98, 95, 90, 82, 71, 58, 42, 25, 11, 0],
+    label: 'Superficie elevada y amplia con drenaje lento y relieve relativo repartido.',
+  },
+  mediterranean_valley: {
+    kc: 1.39,
+    drainageDensity: 0.63,
+    profile: [100, 96, 90, 82, 72, 60, 47, 33, 20, 9, 0],
+    hypsometry: [100, 95, 89, 81, 71, 60, 47, 33, 20, 9, 0],
+    label: 'Valle mediterráneo estructurado, con contraste entre cabeceras y sector medio-bajo amplio.',
+  },
+  continental_mixed: {
+    kc: 1.42,
+    drainageDensity: 0.56,
+    profile: [100, 96, 90, 83, 74, 63, 50, 37, 24, 11, 0],
+    hypsometry: [100, 96, 90, 82, 73, 62, 49, 35, 22, 10, 0],
+    label: 'Combinación de cabeceras montañosas y ejes de valle amplios con respuesta intermedia.',
+  },
+  plateau_river: {
+    kc: 1.45,
+    drainageDensity: 0.49,
+    profile: [100, 97, 92, 86, 78, 68, 56, 42, 28, 14, 0],
+    hypsometry: [100, 97, 92, 86, 78, 68, 55, 41, 26, 12, 0],
+    label: 'Meseta fluvial extensa, con gradiente moderado y propagación de crecida más lenta.',
+  },
+  mediterranean_plateau: {
+    kc: 1.43,
+    drainageDensity: 0.52,
+    profile: [100, 97, 91, 84, 76, 66, 53, 39, 25, 12, 0],
+    hypsometry: [100, 96, 90, 83, 74, 63, 50, 36, 21, 9, 0],
+    label: 'Plataforma mediterránea con contraste moderado entre cabeceras y tramo medio.',
+  },
+  mediterranean_semiarid: {
+    kc: 1.31,
+    drainageDensity: 0.72,
+    profile: [100, 92, 84, 75, 65, 53, 40, 28, 16, 7, 0],
+    hypsometry: [100, 90, 81, 71, 60, 49, 37, 25, 15, 7, 0],
+    label: 'Cuenca semiárida con relieve relativamente concentrado y respuesta torrencial alta.',
+  },
+  atlantic_mountain: {
+    kc: 1.28,
+    drainageDensity: 0.78,
+    profile: [100, 91, 82, 72, 61, 49, 37, 25, 15, 6, 0],
+    hypsometry: [100, 90, 80, 69, 58, 47, 35, 24, 14, 6, 0],
+    label: 'Cuenca atlántica montañosa, con cabeceras activas y rápida organización del drenaje.',
+  },
+};
 const SERVICE_LEVEL_INFO = {
   L1: {
     label: 'L1 · Contexto cartográfico',
@@ -3618,6 +3937,16 @@ const TARIJA_STATIONS_META = {
   pane: 'tarijaStationsPane',
   overlayLabel: 'Estaciones Tarija',
   summary: 'Subcatálogo Tarija derivado desde la red Bolivia con trazabilidad explícita.',
+};
+const SPAIN_HYDRO_STATIONS_META = {
+  label: 'Aforos oficiales España',
+  pane: 'spainHydroStationsPane',
+  overlayLabel: 'Aforos oficiales España',
+  summary: 'Catálogo georreferenciado oficial de estaciones hidrológicas MITECO (SAIH-ROEA 2020-21).',
+  url: 'https://wms.mapama.gob.es/sig/Agua/Aforos/wms.aspx',
+  layer: 'EF.EnvironmentalMonitoringFacilities',
+  attribution: 'MITECO · Red Integrada de Estaciones de Aforos (SAIH-ROEA)',
+  capabilities: 'https://wms.mapama.gob.es/sig/Agua/Aforos/wms.aspx?request=GetCapabilities&Service=WMS',
 };
 const REFERENCE_TEMPLATE_BY_WS = {
   'bol-amazonica':'tropical_amazon',
@@ -3782,8 +4111,17 @@ async function fetchLocalJsonCached(cacheMap, path, label = 'Dataset local') {
     return await cacheMap.get(path);
   }
 
+  const requestPath = (() => {
+    if (!/^\/aquarisk-data\//.test(path)) return path;
+    if (/\/manifest\/|\/reference\/|\/stations\/spain\//.test(path)) {
+      const sep = path.includes('?') ? '&' : '?';
+      return `${path}${sep}v=${encodeURIComponent(AQUARISK_DATA_VERSION)}`;
+    }
+    return path;
+  })();
+
   const request = (async () => {
-    const resp = await fetch(path, { cache: 'force-cache' });
+    const resp = await fetch(requestPath, { cache: 'no-cache' });
     if (!resp.ok) throw new Error(`${label} HTTP ${resp.status}`);
     return await resp.json();
   })();
@@ -3801,7 +4139,7 @@ async function fetchLocalJsonCached(cacheMap, path, label = 'Dataset local') {
 
 async function ensureClimateDatasetManifest() {
   if (climateDatasetManifest) return climateDatasetManifest;
-  const resp = await fetch('/aquarisk-data/manifest/index.v1.json', { cache: 'force-cache' });
+  const resp = await fetch(`/aquarisk-data/manifest/index.v1.json?v=${encodeURIComponent(AQUARISK_DATA_VERSION)}`, { cache: 'no-cache' });
   if (!resp.ok) throw new Error(`Manifest climático HTTP ${resp.status}`);
   climateDatasetManifest = await resp.json();
   return climateDatasetManifest;
@@ -3880,12 +4218,92 @@ function getActiveServiceContext(panelId = currentToolPanel, region = currentReg
     limits: moduleMeta?.limits || country?.limits || 'Límites no declarados',
     stage: country?.stage || '',
     moduleLabel: moduleMeta?.label || 'Módulo activo',
+    countryMeta: country,
+    moduleMeta,
+    backboneMeta: country?.backbone || null,
   };
+}
+
+function getStatusPresentation(status = '') {
+  switch (status) {
+    case 'active':
+      return { label: 'Activo', tone: '#065f46', bg: '#ecfdf5', border: '#a7f3d0' };
+    case 'in_progress':
+      return { label: 'En preparación', tone: '#92400e', bg: '#fffbeb', border: '#fcd34d' };
+    case 'planned':
+      return { label: 'Planificado', tone: '#1d4ed8', bg: '#eff6ff', border: '#bfdbfe' };
+    case 'blocked':
+      return { label: 'Bloqueado', tone: '#991b1b', bg: '#fef2f2', border: '#fecaca' };
+    default:
+      return { label: 'No declarado', tone: '#475569', bg: '#f8fafc', border: '#dce6d4' };
+  }
+}
+
+function renderCountryModuleMatrix(countryMeta = null) {
+  if (!countryMeta?.modules) return '';
+  return Object.entries(countryMeta.modules).map(([, moduleMeta]) => {
+    const tone = getStatusPresentation(moduleMeta.status);
+    return `
+      <div style="border:1px solid var(--border);border-radius:10px;padding:14px;background:#fff">
+        <div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start">
+          <div>
+            <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">${escapeReportHtml(moduleMeta.label || 'Módulo')}</div>
+            <div style="font-size:15px;font-weight:700;color:var(--accent2);margin-top:6px">${escapeReportHtml(moduleMeta.service_level || 'L1')}</div>
+          </div>
+          <div style="font-size:11px;font-weight:700;color:${tone.tone};background:${tone.bg};border:1px solid ${tone.border};border-radius:999px;padding:5px 10px">${tone.label}</div>
+        </div>
+        <p style="font-size:12px;line-height:1.65;color:var(--muted);margin:10px 0 0">${escapeReportHtml(moduleMeta.coverage || 'Cobertura no declarada')}</p>
+        <p style="font-size:11px;line-height:1.65;color:#64748b;margin:8px 0 0">${escapeReportHtml(moduleMeta.recommended_use || '')}</p>
+        <p style="font-size:11px;line-height:1.65;color:#64748b;margin:8px 0 0"><strong>Límite:</strong> ${escapeReportHtml(moduleMeta.limits || 'No declarado')}</p>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderBackboneChecklist(backboneMeta = null) {
+  if (!Array.isArray(backboneMeta?.checklist) || !backboneMeta.checklist.length) return '';
+  return backboneMeta.checklist.map((item) => {
+    const tone = getStatusPresentation(item.status);
+    return `
+      <div style="border:1px solid ${tone.border};border-radius:10px;padding:14px;background:${tone.bg}">
+        <div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start">
+          <div style="font-size:13px;font-weight:700;color:#0f172a">${escapeReportHtml(item.label || 'Componente')}</div>
+          <div style="font-size:11px;font-weight:700;color:${tone.tone}">${tone.label}</div>
+        </div>
+        <p style="font-size:12px;line-height:1.65;color:#475569;margin:10px 0 0">${escapeReportHtml(item.summary || 'Sin detalle')}</p>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderBackboneSources(backboneMeta = null) {
+  if (!Array.isArray(backboneMeta?.sources) || !backboneMeta.sources.length) return '';
+  return backboneMeta.sources.map((source) => {
+    const priorityLabel = source.priority === 'official_primary'
+      ? 'Oficial prioritario'
+      : source.priority === 'official_support'
+        ? 'Oficial de apoyo'
+        : 'Apoyo abierto';
+    return `
+      <div style="border:1px solid var(--border);border-radius:10px;padding:14px;background:#fff">
+        <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">${escapeReportHtml(priorityLabel)}</div>
+        <div style="font-size:15px;font-weight:700;color:var(--accent2);margin-top:6px">${escapeReportHtml(source.label || 'Fuente')}</div>
+        <p style="font-size:12px;line-height:1.65;color:#334155;margin:8px 0 0">${escapeReportHtml(source.role || '')}</p>
+        <p style="font-size:11px;line-height:1.65;color:#64748b;margin:8px 0 0">${escapeReportHtml(source.operator || '')}</p>
+        <p style="font-size:11px;line-height:1.65;margin:8px 0 0"><a href="${escapeReportHtml(source.url || '#')}" target="_blank" rel="noopener noreferrer" style="color:#1d4ed8;text-decoration:none">Abrir fuente oficial ↗</a></p>
+      </div>
+    `;
+  }).join('');
 }
 
 function renderServiceAndCoveragePanels() {
   const coverageGrid = document.getElementById('coverage-matrix-grid');
   const coverageNote = document.getElementById('coverage-matrix-note');
+  const currentContext = document.getElementById('coverage-current-context');
+  const moduleGrid = document.getElementById('country-module-grid');
+  const spainSummary = document.getElementById('spain-premium-summary');
+  const spainChecklist = document.getElementById('spain-premium-checklist');
+  const spainSources = document.getElementById('spain-premium-sources');
   if (coverageGrid && coverageMatrixCatalog?.countries) {
     const cards = Object.entries(coverageMatrixCatalog.countries).map(([countryKey, meta]) => {
       const tone = meta.status === 'active' ? '#0f172a' : '#6b7280';
@@ -3908,6 +4326,60 @@ function renderServiceAndCoveragePanels() {
   }
   if (coverageNote) {
     coverageNote.textContent = `Política de fuente: ${humanizeSourcePriority(coverageMatrixCatalog?.source_priority_policy || climateDatasetManifest?.source_priority)}. Bolivia funciona como cobertura activa y España ya opera con cuencas históricas precargadas; su estándar premium sigue condicionado a DEM, estaciones, hidrografía e informes QA.`;
+  }
+  const contextRegion = currentRegion === 'global' ? 'bolivia' : currentRegion;
+  const activeContext = getActiveServiceContext(currentToolPanel, contextRegion);
+  if (currentContext) {
+    currentContext.innerHTML = `
+      <div style="display:grid;grid-template-columns:1.15fr .85fr;gap:14px">
+        <div>
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Módulo y cobertura activas</div>
+          <div style="font-size:18px;font-weight:700;color:var(--accent2);margin-top:8px">${escapeReportHtml(activeContext.moduleLabel)}</div>
+          <p style="font-size:12px;line-height:1.65;color:var(--muted);margin:8px 0 0">${escapeReportHtml(activeContext.countryLabel)} · ${escapeReportHtml(activeContext.coverageLevel)}</p>
+          <p style="font-size:12px;line-height:1.65;color:#334155;margin:10px 0 0">${escapeReportHtml(activeContext.recommendedUse)}</p>
+          <p style="font-size:11px;line-height:1.65;color:#64748b;margin:8px 0 0"><strong>Límite operativo:</strong> ${escapeReportHtml(activeContext.limits)}</p>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:10px;padding:12px;background:#f8fafc">
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Ficha de trazabilidad</div>
+          <div style="font-size:15px;font-weight:700;color:var(--accent2);margin-top:8px">${escapeReportHtml(activeContext.serviceLevel)} · ${escapeReportHtml(activeContext.serviceInfo.label)}</div>
+          <p style="font-size:11px;line-height:1.65;color:#475569;margin:8px 0 0"><strong>Etapa país:</strong> ${escapeReportHtml(activeContext.stage || 'No declarada')}</p>
+          <p style="font-size:11px;line-height:1.65;color:#475569;margin:6px 0 0"><strong>Política de fuente:</strong> ${escapeReportHtml(humanizeSourcePriority(activeContext.sourcePriority))}</p>
+          <p style="font-size:11px;line-height:1.65;color:#475569;margin:6px 0 0"><strong>Última verificación:</strong> ${escapeReportHtml(formatVerificationDate(activeContext.lastVerifiedAt))}</p>
+          <p style="font-size:11px;line-height:1.65;color:#64748b;margin:8px 0 0">${escapeReportHtml(activeContext.serviceInfo.summary)}</p>
+        </div>
+      </div>
+    `;
+  }
+  if (moduleGrid) {
+    moduleGrid.innerHTML = renderCountryModuleMatrix(activeContext.countryMeta);
+  }
+  const spainMeta = coverageMatrixCatalog?.countries?.spain || null;
+  const spainBackbone = spainMeta?.backbone || null;
+  if (spainSummary && spainBackbone) {
+    const tone = getStatusPresentation(spainBackbone.status);
+    spainSummary.innerHTML = `
+      <div style="display:grid;grid-template-columns:1.15fr .85fr;gap:14px">
+        <div>
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Estado del backbone</div>
+          <div style="font-size:18px;font-weight:700;color:var(--accent2);margin-top:8px">${escapeReportHtml(spainBackbone.label || 'España premium')}</div>
+          <p style="font-size:12px;line-height:1.65;color:var(--muted);margin:8px 0 0">${escapeReportHtml(spainBackbone.current_stage || spainMeta.stage || '')}</p>
+          <p style="font-size:12px;line-height:1.7;color:#334155;margin:10px 0 0">${escapeReportHtml(spainBackbone.readiness_note || '')}</p>
+        </div>
+        <div style="border:1px solid ${tone.border};border-radius:10px;padding:12px;background:${tone.bg}">
+          <div style="font-size:11px;color:${tone.tone};text-transform:uppercase;letter-spacing:.05em">Meta de activación</div>
+          <div style="font-size:16px;font-weight:700;color:${tone.tone};margin-top:8px">${tone.label}</div>
+          <p style="font-size:11px;line-height:1.65;color:#475569;margin:8px 0 0"><strong>Nivel objetivo:</strong> ${escapeReportHtml(spainBackbone.target_service_level || 'L3')}</p>
+          <p style="font-size:11px;line-height:1.65;color:#475569;margin:6px 0 0"><strong>Cobertura actual:</strong> ${escapeReportHtml(spainMeta.coverage_level || '')}</p>
+          <p style="font-size:11px;line-height:1.65;color:#475569;margin:6px 0 0"><strong>Última verificación:</strong> ${escapeReportHtml(formatVerificationDate(spainMeta.last_verified_at))}</p>
+        </div>
+      </div>
+    `;
+  }
+  if (spainChecklist) {
+    spainChecklist.innerHTML = renderBackboneChecklist(spainBackbone);
+  }
+  if (spainSources) {
+    spainSources.innerHTML = renderBackboneSources(spainBackbone);
   }
 }
 
@@ -3958,6 +4430,108 @@ async function ensureTarijaStationsCatalog() {
   return tarijaStationsCatalog;
 }
 
+async function ensureSpainStationsCatalog() {
+  if (spainStationsCatalog) return spainStationsCatalog;
+  const manifest = await ensureClimateDatasetManifest();
+  spainStationsCatalog = manifest?.stations?.spain || {
+    status: 'active',
+    geojson: '/aquarisk-data/stations/spain/stations.v1.geojson',
+    summary: '/aquarisk-data/stations/spain/summary.v1.json',
+    inventory: '/aquarisk-data/stations/spain/inventory.v1.json',
+    region: 'spain',
+    wms_hydrological_official: {
+      url: SPAIN_HYDRO_STATIONS_META.url,
+      layers: SPAIN_HYDRO_STATIONS_META.layer,
+      label: SPAIN_HYDRO_STATIONS_META.label,
+      attribution: SPAIN_HYDRO_STATIONS_META.attribution,
+      capabilities: SPAIN_HYDRO_STATIONS_META.capabilities,
+    },
+  };
+  if (spainStationsCatalog?.summary) {
+    try {
+      spainStationsSummary = await fetchLocalJsonCached(
+        spainStationsDataCache,
+        spainStationsCatalog.summary,
+        'Resumen estaciones España'
+      );
+    } catch (_) {
+      spainStationsSummary = null;
+    }
+  }
+  if (spainStationsCatalog?.inventory) {
+    try {
+      spainStationsInventory = await fetchLocalJsonCached(
+        spainStationsDataCache,
+        spainStationsCatalog.inventory,
+        'Inventario estaciones España'
+      );
+    } catch (_) {
+      spainStationsInventory = null;
+    }
+  }
+  return spainStationsCatalog;
+}
+
+function inferCountryKeyFromSupportContext(regionKey = currentRegion, ws = null, serviceContext = null) {
+  const direct = getRegionCountryKey(regionKey) || regionKey || null;
+  if (direct === 'spain' || direct === 'bolivia') return direct;
+  const wsCountry = String(ws?.country || serviceContext?.countryLabel || '').toLowerCase();
+  if (wsCountry.includes('espa')) return 'spain';
+  if (wsCountry.includes('boliv')) return 'bolivia';
+  const datasetId = String(resolveGuideDatasetId(ws) || ws?.datasetId || ws?.id || '').toLowerCase();
+  if (datasetId.startsWith('esp-')) return 'spain';
+  if (datasetId.startsWith('bol-')) return 'bolivia';
+  return direct || 'unknown';
+}
+
+async function buildCountryFigureSupport(regionKey = currentRegion, ws = null, serviceContext = null) {
+  const manifest = await ensureClimateDatasetManifest().catch(() => null);
+  const countryKey = inferCountryKeyFromSupportContext(regionKey, ws, serviceContext);
+  const backbone = manifest?.countries?.[countryKey]?.backbone || null;
+  const support = {
+    country_key: countryKey,
+    country_meta: manifest?.countries?.[countryKey] || null,
+    dem_meta: manifest?.dem_engine?.[countryKey] || null,
+    stations_meta: manifest?.stations?.[countryKey] || null,
+    backbone,
+    source_inventory: null,
+    source_policy: manifest?.source_priority_policy || manifest?.source_priority || '',
+    public_links: {
+      data_sources_page: '/data-sources/',
+      country_sources_page: countryKey === 'spain' ? '/data-sources/#spain-premium' : countryKey === 'bolivia' ? '/data-sources/#bolivia-sources' : '/data-sources/',
+      source_inventory_path: backbone?.source_inventory || null,
+    },
+    terrain_summary: null,
+    station_summary: null,
+    station_inventory: null,
+  };
+
+  if (countryKey === 'bolivia') {
+    await ensureTerrainOverlayCatalog().catch(() => null);
+    await ensureTarijaStationsCatalog().catch(() => null);
+    support.terrain_summary = terrainOverlaySummary || null;
+    support.station_summary = tarijaStationsSummary || null;
+  } else if (countryKey === 'spain') {
+    await ensureSpainStationsCatalog().catch(() => null);
+    support.station_summary = spainStationsSummary || null;
+    support.station_inventory = spainStationsInventory || null;
+    if (!spainSourceInventory && backbone?.source_inventory) {
+      try {
+        spainSourceInventory = await fetchLocalJsonCached(
+          sourceInventoryCache,
+          backbone.source_inventory,
+          'Inventario de fuentes España premium'
+        );
+      } catch (_) {
+        spainSourceInventory = null;
+      }
+    }
+    support.source_inventory = spainSourceInventory || null;
+  }
+
+  return support;
+}
+
 async function ensureDemMorphometryCatalog(countryKey = 'bolivia') {
   if (countryKey !== 'bolivia') return null;
   if (demMorphometryCatalog) return demMorphometryCatalog;
@@ -3987,6 +4561,202 @@ function getDemMorphometryRecord(wsOrId) {
   const key = typeof wsOrId === 'string' ? wsOrId : resolveGuideDatasetId(wsOrId);
   if (!key) return null;
   return demMorphometryCatalog?.records?.[String(key)] || null;
+}
+
+async function ensureGuideMorphometryCatalog() {
+  if (guideMorphometryCatalog) return guideMorphometryCatalog;
+  const manifest = await ensureClimateDatasetManifest();
+  const guideManifest = manifest?.guide_morphometry;
+  if (!guideManifest?.index) return null;
+  try {
+    guideMorphometryCatalog = await fetchLocalJsonCached(
+      guideMorphometryCache,
+      guideManifest.index,
+      'Catálogo de morfometría relativa por cuenca'
+    );
+    if (guideManifest.summary) {
+      try {
+        guideMorphometrySummary = await fetchLocalJsonCached(
+          guideMorphometryCache,
+          guideManifest.summary,
+          'Resumen de morfometría relativa'
+        );
+      } catch (_) {
+        guideMorphometrySummary = null;
+      }
+    }
+  } catch (_) {
+    guideMorphometryCatalog = null;
+  }
+  return guideMorphometryCatalog;
+}
+
+function getGuideMorphometryRecord(wsOrId) {
+  const key = typeof wsOrId === 'string' ? wsOrId : resolveGuideDatasetId(wsOrId);
+  if (!key) return null;
+  return guideMorphometryCatalog?.records?.[String(key)] || buildGuideMorphometryFallback(wsOrId);
+}
+
+function inferGuideMorphometryFamily(datasetId, ws = null) {
+  const key = String(datasetId || '').toLowerCase();
+  const text = `${key} ${String(ws?.climate || '')} ${String(ws?.name || '')}`.toLowerCase();
+  if (text.includes('amazon') || text.includes('mamore') || text.includes('mamoré')) return 'tropical_lowland';
+  if (text.includes('altiplano') || text.includes('titicaca')) return 'high_plateau';
+  if (text.includes('pilcomayo') && (text.includes('tarija') || text.includes('alto'))) return 'andean_valley';
+  if (text.includes('pilcomayo')) return 'chaco_transition';
+  if (text.includes('guadalquivir')) return 'mediterranean_valley';
+  if (text.includes('ebro')) return 'continental_mixed';
+  if (text.includes('duero')) return 'plateau_river';
+  if (text.includes('tajo')) return 'mediterranean_plateau';
+  if (text.includes('jucar') || text.includes('júcar')) return 'mediterranean_semiarid';
+  if (text.includes('miño') || text.includes('mino')) return 'atlantic_mountain';
+  return ws?.country && /España/i.test(ws.country) ? 'mediterranean_plateau' : 'chaco_transition';
+}
+
+function adjustGuideSeries(series, delta = 0) {
+  return series.map((value, index) => clampValue(
+    index === 0 ? 100 : index === series.length - 1 ? 0 : value + delta,
+    0,
+    100
+  ));
+}
+
+function buildGuideSignaturePoints(ws, family, isSubunit = false) {
+  const preset = GUIDE_MORPHOMETRY_FAMILY_PRESETS[family] || GUIDE_MORPHOMETRY_FAMILY_PRESETS.chaco_transition;
+  const text = `${String(ws?.name || '')} ${String(ws?.river || '')}`.toLowerCase();
+  let profile = preset.profile;
+  let hypsometry = preset.hypsometry;
+  if (isSubunit && (text.includes('alto') || text.includes('sierra') || text.includes('nacientes'))) {
+    profile = adjustGuideSeries(profile, -3);
+    hypsometry = adjustGuideSeries(hypsometry, -4);
+  } else if (isSubunit && (text.includes('bajo') || text.includes('delta'))) {
+    profile = adjustGuideSeries(profile, 4);
+    hypsometry = adjustGuideSeries(hypsometry, 5);
+  }
+  return {
+    terrain_family: family,
+    terrain_label: preset.label,
+    longitudinal_profile_relative: profile.map((value, index) => ({
+      distance_pct: Number((index * 10).toFixed(1)),
+      elevation_pct: Number(value.toFixed(1)),
+    })),
+    hypsometric_curve_relative: hypsometry.map((value, index) => ({
+      area_pct: Number((index * 10).toFixed(1)),
+      elevation_pct: Number(value.toFixed(1)),
+    })),
+  };
+}
+
+function buildGuideMorphometryFallback(wsOrId) {
+  const datasetId = typeof wsOrId === 'string' ? wsOrId : resolveGuideDatasetId(wsOrId);
+  if (!datasetId) return null;
+
+  const ws = typeof wsOrId === 'string'
+    ? [...(WS_GEO.bolivia || []), ...(WS_GEO.spain || [])].find((item) => item.id === wsOrId)
+    : wsOrId;
+
+  if (!ws) return null;
+
+  const isSubunit = datasetId.includes('__');
+  const parentId = isSubunit ? datasetId.split('__')[0] : null;
+  const parentWs = parentId ? [...(WS_GEO.bolivia || []), ...(WS_GEO.spain || [])].find((item) => item.id === parentId) : null;
+  const family = inferGuideMorphometryFamily(datasetId, ws || parentWs);
+  const preset = GUIDE_MORPHOMETRY_FAMILY_PRESETS[family] || GUIDE_MORPHOMETRY_FAMILY_PRESETS.chaco_transition;
+  const areaKm2 = Number(ws.area || parentWs?.area || 0);
+  if (!areaKm2) return null;
+
+  let perimeterKm = Number(ws.perim || 0);
+  let mainChannelLengthKm = Number(ws.length || 0);
+  let mainChannelSlopePct = Number(ws.slope || 0);
+
+  if (isSubunit) {
+    const ratio = clampValue(Math.sqrt(areaKm2 / Math.max(Number(parentWs?.area || areaKm2), 1)), 0.22, 0.78);
+    const text = String(ws.name || '').toLowerCase();
+    let lengthFactor = 0.34 + (ratio * 0.58);
+    let slopeFactor = 1.0;
+    if (text.includes('alto') || text.includes('sierra') || text.includes('nacientes')) {
+      lengthFactor *= 0.86;
+      slopeFactor *= 1.35;
+    }
+    if (text.includes('bajo') || text.includes('delta')) {
+      lengthFactor *= 0.78;
+      slopeFactor *= 0.62;
+    }
+    if (text.includes('medio') || text.includes('central')) slopeFactor *= 0.95;
+    mainChannelLengthKm = Number(((parentWs?.length || Math.sqrt(areaKm2) * 2.2) * lengthFactor).toFixed(1));
+    mainChannelSlopePct = Number(clampValue((parentWs?.slope || 1.2) * slopeFactor, 0.2, 6.5).toFixed(2));
+    const compactness = clampValue(preset.kc + 0.03, 1.18, 1.75);
+    perimeterKm = Number(((compactness * Math.sqrt(areaKm2)) / 0.28).toFixed(1));
+  }
+
+  if (!perimeterKm) {
+    perimeterKm = Number(((preset.kc * Math.sqrt(areaKm2)) / 0.28).toFixed(1));
+  }
+  if (!mainChannelLengthKm) {
+    mainChannelLengthKm = Number((Math.sqrt(areaKm2) * 2.35).toFixed(1));
+  }
+  if (!mainChannelSlopePct) {
+    mainChannelSlopePct = ws?.country && /España/i.test(String(ws.country)) ? 1.3 : 1.8;
+  }
+
+  const compactnessKc = Number(((0.28 * perimeterKm) / Math.sqrt(areaKm2)).toFixed(3));
+  const formFactorFf = Number((areaKm2 / Math.pow(mainChannelLengthKm, 2)).toFixed(3));
+  const drainageDensity = Number(clampValue(
+    preset.drainageDensity + (isSubunit ? 0.06 : 0),
+    0.25,
+    1.1
+  ).toFixed(3));
+  const cnRef = String(ws?.climate || '').toLowerCase().includes('semiárido') ? 82 : /húmedo|oceánico|tropical/i.test(String(ws?.climate || '')) ? 70 : 78;
+  const tcEstimate = estimateTcFromMorphometry(mainChannelLengthKm, mainChannelSlopePct, areaKm2, cnRef);
+  const signature = buildGuideSignaturePoints(ws, family, isSubunit);
+  const responseLabel = isSubunit ? 'Subunidad guía precargada' : 'Cuenca guía precargada';
+  const responseSummary = `${signature.terrain_label} La unidad sugiere ${tcEstimate.tcHours <= 18 ? 'respuesta rápida' : tcEstimate.tcHours <= 48 ? 'respuesta intermedia' : 'respuesta moderada'}, con ${mainChannelSlopePct >= 2.5 ? 'escorrentía concentrada en cabeceras' : 'propagación con almacenamiento relativamente mayor'} y lectura válida para screening técnico.`;
+
+  return {
+    id: datasetId,
+    region: ws?.region || (String(ws?.country || '').includes('España') ? 'spain' : 'bolivia'),
+    country: ws?.country || (parentWs?.country || '—'),
+    source_type: isSubunit ? 'guide_subbasin' : 'guide_basin',
+    source_label: 'Morfometría relativa TerraNava',
+    quality_flag: 'Derivado TerraNava v1 · perfil relativo precalculado',
+    confidence_label: isSubunit ? 'Preliminar' : 'Media',
+    service_level: 'L2',
+    coverage_level: String(ws?.country || '').includes('España') ? 'España hidrología beta' : 'Bolivia activo',
+    source_priority: 'oficial_primero_con_fallback_abierto_trazable',
+    last_verified_at: GUIDE_MORPHOMETRY_LAST_VERIFIED_AT,
+    morphometry_basis: isSubunit ? 'guide_subbasin_derivation' : 'guide_basin_geometry',
+    dem_status: String(ws?.country || '').includes('España') ? 'premium_pending' : 'regional_backbone_pending',
+    name: ws?.displayName || ws?.name || datasetId,
+    parent_id: parentId,
+    climate_context: ws?.climate || null,
+    metrics: {
+      area_km2: areaKm2,
+      perimeter_km: perimeterKm,
+      main_channel_length_km: Number(mainChannelLengthKm.toFixed(1)),
+      main_channel_slope_pct: Number(mainChannelSlopePct.toFixed(2)),
+      compactness_kc: compactnessKc,
+      form_factor_ff: formFactorFf,
+      drainage_density_kmkm2: drainageDensity,
+      cn_ref: cnRef,
+      tc_estimate: {
+        mean_hours: Number(Number(tcEstimate.tcHours || 0).toFixed(2)),
+        kirpich_hours: Number(Number(tcEstimate.methods?.kirpich || 0).toFixed(2)),
+        temez_hours: Number(Number(tcEstimate.methods?.temez || 0).toFixed(2)),
+        scs_lag_hours: Number(Number(tcEstimate.methods?.scs || 0).toFixed(2)),
+      },
+    },
+    signature: {
+      ...signature,
+      response_label: responseLabel,
+      response_summary: responseSummary,
+    },
+    recommended_use: 'Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.',
+    limits: 'Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.',
+    notes: [
+      'Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.',
+      'Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables.'
+    ],
+  };
 }
 
 async function ensureGuideClimateCatalog() {
@@ -4143,6 +4913,14 @@ function getTarijaStationsOverlayZoomNote() {
   return 'Lectura óptima de estaciones Tarija entre zoom 7 y 10.';
 }
 
+function getSpainHydroStationsOverlayZoomNote() {
+  if (!leafletMap) return '';
+  const zoom = leafletMap.getZoom();
+  if (zoom < 6) return 'Acércate a España entre zoom 6 y 9 para distinguir mejor la red oficial georreferenciada.';
+  if (zoom > 10) return 'Aleja a zoom 6–9 para recuperar continuidad de la red oficial georreferenciada.';
+  return 'Lectura óptima de aforos oficiales España entre zoom 6 y 9.';
+}
+
 function updateMapOverlayContext() {
   const container = document.getElementById('map-overlay-context');
   const list = document.getElementById('map-overlay-context-list');
@@ -4180,6 +4958,16 @@ function updateMapOverlayContext() {
       <div class="map-overlay-chip">
         <span class="overlay-marker-swatch tarija-stations"></span>
         <div><strong>Estaciones Tarija</strong><br><span>${stationCount} estaciones · ${hydroCount} hidrológica${hydroCount === 1 ? '' : 's'} con trazabilidad explícita.</span></div>
+      </div>
+    `);
+  }
+  const hasSpainStations = !!(spainHydroStationsOverlay && leafletMap.hasLayer(spainHydroStationsOverlay));
+  if (hasSpainStations) {
+    const stationCount = spainStationsSummary?.station_count || 0;
+    items.push(`
+      <div class="map-overlay-chip">
+        <span class="overlay-marker-swatch spain-stations"></span>
+        <div><strong>Aforos oficiales España</strong><br><span>${stationCount ? `${stationCount} estaciones georreferenciadas` : 'Catálogo oficial georreferenciado'} · MITECO · SAIH-ROEA.</span></div>
       </div>
     `);
   }
@@ -4222,6 +5010,9 @@ function updateMapOverlayContext() {
   if (hasTarijaStations) {
     notes.push(getTarijaStationsOverlayZoomNote());
   }
+  if (hasSpainStations) {
+    notes.push(getSpainHydroStationsOverlayZoomNote());
+  }
   if (hasTemp || hasPrecip) {
     notes.push(currentRegion === 'bolivia'
       ? getClimateOverlayZoomNote()
@@ -4251,6 +5042,23 @@ function buildTarijaStationPopup(props = {}) {
       <span><em>${props.operational_status || 'Sin estado'}</em> · ${useLabel}</span>
       <span>Fuente: ${source}</span>
       <span>Confianza: ${confidence} · ${props.location_quality || props.quality_flag || 'Ubicación trazable TerraNava'}</span>
+    </div>
+  `;
+}
+
+function buildSpainStationPopup(props = {}) {
+  const yearStart = Number.isFinite(Number(props.year_start)) && Number(props.year_start) > 0 ? Number(props.year_start) : null;
+  const yearEnd = Number.isFinite(Number(props.year_end)) && Number(props.year_end) > 0 ? Number(props.year_end) : null;
+  const yearsLabel = yearStart && yearEnd ? `${yearStart}–${yearEnd}` : yearStart ? `Desde ${yearStart}` : 'Periodo no detallado';
+  return `
+    <div class="stations-map-tooltip">
+      <strong>${props.station_name || 'Estación hidrológica España'}</strong>
+      <span>${props.network_label || 'Aforo oficial España'} · ${props.municipality || props.province || 'España'}</span>
+      <span><em>${props.operational_status || 'Sin estado'}</em> · ${props.station_type_label || 'Estación hidrológica'}</span>
+      <span>Río o sistema: ${props.river_name || 'Sin cauce declarado'}</span>
+      <span>Organismo: ${props.operator || 'MITECO / organismo no identificado'}</span>
+      <span>Código hidrológico: ${props.hydro_code || 'Sin código'} · ${yearsLabel}</span>
+      <span>Fuente: ${props.source_label || 'MITECO · SAIH-ROEA'} · ${props.location_quality || 'Coordenada oficial'}</span>
     </div>
   `;
 }
@@ -4329,6 +5137,69 @@ async function ensureTarijaStationsOverlay() {
   tarijaStationsOverlay.clearLayers();
   tarijaStationsOverlay.addLayer(tarijaStationsOverlayLayer);
   return tarijaStationsOverlayLayer;
+}
+
+async function ensureSpainHydroStationsOverlay() {
+  if (!spainHydroStationsOverlay || !leafletMap) return null;
+  const catalog = await ensureSpainStationsCatalog();
+  const geojsonPath = catalog?.geojson;
+  const wmsMeta = catalog?.wms_hydrological_official || {
+    url: SPAIN_HYDRO_STATIONS_META.url,
+    layers: SPAIN_HYDRO_STATIONS_META.layer,
+    label: SPAIN_HYDRO_STATIONS_META.label,
+    attribution: SPAIN_HYDRO_STATIONS_META.attribution,
+  };
+  if (!geojsonPath && (!wmsMeta?.url || !wmsMeta?.layers)) {
+    throw new Error('Capa oficial España sin endpoint WMS declarado');
+  }
+  if (spainHydroStationsOverlayLayer) return spainHydroStationsOverlayLayer;
+
+  if (geojsonPath) {
+    if (!spainStationsSummary && catalog?.summary) {
+      spainStationsSummary = await fetchLocalJsonCached(
+        spainStationsDataCache,
+        catalog.summary,
+        'Resumen estaciones España'
+      );
+    }
+    const geojson = await fetchLocalJsonCached(
+      spainStationsDataCache,
+      geojsonPath,
+      'Estaciones oficiales España'
+    );
+    spainHydroStationsOverlayLayer = L.geoJSON(geojson, {
+      pane: SPAIN_HYDRO_STATIONS_META.pane,
+      pointToLayer(feature, latlng) {
+        return L.circleMarker(latlng, getStationMarkerStyle(feature, false));
+      },
+      onEachFeature(feature, layer) {
+        const props = feature?.properties || {};
+        layer.bindPopup(buildSpainStationPopup(props), {
+          maxWidth: 340,
+          autoPan: true,
+        });
+        layer.bindTooltip(buildStationTooltip(props), {
+          direction: 'top',
+          sticky: true,
+        });
+        layer.on('click', () => layer.openPopup());
+      },
+    });
+  } else {
+    spainHydroStationsOverlayLayer = L.tileLayer.wms(wmsMeta.url, {
+      layers: wmsMeta.layers,
+      format: 'image/png',
+      transparent: true,
+      version: '1.3.0',
+      pane: SPAIN_HYDRO_STATIONS_META.pane,
+      opacity: 0.96,
+      attribution: wmsMeta.attribution || SPAIN_HYDRO_STATIONS_META.attribution,
+    });
+  }
+
+  spainHydroStationsOverlay.clearLayers();
+  spainHydroStationsOverlay.addLayer(spainHydroStationsOverlayLayer);
+  return spainHydroStationsOverlayLayer;
 }
 
 function getHydroOverlayRegionKey() {
@@ -5200,6 +6071,8 @@ function initLeafletMap() {
   leafletMap.getPane('terrainSlopePane').style.zIndex = 333;
   leafletMap.createPane('tarijaStationsPane');
   leafletMap.getPane('tarijaStationsPane').style.zIndex = 365;
+  leafletMap.createPane('spainHydroStationsPane');
+  leafletMap.getPane('spainHydroStationsPane').style.zIndex = 366;
   leafletMap.createPane('climateTempPane');
   leafletMap.getPane('climateTempPane').style.zIndex = 352;
   leafletMap.createPane('climatePrecipPane');
@@ -5221,6 +6094,7 @@ function initLeafletMap() {
   };
 
   tarijaStationsOverlay = L.layerGroup();
+  spainHydroStationsOverlay = L.layerGroup();
   hydroRiversOverlay = L.layerGroup();
 
   // Layer control — satellite + HydroSHEDS overlay
@@ -5233,6 +6107,7 @@ function initLeafletMap() {
     [TERRAIN_OVERLAY_META.relief.overlayLabel]: terrainOverlayGroups.relief,
     [TERRAIN_OVERLAY_META.slope.overlayLabel]: terrainOverlayGroups.slope,
     [TARIJA_STATIONS_META.overlayLabel]: tarijaStationsOverlay,
+    [SPAIN_HYDRO_STATIONS_META.overlayLabel]: spainHydroStationsOverlay,
     'Red Hidrográfica (HydroSHEDS)': hydroRiversOverlay,
     [CLIMATE_LINE_META.temperature.overlayLabel]: climateLineOverlayGroups.temperature,
     [CLIMATE_LINE_META.precipitation.overlayLabel]: climateLineOverlayGroups.precipitation,
@@ -5272,6 +6147,21 @@ function initLeafletMap() {
         console.warn('Estaciones Tarija:', error.message);
         leafletMap.removeLayer(tarijaStationsOverlay);
         announceOverlayState('No se pudo cargar Estaciones Tarija.', 'warn');
+      });
+      return;
+    }
+    if (event.layer === spainHydroStationsOverlay) {
+      if (currentRegion !== 'spain') {
+        leafletMap.removeLayer(spainHydroStationsOverlay);
+        announceOverlayState('Aforos oficiales España disponibles solo dentro del foco España.', 'warn');
+        return;
+      }
+      ensureSpainHydroStationsOverlay().then(() => {
+        announceOverlayState(`Aforos oficiales España activados · ${spainStationsSummary?.station_count || 'Catálogo'} estaciones · ${getSpainHydroStationsOverlayZoomNote()}`);
+      }).catch((error) => {
+        console.warn('Aforos oficiales España:', error.message);
+        leafletMap.removeLayer(spainHydroStationsOverlay);
+        announceOverlayState('No se pudo cargar la capa oficial de aforos de España.', 'warn');
       });
       return;
     }
@@ -5331,6 +6221,10 @@ function initLeafletMap() {
       announceOverlayState('Estaciones Tarija desactivadas.');
       return;
     }
+    if (event.layer === spainHydroStationsOverlay) {
+      announceOverlayState('Aforos oficiales España desactivados.');
+      return;
+    }
     if (event.layer === hydroRiversOverlay) {
       announceOverlayState('Red hidrográfica HydroSHEDS desactivada.');
       return;
@@ -5349,6 +6243,7 @@ function initLeafletMap() {
       leafletMap.hasLayer(terrainOverlayGroups.relief) ||
       leafletMap.hasLayer(terrainOverlayGroups.slope) ||
       leafletMap.hasLayer(tarijaStationsOverlay) ||
+      leafletMap.hasLayer(spainHydroStationsOverlay) ||
       leafletMap.hasLayer(climateLineOverlayGroups.temperature) ||
       leafletMap.hasLayer(climateLineOverlayGroups.precipitation) ||
       leafletMap.hasLayer(hydroRiversOverlay)
@@ -5398,6 +6293,9 @@ function switchRegion(region, btn) {
     if (tarijaStationsOverlay && leafletMap.hasLayer(tarijaStationsOverlay)) {
       leafletMap.removeLayer(tarijaStationsOverlay);
     }
+    if (spainHydroStationsOverlay && leafletMap.hasLayer(spainHydroStationsOverlay)) {
+      leafletMap.removeLayer(spainHydroStationsOverlay);
+    }
   }
   if (!getHydroOverlayRegionKey()) {
     hydroRiversOverlayRegionKey = null;
@@ -5421,6 +6319,10 @@ function switchRegion(region, btn) {
     });
   }
   updateMapOverlayContext();
+  ensureClimateDatasetManifest()
+    .then(() => ensureCoverageMatrix())
+    .then(() => renderServiceAndCoveragePanels())
+    .catch(() => renderServiceAndCoveragePanels());
 }
 
 function clearLayers() {
@@ -5449,9 +6351,13 @@ function refreshGuideWatersheds() {
 
 function showSuggestions(region) {
   const suggs = RIVER_SUGGESTIONS.filter(s => s.region === region);
-  const extraTags = region === 'bolivia'
-    ? [`<span class="subbasin-tag" onclick="focusTarijaStationsOverlay()" title="Activar red observacional Tarija">Red observacional Tarija</span>`]
-    : [];
+  const extraTags = [];
+  if (region === 'bolivia') {
+    extraTags.push(`<span class="subbasin-tag" onclick="focusTarijaStationsOverlay()" title="Activar red observacional Tarija">Red observacional Tarija</span>`);
+  }
+  if (region === 'spain') {
+    extraTags.push(`<span class="subbasin-tag" onclick="focusSpainHydroStationsOverlay()" title="Activar catálogo georreferenciado oficial de aforos">Aforos oficiales España</span>`);
+  }
   const tags = suggs.map(s =>
     `<span class="subbasin-tag" onclick="quickSelect('${s.keywords[0]}')" title="${s.name}">${s.name}</span>`
   ).concat(extraTags).join('');
@@ -5488,6 +6394,27 @@ async function focusTarijaStationsOverlay() {
   } catch (error) {
     console.warn('Estaciones Tarija:', error.message);
     announceOverlayState('No se pudo activar la red observacional Tarija.', 'warn');
+  }
+}
+
+async function focusSpainHydroStationsOverlay() {
+  if (!leafletMap) initLeafletMap();
+  if (currentRegion !== 'spain') {
+    switchRegion('spain', document.getElementById('rbtn-spain'));
+  }
+  try {
+    await ensureSpainHydroStationsOverlay();
+    if (spainHydroStationsOverlay && !leafletMap.hasLayer(spainHydroStationsOverlay)) {
+      leafletMap.addLayer(spainHydroStationsOverlay);
+    }
+    leafletMap.flyToBounds([
+      [36.0, -9.6],
+      [43.9, 3.5],
+    ], { padding: [24, 24], maxZoom: 7, duration: 1.1 });
+    announceOverlayState(`Aforos oficiales España activados · ${spainStationsSummary?.station_count || 'Catálogo'} estaciones · ${getSpainHydroStationsOverlayZoomNote()}`);
+  } catch (error) {
+    console.warn('Aforos oficiales España:', error.message);
+    announceOverlayState('No se pudo activar la capa oficial de aforos de España.', 'warn');
   }
 }
 
@@ -5676,6 +6603,125 @@ async function searchRiver() {
   document.getElementById('map-loading').style.display = 'none';
 }
 
+function buildRelativeCurveSvg(points, xKey, yKey, strokeColor, fillColor) {
+  const width = 320;
+  const height = 136;
+  const padX = 18;
+  const padTop = 10;
+  const padBottom = 24;
+  const innerWidth = width - (padX * 2);
+  const innerHeight = height - padTop - padBottom;
+  const safePoints = Array.isArray(points) ? points : [];
+  if (!safePoints.length) {
+    return `<div style="font-size:12px;color:var(--muted);line-height:1.7;padding:18px 6px">Sin curva relativa precalculada para esta unidad.</div>`;
+  }
+
+  const coords = safePoints.map((point) => {
+    const x = padX + ((Number(point?.[xKey]) || 0) / 100) * innerWidth;
+    const y = padTop + (1 - ((Number(point?.[yKey]) || 0) / 100)) * innerHeight;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+  const areaCoords = `${padX},${height - padBottom} ${coords} ${width - padX},${height - padBottom}`;
+  const yTicks = [0, 25, 50, 75, 100].map((value) => {
+    const y = padTop + (1 - (value / 100)) * innerHeight;
+    return `<line x1="${padX}" y1="${y.toFixed(1)}" x2="${width - padX}" y2="${y.toFixed(1)}" stroke="rgba(148,163,184,.32)" stroke-width="1" stroke-dasharray="3 4"/>`;
+  }).join('');
+  const xTicks = [0, 25, 50, 75, 100].map((value) => {
+    const x = padX + (value / 100) * innerWidth;
+    return `<g><line x1="${x.toFixed(1)}" y1="${padTop}" x2="${x.toFixed(1)}" y2="${height - padBottom}" stroke="rgba(148,163,184,.16)" stroke-width="1"/><text x="${x.toFixed(1)}" y="${height - 6}" text-anchor="middle" font-size="9" fill="#64748b">${value}</text></g>`;
+  }).join('');
+
+  return `
+    <svg viewBox="0 0 ${width} ${height}" width="100%" height="136" role="img" aria-hidden="true">
+      <rect x="${padX}" y="${padTop}" width="${innerWidth}" height="${innerHeight}" rx="10" fill="#f8fafc" stroke="#d8dfe9"/>
+      ${yTicks}
+      ${xTicks}
+      <polygon points="${areaCoords}" fill="${fillColor}" opacity="0.22"></polygon>
+      <polyline points="${coords}" fill="none" stroke="${strokeColor}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></polyline>
+      <text x="${padX}" y="${padTop - 1}" font-size="9" fill="#64748b">100 %</text>
+      <text x="${width - padX}" y="${padTop - 1}" text-anchor="end" font-size="9" fill="#64748b">0 %</text>
+    </svg>
+  `;
+}
+
+function syncBasinStatsFromGuideMorphometry(record, ws) {
+  if (!record?.metrics) return;
+  const areaText = Number(record.metrics.area_km2).toLocaleString('es-ES');
+  const title = ws?.displayName || ws?.name || record.name || 'Unidad hidrológica';
+  const river = ws?.river || record.name || '—';
+  const climate = ws?.climate || record.climate_context || '—';
+  const region = ws?.country || record.country || '—';
+
+  const titleEl = document.getElementById('bs-card-title');
+  const areaEl = document.getElementById('bs-area');
+  const riverEl = document.getElementById('bs-river');
+  const climateEl = document.getElementById('bs-climate');
+  const regionEl = document.getElementById('bs-region');
+  const kcEl = document.getElementById('bs-kc');
+  const ffEl = document.getElementById('bs-ff');
+  const ddEl = document.getElementById('bs-dd');
+  const areaInput = document.getElementById('wb-area');
+
+  if (titleEl) titleEl.textContent = title;
+  if (areaEl) areaEl.textContent = areaText;
+  if (riverEl) riverEl.textContent = river;
+  if (climateEl) climateEl.textContent = climate;
+  if (regionEl) regionEl.textContent = region;
+  if (kcEl) kcEl.textContent = Number(record.metrics.compactness_kc).toFixed(3);
+  if (ffEl) ffEl.textContent = Number(record.metrics.form_factor_ff).toFixed(3);
+  if (ddEl) ddEl.textContent = `${Number(record.metrics.drainage_density_kmkm2).toFixed(3)} km/km²`;
+  if (areaInput && Number.isFinite(Number(record.metrics.area_km2))) {
+    areaInput.value = Math.round(Number(record.metrics.area_km2));
+  }
+}
+
+async function renderGuideMorphometryPanel(ws = currentClimateData?.ws || currentWatershedContext || null) {
+  const panel = document.getElementById('guide-morphometry-panel');
+  if (!panel) return;
+  if (!ws) {
+    panel.style.display = 'none';
+    return;
+  }
+
+  await ensureGuideMorphometryCatalog().catch(() => null);
+
+  const record = getGuideMorphometryRecord(ws);
+  if (!record?.metrics || !record?.signature) {
+    panel.style.display = 'none';
+    return;
+  }
+
+  syncBasinStatsFromGuideMorphometry(record, ws);
+
+  const tcMean = Number(record.metrics?.tc_estimate?.mean_hours);
+  document.getElementById('guide-morphometry-title').textContent = ws?.displayName || ws?.name || record.name || 'Unidad hidrológica';
+  document.getElementById('guide-morphometry-level').textContent = `${record.service_level} · ${record.confidence_label || 'Preliminar'}`;
+  document.getElementById('guide-morphometry-source').textContent = `${record.source_label} · verificado ${formatVerificationDate(record.last_verified_at)}`;
+  document.getElementById('guide-morphometry-sub').textContent = `${record.signature.terrain_label} ${record.limits}`;
+  document.getElementById('guide-morphometry-length').textContent = `${Number(record.metrics.main_channel_length_km).toFixed(0)} km`;
+  document.getElementById('guide-morphometry-slope').textContent = `${Number(record.metrics.main_channel_slope_pct).toFixed(2)} %`;
+  document.getElementById('guide-morphometry-tc').textContent = Number.isFinite(tcMean) ? `${tcMean.toFixed(1)} h` : '—';
+  document.getElementById('guide-morphometry-response').textContent = record.signature.response_label || 'Lectura relativa';
+  document.getElementById('guide-morphometry-family').textContent = record.signature.terrain_family || 'Sin familia declarada';
+  document.getElementById('guide-profile-chart').innerHTML = buildRelativeCurveSvg(
+    record.signature.longitudinal_profile_relative,
+    'distance_pct',
+    'elevation_pct',
+    '#0f4c97',
+    'rgba(15,76,151,.16)'
+  );
+  document.getElementById('guide-hypsometry-chart').innerHTML = buildRelativeCurveSvg(
+    record.signature.hypsometric_curve_relative,
+    'area_pct',
+    'elevation_pct',
+    '#b8611d',
+    'rgba(184,97,29,.16)'
+  );
+  document.getElementById('guide-morphometry-note').textContent =
+    `${record.signature.response_summary} ${Array.isArray(record.notes) ? record.notes[0] : ''}`.trim();
+  panel.style.display = 'block';
+}
+
 function showWatershedStats(ws) {
   currentWatershedContext = ws || null;
   const A = ws.area, P = ws.perim, L2 = ws.length;
@@ -5695,6 +6741,7 @@ function showWatershedStats(ws) {
   document.getElementById('basin-stats-card').style.display = 'block';
   document.getElementById('basin-stats-card').scrollIntoView({behavior:'smooth',block:'nearest'});
   document.getElementById('wb-area').value = A.toFixed(0);
+  renderGuideMorphometryPanel(ws);
 }
 
 async function fetchPointClimate(lat, lon, ws, options = {}) {
@@ -5781,6 +6828,7 @@ function showClimateLoadError(ws, lat, lon, detail) {
   document.getElementById('monthly-chart-note').style.display = 'none';
   document.getElementById('basin-state-panel').style.display = 'none';
   document.getElementById('risk-analysis').style.display = 'none';
+  document.getElementById('guide-morphometry-panel').style.display = ws ? document.getElementById('guide-morphometry-panel').style.display : 'none';
   const climateBadge = document.getElementById('info-climate-badge');
   const riskBadge = document.getElementById('risk-badge');
   if (climateBadge) climateBadge.style.display = 'none';
@@ -6453,6 +7501,12 @@ function displayClimateInfo(climateSeries, lat, lon, ws) {
     climateBadge.style.color = 'var(--accent)';
     climateBadge.style.borderColor = 'var(--accent)';
     climateBadge.style.background = 'var(--light)';
+  }
+  if (ws) {
+    document.getElementById('basin-stats-card').style.display = 'block';
+    renderGuideMorphometryPanel(ws);
+  } else {
+    document.getElementById('guide-morphometry-panel').style.display = 'none';
   }
 
   const MONTHS_SHORT = ['E','F','M','A','M','J','J','A','S','O','N','D'];
@@ -8434,7 +9488,7 @@ function buildReportScopeHtml() {
       <div style="border:1px solid #dce6d4;border-radius:6px;padding:12px;background:#fff">
         <div style="font-size:11px;color:#6b7c5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Objeto y alcance</div>
         <p style="font-size:11px;line-height:1.7;color:#334155;margin:0">
-          Este documento organiza la información hidrológica disponible para la unidad activa y la presenta como apoyo técnico para análisis preliminar, formulación y diálogo institucional. El módulo se comunica aquí con nivel <strong>${escapeReportHtml(serviceContext.serviceLevel)}</strong>, dentro de una cobertura declarada como <strong>${escapeReportHtml(serviceContext.coverageLevel)}</strong>. Su alcance se limita a la caracterización de cuenca, la referencia climática, la lectura del balance hídrico y el contexto territorial con trazabilidad explícita. No sustituye mediciones de campo, aforos específicos, estudios de diseño ni documentación exigible para aprobación regulatoria.
+          Este informe reúne la información hidrológica y territorial disponible para la unidad activa y la presenta como insumo de apoyo a análisis preliminar, formulación y diálogo técnico-institucional. El módulo se comunica aquí con nivel <strong>${escapeReportHtml(serviceContext.serviceLevel)}</strong>, dentro de una cobertura declarada como <strong>${escapeReportHtml(serviceContext.coverageLevel)}</strong>. Su alcance se concentra en la caracterización de cuenca, la base climática de referencia, la lectura del balance hídrico y el contexto territorial con trazabilidad explícita. No sustituye mediciones de campo, aforos específicos, estudios de diseño ni documentación exigible para aprobación regulatoria.
         </p>
       </div>
       <div style="border:1px solid #dce6d4;border-radius:6px;padding:12px;background:#f8fafc">
@@ -8450,8 +9504,8 @@ function buildReportScopeHtml() {
     </div>
     <div style="margin-top:12px;border:1px solid #dce6d4;border-radius:6px;padding:12px;background:#f8fafc">
       <div style="font-size:11px;color:#6b7c5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Límites y uso recomendado</div>
-      <p style="font-size:11px;line-height:1.7;color:#475569;margin:0 0 6px">${escapeReportHtml(serviceContext.recommendedUse)}</p>
-      <p style="font-size:11px;line-height:1.7;color:#64748b;margin:0">${escapeReportHtml(serviceContext.limits)}</p>
+      <p style="font-size:11px;line-height:1.7;color:#475569;margin:0 0 6px">Uso recomendado: ${escapeReportHtml(serviceContext.recommendedUse)}</p>
+      <p style="font-size:11px;line-height:1.7;color:#64748b;margin:0">Límites de interpretación: ${escapeReportHtml(serviceContext.limits)}</p>
     </div>
   `;
 }
@@ -8465,7 +9519,7 @@ function buildReportExecutiveHtml() {
   const bullets = [];
 
   if (areaText && areaText !== '—') {
-    bullets.push(`La unidad activa se analiza con un área aproximada de <strong>${areaText} km²</strong>, adoptada como referencia para la lectura morfométrica, climática y de respuesta hidrológica preliminar.`);
+    bullets.push(`La unidad activa se examina sobre un área aproximada de <strong>${areaText} km²</strong>, tomada como referencia para la lectura morfométrica, climática y de respuesta hidrológica preliminar.`);
   }
 
   if (climate?.monthly?.length) {
@@ -8474,17 +9528,17 @@ function buildReportExecutiveHtml() {
     const meanT = climate.monthly.reduce((sum, item) => sum + Number(item.t || 0), 0) / 12;
     const ai = totalET > 0 ? totalP / totalET : 0;
     const aiClass = _AI_CLASS(ai)[0];
-    bullets.push(`La climatología de referencia describe un régimen <strong>${escapeReportHtml(aiClass)}</strong>, con precipitación media anual de <strong>${formatReportNumber(totalP, 0)} mm</strong>, ET₀ anual de <strong>${formatReportNumber(totalET, 0)} mm</strong> y temperatura media anual de <strong>${formatReportNumber(meanT, 1)} °C</strong>.`);
+    bullets.push(`La base climática de referencia describe un régimen <strong>${escapeReportHtml(aiClass)}</strong>, con precipitación media anual de <strong>${formatReportNumber(totalP, 0)} mm</strong>, ET₀ anual de <strong>${formatReportNumber(totalET, 0)} mm</strong> y temperatura media anual de <strong>${formatReportNumber(meanT, 1)} °C</strong>.`);
   }
 
   if (municipality) {
-    bullets.push(`Cuando la unidad activa se vincula al piloto Bolivia, la salida hidrológica de referencia se asocia al municipio de <strong>${escapeReportHtml(municipality.municipality)}</strong>, con <strong>${formatRiskNumber(municipality.population_total)}</strong> habitantes y una prioridad institucional clasificada como <strong>${escapeReportHtml(municipality.priority_label)}</strong>.`);
+    bullets.push(`Cuando la unidad activa se vincula al piloto Bolivia, la referencia hidrológica se asocia al municipio de <strong>${escapeReportHtml(municipality.municipality)}</strong>, con <strong>${formatRiskNumber(municipality.population_total)}</strong> habitantes y una prioridad institucional clasificada como <strong>${escapeReportHtml(municipality.priority_label)}</strong>.`);
   }
 
   if (wbTable && wbTable.rows.length > 1) {
     const totalCells = wbTable.querySelector('tbody tr:last-child')?.cells || [];
     if (totalCells.length >= 7) {
-      bullets.push(`El balance hídrico mensual de referencia resume una precipitación anual de <strong>${escapeReportHtml(totalCells[1].textContent || '—')} mm</strong>, una PET anual de <strong>${escapeReportHtml(totalCells[2].textContent || '—')} mm</strong> y una escorrentía anual modelada de <strong>${escapeReportHtml(totalCells[6].textContent || '—')} mm</strong>.`);
+      bullets.push(`El balance hídrico mensual de referencia sintetiza una precipitación anual de <strong>${escapeReportHtml(totalCells[1].textContent || '—')} mm</strong>, una PET anual de <strong>${escapeReportHtml(totalCells[2].textContent || '—')} mm</strong> y una escorrentía anual modelada de <strong>${escapeReportHtml(totalCells[6].textContent || '—')} mm</strong>.`);
     }
   }
 
@@ -8492,12 +9546,1319 @@ function buildReportExecutiveHtml() {
 
   return `
     <div style="border:1px solid #dce6d4;border-radius:6px;padding:12px;background:#fff">
+      <p style="font-size:12px;line-height:1.75;color:#334155;margin:0 0 10px">
+        La síntesis siguiente reúne los rasgos más relevantes del caso analizado y ordena la lectura hidrológica del informe en términos de magnitud, régimen y uso previsto.
+      </p>
       ${bullets.map((item) => `<p style="font-size:12px;line-height:1.75;color:#334155;margin:0 0 10px">${item}</p>`).join('')}
       <p style="font-size:11px;line-height:1.7;color:#64748b;margin:0">
-        Esta síntesis debe leerse como una referencia técnica preliminar. AquaRisk prioriza datos oficiales cuando están disponibles y, en ausencia de ellos, incorpora derivados TerraNava con trazabilidad explícita para mantener continuidad metodológica. Para este informe se adopta un nivel <strong>${escapeReportHtml(serviceContext.serviceLevel)}</strong>, adecuado para ${escapeReportHtml(serviceContext.recommendedUse).toLowerCase()}.
+        Esta síntesis debe leerse como una referencia técnica preliminar. AquaRisk prioriza datos oficiales cuando están disponibles y, en ausencia de ellos, incorpora derivados TerraNava con trazabilidad explícita para mantener continuidad metodológica. Para este informe se adopta un nivel <strong>${escapeReportHtml(serviceContext.serviceLevel)}</strong>, adecuado para ${escapeReportHtml(serviceContext.recommendedUse).toLowerCase()} y no equivalente, por sí solo, a una modelación calibrada o a una validación reglamentaria.
       </p>
     </div>
   `;
+}
+
+function buildReportTraceabilityHtml() {
+  const serviceContext = getActiveServiceContext();
+  const countryMeta = serviceContext.countryMeta || null;
+  const backboneMeta = serviceContext.backboneMeta || null;
+  const moduleMeta = serviceContext.moduleMeta || null;
+  const tone = getStatusPresentation(countryMeta?.status || '');
+  const checklist = Array.isArray(backboneMeta?.checklist) ? backboneMeta.checklist : [];
+  const activeCount = checklist.filter((item) => item.status === 'active').length;
+  const progressCount = checklist.filter((item) => item.status === 'in_progress').length;
+  const plannedCount = checklist.filter((item) => item.status === 'planned').length;
+  const sourceCount = Array.isArray(backboneMeta?.sources) ? backboneMeta.sources.length : 0;
+
+  return `
+    ${buildReportCards([
+      {
+        label: 'Cobertura país',
+        value: serviceContext.countryLabel,
+        note: serviceContext.coverageLevel,
+      },
+      {
+        label: 'Módulo activo',
+        value: serviceContext.moduleLabel,
+        note: serviceContext.serviceInfo.label,
+      },
+      {
+        label: 'Política de fuente',
+        value: humanizeSourcePriority(serviceContext.sourcePriority),
+        note: `Verificado ${formatVerificationDate(serviceContext.lastVerifiedAt)}`,
+      },
+      {
+        label: 'Etapa backbone',
+        value: backboneMeta?.current_stage || serviceContext.stage || 'No declarada',
+        note: backboneMeta?.target_service_level ? `Objetivo ${backboneMeta.target_service_level}` : 'Sin objetivo declarado',
+      },
+    ])}
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div style="border:1px solid #dce6d4;border-radius:6px;padding:12px;background:#fff">
+        <div style="font-size:11px;color:#6b7c5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Ficha de servicio</div>
+        <div style="font-size:12px;line-height:1.75;color:#334155">
+          <div><strong>Estado país:</strong> <span style="display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid ${tone.border};background:${tone.bg};color:${tone.tone};font-weight:700">${tone.label}</span></div>
+          <div><strong>Nivel declarado:</strong> ${escapeReportHtml(serviceContext.serviceLevel)} · ${escapeReportHtml(serviceContext.serviceInfo.summary)}</div>
+          <div><strong>Uso recomendado:</strong> ${escapeReportHtml(serviceContext.recommendedUse)}</div>
+          <div><strong>Límite principal:</strong> ${escapeReportHtml(serviceContext.limits)}</div>
+          <div><strong>Etapa país:</strong> ${escapeReportHtml(serviceContext.stage || 'No declarada')}</div>
+        </div>
+      </div>
+      <div style="border:1px solid #dce6d4;border-radius:6px;padding:12px;background:#f8fafc">
+        <div style="font-size:11px;color:#6b7c5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Backbone y verificación</div>
+        <div style="font-size:12px;line-height:1.75;color:#334155">
+          <div><strong>Componentes activos:</strong> ${activeCount}</div>
+          <div><strong>En preparación:</strong> ${progressCount}</div>
+          <div><strong>Planificados:</strong> ${plannedCount}</div>
+          <div><strong>Fuentes prioritarias visibles:</strong> ${sourceCount}</div>
+          <div><strong>Nota de backbone:</strong> ${escapeReportHtml(backboneMeta?.readiness_note || 'Sin nota de backbone declarada.')}</div>
+        </div>
+      </div>
+    </div>
+    ${checklist.length ? `
+    <div style="margin-top:12px;border:1px solid #dce6d4;border-radius:6px;padding:12px;background:#f8fafc">
+      <div style="font-size:11px;color:#6b7c5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Checklist relevante del país</div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
+        ${checklist.map((item) => {
+          const itemTone = getStatusPresentation(item.status);
+          return `
+            <div style="border:1px solid ${itemTone.border};border-radius:6px;padding:10px;background:${itemTone.bg}">
+              <div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start">
+                <div style="font-size:12px;font-weight:700;color:#0f172a">${escapeReportHtml(item.label || 'Componente')}</div>
+                <div style="font-size:10px;font-weight:700;color:${itemTone.tone}">${itemTone.label}</div>
+              </div>
+              <p style="font-size:11px;line-height:1.65;color:#475569;margin:8px 0 0">${escapeReportHtml(item.summary || 'Sin detalle')}</p>
+            </div>
+          `;
+        }).join('')}
+      </div>
+      ${moduleMeta ? `<p style="font-size:11px;line-height:1.65;color:#64748b;margin:10px 0 0">Módulo activo en este informe: <strong>${escapeReportHtml(moduleMeta.label || serviceContext.moduleLabel)}</strong>. La interpretación debe mantenerse dentro del nivel de servicio declarado y del estado backbone visible para ${escapeReportHtml(serviceContext.countryLabel)}.</p>` : ''}
+    </div>` : ''}
+  `;
+}
+
+const REPORT_MAP_STATE_STORAGE_KEY = 'aquarisk:report-map-state:v1';
+let currentReportMapState = null;
+
+function getReportMapTone(level = 'L2') {
+  if (String(level).startsWith('L4') || String(level).startsWith('L5')) {
+    return { bg: '#ecfdf5', border: '#a7f3d0', text: '#065f46' };
+  }
+  if (String(level).startsWith('L3')) {
+    return { bg: '#eff6ff', border: '#bfdbfe', text: '#1d4ed8' };
+  }
+  return { bg: '#f8fafc', border: '#cbd5e1', text: '#334155' };
+}
+
+function convertLatLngRingToLonLat(ring = []) {
+  return ring
+    .map((coord) => Array.isArray(coord) && coord.length >= 2 ? [Number(coord[1]), Number(coord[0])] : null)
+    .filter((coord) => coord && coord.every(Number.isFinite));
+}
+
+function computeBBoxFromLonLatSets(sets = []) {
+  const coords = sets.flat().filter((coord) => Array.isArray(coord) && coord.length >= 2 && coord.every(Number.isFinite));
+  if (!coords.length) return null;
+  const lons = coords.map((coord) => coord[0]);
+  const lats = coords.map((coord) => coord[1]);
+  return {
+    minLon: Math.min(...lons),
+    maxLon: Math.max(...lons),
+    minLat: Math.min(...lats),
+    maxLat: Math.max(...lats),
+  };
+}
+
+function expandFigureBBox(bbox, factor = 0.12) {
+  if (!bbox) return null;
+  const lonSpan = Math.max(0.1, bbox.maxLon - bbox.minLon);
+  const latSpan = Math.max(0.1, bbox.maxLat - bbox.minLat);
+  return {
+    minLon: bbox.minLon - lonSpan * factor,
+    maxLon: bbox.maxLon + lonSpan * factor,
+    minLat: bbox.minLat - latSpan * factor,
+    maxLat: bbox.maxLat + latSpan * factor,
+  };
+}
+
+function getFigureRegionKey(state = null) {
+  const explicitRegion = String(state?.unit?.region_key || '').trim().toLowerCase();
+  if (explicitRegion) return explicitRegion;
+  const country = String(state?.unit?.country || '').trim().toLowerCase();
+  if (country.includes('espa')) return 'spain';
+  if (country.includes('boliv')) return 'bolivia';
+  return 'unknown';
+}
+
+const FIGURE_INSET_CONTEXTS = {
+  spain: {
+    label: 'España peninsular',
+    bbox: { minLon: -10.6, maxLon: 4.8, minLat: 35.0, maxLat: 44.6 },
+    basePolygons: [
+      {
+        label: 'Portugal',
+        fill: '#e8edf3',
+        stroke: '#cdd7e3',
+        coords: [
+          [-9.45, 41.95], [-8.95, 41.15], [-8.75, 40.05], [-8.85, 39.15], [-8.92, 38.25],
+          [-8.88, 37.18], [-8.1, 37.0], [-7.45, 37.12], [-7.08, 38.05], [-7.12, 39.18],
+          [-7.22, 40.25], [-7.35, 41.55], [-7.62, 41.92], [-8.65, 42.12], [-9.18, 41.98],
+        ],
+      },
+      {
+        label: 'España',
+        fill: '#eef2f6',
+        stroke: '#bcc8d6',
+        coords: [
+          [-9.3, 43.15], [-8.25, 43.45], [-6.75, 43.62], [-4.15, 43.58], [-2.1, 43.3],
+          [-0.25, 43.06], [1.55, 42.7], [2.95, 41.95], [3.25, 41.28], [2.5, 40.42],
+          [1.45, 39.38], [0.62, 38.82], [-0.45, 38.45], [-1.32, 37.95], [-2.1, 37.28],
+          [-3.18, 36.82], [-4.55, 36.7], [-5.45, 36.06], [-6.28, 36.05], [-7.05, 36.66],
+          [-7.48, 37.28], [-7.38, 38.2], [-7.08, 39.18], [-7.58, 40.22], [-8.42, 41.12],
+          [-9.08, 41.92], [-9.3, 42.62],
+        ],
+      },
+    ],
+    islands: [
+      { lon: 2.65, lat: 39.6, r: 2.8 },
+      { lon: 3.25, lat: 39.95, r: 1.8 },
+      { lon: 4.15, lat: 39.9, r: 1.4 },
+    ],
+  },
+  bolivia: {
+    label: 'Bolivia',
+    bbox: { minLon: -69.9, maxLon: -57.1, minLat: -22.95, maxLat: -9.45 },
+    basePolygons: [
+      {
+        label: 'Bolivia',
+        fill: '#eef2f6',
+        stroke: '#bcc8d6',
+        coords: [
+          [-69.55, -17.85], [-69.18, -16.7], [-68.6, -15.6], [-68.32, -14.4], [-67.72, -13.48],
+          [-66.48, -12.55], [-65.18, -11.3], [-63.72, -10.7], [-61.92, -10.58], [-60.28, -10.88],
+          [-58.95, -11.9], [-58.22, -13.28], [-57.84, -15.12], [-57.55, -17.18], [-57.82, -18.55],
+          [-58.55, -19.78], [-59.82, -20.58], [-61.25, -21.06], [-62.45, -21.82], [-63.82, -22.52],
+          [-65.52, -22.78], [-66.92, -22.1], [-67.96, -20.92], [-68.72, -19.32], [-69.42, -18.38],
+        ],
+      },
+    ],
+    islands: [],
+  },
+};
+
+function getFigureBasemapMeta(state = null, bbox = null, width = 0, height = 0) {
+  const regionKey = getFigureRegionKey(state);
+
+  if (!bbox) {
+    if (regionKey === 'spain') {
+      return {
+        label: 'IGN PNOA Ortofoto · WMS oficial para informe',
+        note: 'Instituto Geográfico Nacional · ortofoto PNOA de referencia para composición cartográfica.',
+        url: '',
+      };
+    }
+    return {
+      label: 'Esri World Imagery · export referencial para informe',
+      note: 'Base satelital referencial para lectura territorial. No equivale a ortofoto oficial del país.',
+      url: '',
+    };
+  }
+
+  if (regionKey === 'spain') {
+    const params = new URLSearchParams({
+      SERVICE: 'WMS',
+      REQUEST: 'GetMap',
+      VERSION: '1.3.0',
+      LAYERS: 'OI.OrthoimageCoverage',
+      CRS: 'EPSG:4326',
+      BBOX: [
+        Number(bbox.minLat.toFixed(6)),
+        Number(bbox.minLon.toFixed(6)),
+        Number(bbox.maxLat.toFixed(6)),
+        Number(bbox.maxLon.toFixed(6)),
+      ].join(','),
+      WIDTH: String(Math.max(220, Math.round(width))),
+      HEIGHT: String(Math.max(180, Math.round(height))),
+      FORMAT: 'image/jpeg',
+      STYLES: '',
+      TRANSPARENT: 'FALSE',
+    });
+    return {
+      label: 'IGN PNOA Ortofoto · WMS oficial para informe',
+      note: 'Instituto Geográfico Nacional · ortofoto PNOA de referencia para composición cartográfica.',
+      url: `https://www.ign.es/wms-inspire/pnoa-ma?${params.toString()}`,
+    };
+  }
+
+  const params = new URLSearchParams({
+    bbox: [
+      Number(bbox.minLon.toFixed(6)),
+      Number(bbox.minLat.toFixed(6)),
+      Number(bbox.maxLon.toFixed(6)),
+      Number(bbox.maxLat.toFixed(6)),
+    ].join(','),
+    bboxSR: '4326',
+    imageSR: '4326',
+    size: `${Math.max(220, Math.round(width))},${Math.max(180, Math.round(height))}`,
+    format: 'jpg',
+    transparent: 'false',
+    f: 'image',
+  });
+  return {
+    label: 'Esri World Imagery · export referencial para informe',
+    note: 'Base satelital referencial para lectura territorial. No equivale a ortofoto oficial del país.',
+    url: `https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?${params.toString()}`,
+  };
+}
+
+function getFigureOfficialOverlayMetas(state = null, variant = 'basin', bbox = null, width = 0, height = 0) {
+  const regionKey = getFigureRegionKey(state);
+  if (regionKey !== 'spain' || !bbox) return [];
+
+  const common = {
+    CRS: 'EPSG:4326',
+    BBOX: [
+      Number(bbox.minLat.toFixed(6)),
+      Number(bbox.minLon.toFixed(6)),
+      Number(bbox.maxLat.toFixed(6)),
+      Number(bbox.maxLon.toFixed(6)),
+    ].join(','),
+    WIDTH: String(Math.max(220, Math.round(width))),
+    HEIGHT: String(Math.max(180, Math.round(height))),
+    FORMAT: 'image/png',
+    TRANSPARENT: 'TRUE',
+  };
+
+  const overlays = [];
+  if (variant === 'basin' || variant === 'premium' || variant === 'climate') {
+    const params = new URLSearchParams({
+      SERVICE: 'WMS',
+      REQUEST: 'GetMap',
+      VERSION: '1.3.0',
+      LAYERS: 'HY.Network',
+      STYLES: 'HY.Network.Default',
+      ...common,
+    });
+    overlays.push({
+      key: 'spain-hydrography-wms',
+      label: 'Hidrografía oficial IGN · WMS',
+      note: 'Red hidrográfica oficial del servicio INSPIRE de hidrografía del IGN/IDEE.',
+      kind: 'line-river-secondary',
+      opacity: variant === 'premium' ? 0.9 : 0.82,
+      url: `https://servicios.idee.es/wms-inspire/hidrografia?${params.toString()}`,
+    });
+  }
+
+  if (variant === 'stations' || variant === 'premium') {
+    const params = new URLSearchParams({
+      SERVICE: 'WMS',
+      REQUEST: 'GetMap',
+      VERSION: '1.3.0',
+      LAYERS: 'EF.EnvironmentalMonitoringFacilities',
+      STYLES: '',
+      ...common,
+    });
+    overlays.push({
+      key: 'spain-official-stations-wms',
+      label: 'Aforos oficiales MITECO · WMS',
+      note: 'Red Integrada de Estaciones de Aforos (SAIH-ROEA) visible como soporte observacional oficial.',
+      kind: 'dot-hydro',
+      opacity: variant === 'stations' ? 0.96 : 0.9,
+      url: `https://wms.mapama.gob.es/sig/Agua/Aforos/wms.aspx?${params.toString()}`,
+    });
+  }
+
+  return overlays;
+}
+
+function lineCoordsFromGeometry(geometry) {
+  const type = geometry?.type;
+  const coords = geometry?.coordinates;
+  if (!type || !coords) return [];
+  if (type === 'LineString') return [coords];
+  if (type === 'MultiLineString') return coords;
+  return [];
+}
+
+function geometryIntersectsBBox(geometry, bbox) {
+  const lines = lineCoordsFromGeometry(geometry);
+  if (!lines.length || !bbox) return false;
+  return lines.some((line) => {
+    let minLon = Infinity;
+    let maxLon = -Infinity;
+    let minLat = Infinity;
+    let maxLat = -Infinity;
+    for (const coord of line) {
+      const lon = Number(coord?.[0]);
+      const lat = Number(coord?.[1]);
+      if (!Number.isFinite(lon) || !Number.isFinite(lat)) continue;
+      minLon = Math.min(minLon, lon);
+      maxLon = Math.max(maxLon, lon);
+      minLat = Math.min(minLat, lat);
+      maxLat = Math.max(maxLat, lat);
+      if (lon >= bbox.minLon && lon <= bbox.maxLon && lat >= bbox.minLat && lat <= bbox.maxLat) {
+        return true;
+      }
+    }
+    if (!Number.isFinite(minLon)) return false;
+    return !(maxLon < bbox.minLon || minLon > bbox.maxLon || maxLat < bbox.minLat || minLat > bbox.maxLat);
+  });
+}
+
+function projectLonLatToFigure(lon, lat, bbox, width, height, pad = 28) {
+  const x = pad + ((lon - bbox.minLon) / Math.max(1e-9, bbox.maxLon - bbox.minLon)) * (width - pad * 2);
+  const y = height - pad - ((lat - bbox.minLat) / Math.max(1e-9, bbox.maxLat - bbox.minLat)) * (height - pad * 2);
+  return [Number(x.toFixed(2)), Number(y.toFixed(2))];
+}
+
+function buildFigurePath(coords, bbox, width, height, pad = 28, closed = true) {
+  if (!Array.isArray(coords) || coords.length < 2 || !bbox) return '';
+  return coords.map((coord, index) => {
+    const [x, y] = projectLonLatToFigure(coord[0], coord[1], bbox, width, height, pad);
+    return `${index === 0 ? 'M' : 'L'}${x} ${y}`;
+  }).join(' ') + (closed ? ' Z' : '');
+}
+
+function buildFigureGrid(bbox, width, height, pad = 28, steps = 5) {
+  if (!bbox) return '';
+  const lines = [];
+  for (let i = 0; i <= steps; i += 1) {
+    const t = i / steps;
+    const x = pad + (width - pad * 2) * t;
+    const y = pad + (height - pad * 2) * t;
+    lines.push(`<line x1="${x}" y1="${pad}" x2="${x}" y2="${height - pad}" stroke="#dbe3ed" stroke-width="1"/>`);
+    lines.push(`<line x1="${pad}" y1="${y}" x2="${width - pad}" y2="${y}" stroke="#dbe3ed" stroke-width="1"/>`);
+  }
+  return lines.join('');
+}
+
+function buildFigureContourLines(width, height, variant = 'basin') {
+  const color = (variant === 'thematic' || variant === 'climate') ? '#d8dee8' : '#e2e8f0';
+  const lines = [];
+  for (let i = 0; i < 7; i += 1) {
+    const y = 54 + i * ((height - 108) / 6);
+    const offset = (i % 2 === 0 ? 20 : -16);
+    lines.push(`<path d="M 36 ${y} C ${width * 0.25} ${y - 18 + offset}, ${width * 0.62} ${y + 12 - offset}, ${width - 36} ${y - 10}" fill="none" stroke="${color}" stroke-width="1.2"/>`);
+  }
+  return lines.join('');
+}
+
+function buildFigureViewportPath(width, height, pad = 28) {
+  return `M${pad} ${pad} H${width - pad} V${height - pad} H${pad} Z`;
+}
+
+function buildInsetSvg(state, variant = 'localizacion', width = 160, height = 120) {
+  const regionKey = getFigureRegionKey(state);
+  const context = FIGURE_INSET_CONTEXTS[regionKey];
+  const polygon = state?.geometry?.polygon || [];
+  if (!context || !polygon.length) {
+    return buildReportMapSvg(state, variant, width, height);
+  }
+
+  const bbox = context.bbox;
+  const pad = 10;
+  const unitBBox = expandFigureBBox(computeBBoxFromLonLatSets([polygon]), 0.45);
+  const basePolygons = context.basePolygons.map((shape) => {
+    const path = buildFigurePath(shape.coords, bbox, width, height, pad, true);
+    return `<path d="${path}" fill="${shape.fill}" stroke="${shape.stroke}" stroke-width="1.2"></path>`;
+  }).join('');
+  const islandDots = (context.islands || []).map((island) => {
+    const [x, y] = projectLonLatToFigure(island.lon, island.lat, bbox, width, height, pad);
+    return `<circle cx="${x}" cy="${y}" r="${island.r}" fill="#eef2f6" stroke="#bcc8d6" stroke-width="0.9"></circle>`;
+  }).join('');
+  const [insetX1, insetY2] = unitBBox
+    ? projectLonLatToFigure(unitBBox.minLon, unitBBox.minLat, bbox, width, height, pad)
+    : [pad + 20, height - pad - 20];
+  const [insetX2, insetY1] = unitBBox
+    ? projectLonLatToFigure(unitBBox.maxLon, unitBBox.maxLat, bbox, width, height, pad)
+    : [width - pad - 20, pad + 20];
+  const rectX = Math.min(insetX1, insetX2);
+  const rectY = Math.min(insetY1, insetY2);
+  const rectW = Math.max(12, Math.abs(insetX2 - insetX1));
+  const rectH = Math.max(10, Math.abs(insetY2 - insetY1));
+
+  return `
+    <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Mapa de ubicación ${escapeReportHtml(context.label)}">
+      <rect x="0" y="0" width="${width}" height="${height}" fill="#f6f8fb"></rect>
+      <rect x="${pad}" y="${pad}" width="${width - pad * 2}" height="${height - pad * 2}" fill="#fbfcfe" stroke="#dbe3ed" stroke-width="1"></rect>
+      ${basePolygons}
+      ${islandDots}
+      <rect x="${rectX}" y="${rectY}" width="${rectW}" height="${rectH}" rx="2.5" fill="#1d4ed8" fill-opacity="0.12" stroke="#1d4ed8" stroke-width="1.6"></rect>
+      <rect x="${rectX + 1.5}" y="${rectY + 1.5}" width="${Math.max(8, rectW - 3)}" height="${Math.max(6, rectH - 3)}" rx="1.8" fill="none" stroke="#ffffff" stroke-opacity="0.92" stroke-width="0.95"></rect>
+    </svg>
+  `;
+}
+
+function getReportFigureOverlayDescriptors() {
+  const overlays = [];
+  if (!leafletMap) return overlays;
+  if (terrainOverlayGroups.relief && leafletMap.hasLayer(terrainOverlayGroups.relief)) {
+    overlays.push({ key: 'relief', label: 'Relieve / hillshade local', type: 'raster' });
+  }
+  if (terrainOverlayGroups.slope && leafletMap.hasLayer(terrainOverlayGroups.slope)) {
+    overlays.push({ key: 'slope', label: 'Pendiente derivada', type: 'raster' });
+  }
+  if (hydroRiversOverlay && leafletMap.hasLayer(hydroRiversOverlay)) {
+    overlays.push({ key: 'rivers', label: 'Red hidrográfica HydroRIVERS / HydroSHEDS', type: 'vector' });
+  }
+  if (tarijaStationsOverlay && leafletMap.hasLayer(tarijaStationsOverlay)) {
+    overlays.push({ key: 'stations', label: 'Estaciones Tarija con trazabilidad explícita', type: 'vector' });
+  }
+  if (spainHydroStationsOverlay && leafletMap.hasLayer(spainHydroStationsOverlay)) {
+    overlays.push({ key: 'spain-official-stations', label: 'Aforos oficiales España · catálogo georreferenciado MITECO', type: 'geojson' });
+  }
+  if (climateLineOverlayGroups.temperature && leafletMap.hasLayer(climateLineOverlayGroups.temperature)) {
+    overlays.push({ key: 'temperature', label: 'Isotermas derivadas TerraNava', type: 'vector' });
+  }
+  if (climateLineOverlayGroups.precipitation && leafletMap.hasLayer(climateLineOverlayGroups.precipitation)) {
+    overlays.push({ key: 'precipitation', label: 'Isoyetas derivadas TerraNava', type: 'vector' });
+  }
+  return overlays;
+}
+
+function getReportGeometryBundle(ws = currentClimateData?.ws || currentWatershedContext || null) {
+  const polygon = Array.isArray(ws?.polygon) && ws.polygon.length >= 3
+    ? convertLatLngRingToLonLat(ws.polygon)
+    : (() => {
+        const ring = getFeatureOuterRing(currentAtlasSelectedFeature);
+        return Array.isArray(ring) ? ring.map((coord) => [Number(coord[0]), Number(coord[1])]).filter((coord) => coord.every(Number.isFinite)) : [];
+      })();
+  const riverPath = Array.isArray(ws?.riverPath) && ws.riverPath.length > 1
+    ? convertLatLngRingToLonLat(ws.riverPath)
+    : [];
+  const outlet = Array.isArray(ws?.outletLatLng) && ws.outletLatLng.length === 2
+    ? [Number(ws.outletLatLng[1]), Number(ws.outletLatLng[0])]
+    : riverPath.length ? riverPath[riverPath.length - 1] : null;
+  const bbox = computeBBoxFromLonLatSets([polygon, riverPath, outlet ? [outlet] : []]);
+  return {
+    polygon,
+    riverPath,
+    outlet,
+    bbox,
+    sourceLabel: polygon.length
+      ? (Array.isArray(ws?.polygon) && ws?.polygon?.length ? 'Polígono guía TerraNava' : 'HydroBASINS / geometría atlas')
+      : 'Sin geometría activa',
+  };
+}
+
+async function loadReportFigureStations(bbox) {
+  if (!bbox) return [];
+  try {
+    let catalog = null;
+    let geojson = null;
+    let cache = null;
+    let defaultNetworkType = 'meteorological';
+    if (currentRegion === 'spain') {
+      catalog = await ensureSpainStationsCatalog();
+      if (!catalog?.geojson) return [];
+      cache = spainStationsDataCache;
+      defaultNetworkType = 'hydrological';
+    } else if (currentRegion === 'bolivia') {
+      catalog = await ensureTarijaStationsCatalog();
+      if (!catalog?.geojson) return [];
+      cache = tarijaStationsDataCache;
+      defaultNetworkType = 'meteorological';
+    } else {
+      return [];
+    }
+    geojson = await fetchLocalJsonCached(
+      cache,
+      catalog.geojson,
+      'report figure stations'
+    );
+    return (geojson?.features || [])
+      .map((feature) => {
+        const [lon, lat] = feature?.geometry?.coordinates || [];
+        if (![lon, lat].every(Number.isFinite)) return null;
+        if (lon < bbox.minLon || lon > bbox.maxLon || lat < bbox.minLat || lat > bbox.maxLat) return null;
+        return {
+          lon,
+          lat,
+          label: feature.properties?.station_name || 'Estación',
+          networkType: feature.properties?.network_type || defaultNetworkType,
+          status: feature.properties?.operational_status || 'pendiente de verificación',
+          operator: feature.properties?.operator || feature.properties?.source_label || null,
+        };
+      })
+      .filter(Boolean);
+  } catch (_) {
+    return [];
+  }
+}
+
+async function loadReportFigureHydroNetwork(bbox, region = currentRegion) {
+  if (!bbox) return [];
+  const regionKey = region === 'bolivia' ? 'sa' : region === 'spain' ? 'eu' : null;
+  if (!regionKey) return [];
+  try {
+    const manifest = await ensureAtlasManifest();
+    const paths = getAtlasPaths(manifest, regionKey, atlasActiveLevel);
+    if (!paths?.hydrorivers) return [];
+    const rivers = await fetchLocalJsonCached(
+      hydroRiversOverlayCache,
+      paths.hydrorivers,
+      `Red hidrográfica de informe ${regionKey.toUpperCase()}`
+    );
+    const padded = expandFigureBBox(bbox, 0.08);
+    return (rivers?.features || [])
+      .filter((feature) => geometryIntersectsBBox(feature?.geometry, padded))
+      .map((feature) => {
+        const order = Number(feature?.properties?.ORD_FLOW ?? feature?.properties?.ORD_STRA ?? 1) || 1;
+        const lines = lineCoordsFromGeometry(feature?.geometry)
+          .map((line) => line
+            .map((coord) => [Number(coord?.[0]), Number(coord?.[1])])
+            .filter((coord) => coord.every(Number.isFinite))
+          )
+          .filter((line) => line.length > 1);
+        return lines.map((coords) => ({
+          order,
+          coords,
+        }));
+      })
+      .flat()
+      .sort((a, b) => b.order - a.order)
+      .slice(0, 42);
+  } catch (_) {
+    return [];
+  }
+}
+
+function normalizeReportFigureVariant(variant, state = null) {
+  if (variant === 'tematico' || variant === 'thematic') {
+    return state?.stations?.count ? 'stations' : 'climate';
+  }
+  return variant;
+}
+
+function getReportSupportCatalogSample(state, limit = 3) {
+  const sourceInventory = state?.support?.source_inventory?.sources;
+  if (Array.isArray(sourceInventory) && sourceInventory.length) {
+    return sourceInventory.slice(0, limit).map((item) => ({
+      label: item.label || 'Fuente oficial',
+      note: item.role || item.priority || item.status || '',
+    }));
+  }
+  const inventoryCatalogs = state?.support?.station_inventory?.catalogs;
+  if (Array.isArray(inventoryCatalogs) && inventoryCatalogs.length) {
+    return inventoryCatalogs.slice(0, limit).map((item) => ({
+      label: item.label || item.operator || 'Fuente oficial',
+      note: item.limits || item.coverage_level || item.status || '',
+    }));
+  }
+  const summarySources = state?.support?.station_summary?.sources;
+  if (Array.isArray(summarySources) && summarySources.length) {
+    return summarySources.slice(0, limit).map((item) => ({
+      label: item.label || 'Fuente declarada',
+      note: item.notes || item.url || '',
+    }));
+  }
+  const backboneSources = state?.support?.backbone?.sources;
+  if (Array.isArray(backboneSources) && backboneSources.length) {
+    return backboneSources.slice(0, limit).map((item) => ({
+      label: item.label || item.operator || 'Fuente backbone',
+      note: item.role || item.priority || '',
+    }));
+  }
+  return [];
+}
+
+function buildReportSupportLinksHtml(state) {
+  const links = [];
+  const publicLinks = state?.support?.public_links || {};
+  if (publicLinks.data_sources_page) {
+    links.push(`<li><a href="${escapeReportHtml(publicLinks.data_sources_page)}" target="_blank" rel="noopener noreferrer">Página pública de fuentes y acceso a datos</a></li>`);
+  }
+  if (publicLinks.country_sources_page) {
+    links.push(`<li><a href="${escapeReportHtml(publicLinks.country_sources_page)}" target="_blank" rel="noopener noreferrer">Sección país de fuentes prioritarias</a></li>`);
+  }
+  if (publicLinks.source_inventory_path) {
+    links.push(`<li><a href="${escapeReportHtml(publicLinks.source_inventory_path)}" target="_blank" rel="noopener noreferrer">Inventario técnico JSON del backbone</a></li>`);
+  }
+  if (!links.length) return '';
+  return `<ul>${links.join('')}</ul>`;
+}
+
+function buildReportFigureBoxes(state, variant) {
+  const normalizedVariant = normalizeReportFigureVariant(variant, state);
+  const overlayLabels = (state?.map?.overlays || []).map((item) => item.label);
+  const sourceItems = getReportSupportCatalogSample(state);
+  const stationSummary = state?.support?.station_summary || null;
+  const support = state?.support || {};
+  const officialFigureOverlays = getFigureOfficialOverlayMetas(
+    state,
+    normalizedVariant,
+    state?.map?.bbox || null,
+    480,
+    320
+  );
+  const boxes = [];
+
+  if (normalizedVariant === 'localizacion') {
+    boxes.push({
+      label: 'Cobertura territorial',
+      html: `
+        <p><strong>País:</strong> ${escapeReportHtml(state?.unit?.country || 'Cobertura activa')}</p>
+        <p><strong>Unidad:</strong> ${escapeReportHtml(state?.unit?.label || 'Unidad hidrológica activa')}</p>
+        <p><strong>Cobertura:</strong> ${escapeReportHtml(state?.service?.coverage_level || 'Sin cobertura declarada')}</p>
+      `,
+    });
+  }
+
+  if (normalizedVariant === 'basin') {
+    boxes.push({
+      label: 'Capas activas en la figura',
+      html: overlayLabels.length
+        ? `<ul>${overlayLabels.slice(0, 5).map((item) => `<li>${escapeReportHtml(item)}</li>`).join('')}</ul>`
+        : '<p>La figura técnica prioriza límite de cuenca, eje de drenaje y contexto geomorfológico simplificado.</p>',
+    });
+    if (state?.hydro?.count) {
+      boxes.push({
+        label: 'Red hidrográfica contextual',
+        html: `<p><strong>Tramos visibles:</strong> ${escapeReportHtml(String(state.hydro.count))}</p><p>${escapeReportHtml(state?.hydro?.source_label || 'Red hidrográfica contextual derivada para la figura.')}</p>`,
+      });
+    }
+    if (support.terrain_summary || support.dem_meta) {
+      boxes.push({
+        label: 'Relieve y DEM',
+        html: `
+          <p><strong>Base:</strong> ${escapeReportHtml(support.terrain_summary?.source_label || support.dem_meta?.summary_note || 'Backbone DEM en preparación')}</p>
+          <p><strong>Nivel:</strong> ${escapeReportHtml(support.terrain_summary?.service_level || support.dem_meta?.service_level || 'L1')}</p>
+          <p>${escapeReportHtml(support.terrain_summary?.limits || support.dem_meta?.summary_note || 'El relieve se sirve como derivado ligero y no como DEM crudo.')}</p>
+        `,
+      });
+    }
+  }
+
+  if (normalizedVariant === 'stations') {
+    const stationCount = Number(state?.stations?.count || stationSummary?.station_count || 0);
+    const hydrologicalCount = Number(state?.stations?.hydrological_count || stationSummary?.type_counts?.hydrological || 0);
+    const hasSpainOfficialStations = (state?.map?.overlays || []).some((item) => item.key === 'spain-official-stations');
+    boxes.push({
+      label: 'Red observacional',
+      html: stationCount
+        ? `
+          <p><strong>Estaciones visibles:</strong> ${stationCount}</p>
+          <p><strong>Hidrológicas:</strong> ${hydrologicalCount} · <strong>Meteorológicas:</strong> ${Math.max(stationCount - hydrologicalCount, 0)}</p>
+          <p>${escapeReportHtml(stationSummary?.recommended_use || 'La red visible sirve para documentar respaldo observacional y proximidad a estaciones.')}</p>
+        `
+        : `
+          <p>${escapeReportHtml(state?.support?.station_inventory?.summary_note || state?.support?.stations_meta?.summary_note || 'No hay puntos georreferenciados listos para esta unidad. El inventario oficial sigue en preparación.')}</p>
+          ${hasSpainOfficialStations ? `<p><strong>Capa visible:</strong> ${escapeReportHtml(state?.support?.station_summary?.station_count_note || 'Catálogo georreferenciado oficial MITECO · SAIH-ROEA.')} El WMS oficial sigue disponible como apoyo de verificación.</p>` : ''}
+        `,
+    });
+    if (officialFigureOverlays.length) {
+      boxes.push({
+        label: 'Capas oficiales visibles',
+        html: `<ul>${officialFigureOverlays.map((item) => `<li><strong>${escapeReportHtml(item.label)}</strong>${item.note ? ` · ${escapeReportHtml(item.note)}` : ''}</li>`).join('')}</ul>`,
+      });
+    }
+    if (sourceItems.length) {
+      boxes.push({
+        label: 'Operadores y fuentes',
+        html: `<ul>${sourceItems.map((item) => `<li><strong>${escapeReportHtml(item.label)}</strong>${item.note ? ` · ${escapeReportHtml(item.note)}` : ''}</li>`).join('')}</ul>`,
+      });
+    }
+    const linksHtml = buildReportSupportLinksHtml(state);
+    if (linksHtml) {
+      boxes.push({
+        label: 'Acceso a datos',
+        html: linksHtml,
+      });
+    }
+  }
+
+  if (normalizedVariant === 'climate') {
+    boxes.push({
+      label: 'Base climática visible',
+      html: `
+        <p><strong>Fuente:</strong> ${escapeReportHtml(state?.climate?.source_label || 'Sin base climática')}</p>
+        <p><strong>Periodo:</strong> ${escapeReportHtml(state?.climate?.period_label || 'Sin periodo declarado')}</p>
+        <p><strong>P anual:</strong> ${state?.climate?.annual_precip_mm != null ? `${escapeReportHtml(String(state.climate.annual_precip_mm))} mm` : '—'} · <strong>ET0 anual:</strong> ${state?.climate?.annual_et0_mm != null ? `${escapeReportHtml(String(state.climate.annual_et0_mm))} mm` : '—'}</p>
+        <p><strong>Clase climática:</strong> ${escapeReportHtml(state?.climate?.aridity_class || 'Sin clasificación')}</p>
+      `,
+    });
+    boxes.push({
+      label: 'Capas y soporte',
+      html: overlayLabels.length
+        ? `<ul>${overlayLabels.filter((item) => /iso|clima|temper|precip|relieve|pendiente/i.test(item)).slice(0, 5).map((item) => `<li>${escapeReportHtml(item)}</li>`).join('') || overlayLabels.slice(0, 4).map((item) => `<li>${escapeReportHtml(item)}</li>`).join('')}</ul>`
+        : '<p>La figura climática sintetiza la base activa del informe y sus derivados temáticos visibles.</p>',
+    });
+  }
+
+  if (normalizedVariant === 'premium') {
+    if (support.backbone || support.country_meta?.backbone) {
+      const backbone = support.backbone || support.country_meta?.backbone;
+      boxes.push({
+        label: 'Backbone premium país',
+        html: `
+          <p><strong>Estado:</strong> ${escapeReportHtml(backbone?.current_stage || support.country_meta?.stage || 'En preparación')}</p>
+          <p><strong>Nivel objetivo:</strong> ${escapeReportHtml(backbone?.target_service_level || 'L3')}</p>
+          <p>${escapeReportHtml(backbone?.readiness_note || support.country_meta?.limits || 'La activación premium requiere DEM, estaciones, hidrografía y QA visibles.')}</p>
+        `,
+      });
+    }
+    if (state?.map?.basemap) {
+      boxes.push({
+        label: 'Base cartográfica premium',
+        html: `
+          <p><strong>Base:</strong> ${escapeReportHtml(state.map.basemap)}</p>
+          <p>${escapeReportHtml(state?.map?.basemap_note || 'Base de referencia para la composición institucional del mapa.')}</p>
+        `,
+      });
+    }
+    if (sourceItems.length) {
+      boxes.push({
+        label: 'Fuentes prioritarias',
+        html: `<ul>${sourceItems.map((item) => `<li><strong>${escapeReportHtml(item.label)}</strong>${item.note ? ` · ${escapeReportHtml(item.note)}` : ''}</li>`).join('')}</ul>`,
+      });
+    }
+    if (overlayLabels.length) {
+      boxes.push({
+        label: 'Capas representadas',
+        html: `<ul>${overlayLabels.slice(0, 6).map((item) => `<li>${escapeReportHtml(item)}</li>`).join('')}</ul>`,
+      });
+    }
+    if (state?.hydro?.count) {
+      boxes.push({
+        label: 'Estructura hidrológica visible',
+        html: `<p><strong>Tramos visibles:</strong> ${escapeReportHtml(String(state.hydro.count))}</p><p>${escapeReportHtml(state?.hydro?.source_label || 'Red hidrográfica contextual para lectura institucional de la cuenca.')}</p>`,
+      });
+    }
+    if (officialFigureOverlays.length) {
+      boxes.push({
+        label: 'Capas oficiales en figura',
+        html: `<ul>${officialFigureOverlays.map((item) => `<li><strong>${escapeReportHtml(item.label)}</strong>${item.note ? ` · ${escapeReportHtml(item.note)}` : ''}</li>`).join('')}</ul>`,
+      });
+    }
+    const linksHtml = buildReportSupportLinksHtml(state);
+    if (linksHtml) {
+      boxes.push({
+        label: 'Acceso y trazabilidad',
+        html: linksHtml,
+      });
+    }
+  }
+
+  boxes.push({
+    label: 'Fuentes y base',
+    html: `
+      <p><strong>Geometría:</strong> ${escapeReportHtml(state?.geometry?.source_label || 'Sin geometría')}</p>
+      <p><strong>Base cartográfica:</strong> ${escapeReportHtml(state?.map?.basemap || 'Sin base cartográfica declarada')}</p>
+      <p><strong>Nota base:</strong> ${escapeReportHtml(state?.map?.basemap_note || 'Sin nota de base cartográfica')}</p>
+      <p><strong>Clima:</strong> ${escapeReportHtml(state?.climate?.source_label || 'Sin base climática')}</p>
+      <p><strong>Servicio:</strong> ${escapeReportHtml(state?.service?.level || 'L2')} · ${escapeReportHtml(state?.service?.coverage_level || 'Sin cobertura')}</p>
+    `,
+  });
+  boxes.push({
+    label: 'Uso y límites',
+    html: `
+      <p>${escapeReportHtml(state?.service?.recommended_use || 'Apoyo técnico preliminar')}</p>
+      <p>${escapeReportHtml(state?.service?.limits || 'No equivalente a modelación calibrada')}</p>
+    `,
+  });
+  return boxes;
+}
+
+async function buildReportMapState() {
+  const ws = currentClimateData?.ws || currentWatershedContext || null;
+  const serviceContext = getActiveServiceContext();
+  const municipality = getReportMunicipalityProps();
+  const climate = currentClimateData || null;
+  const geometry = getReportGeometryBundle(ws);
+  const centerRef = getHydroReferenceCoordinates();
+  const overlayDescriptors = getReportFigureOverlayDescriptors();
+  const stations = await loadReportFigureStations(geometry.bbox);
+  const hydroNetwork = await loadReportFigureHydroNetwork(geometry.bbox, currentRegion);
+  const support = await buildCountryFigureSupport(currentRegion, ws, serviceContext);
+  const monthly = climate?.monthly || [];
+  const annualP = monthly.length ? monthly.reduce((sum, item) => sum + Number(item.p || 0), 0) : null;
+  const annualET = monthly.length ? monthly.reduce((sum, item) => sum + Number(item.et || 0), 0) : null;
+  const aridity = annualP && annualET ? annualP / annualET : null;
+  const aridityClass = Number.isFinite(aridity) ? _AI_CLASS(aridity)[0] : 'No clasificada';
+  const bbox = geometry.bbox ? expandFigureBBox(geometry.bbox, 0.16) : null;
+  const basemapMeta = getFigureBasemapMeta({
+    unit: {
+      country: serviceContext.countryLabel,
+      region_key: currentRegion || 'unknown',
+    },
+  });
+  const state = {
+    version: '1.0',
+    state_id: `AQR-MAP-${Date.now()}`,
+    generated_at: new Date().toISOString(),
+    route: '/aquarisk/?print-map=1',
+    unit: {
+      label: ws?.displayName || ws?.name || municipality?.municipality || 'Unidad hidrológica activa',
+      hydro_unit: ws?.atlasProps?.HYBAS_ID || ws?.datasetId || ws?.id || municipality?.hydro_unit_id || '—',
+      country: serviceContext.countryLabel,
+      region_key: currentRegion || 'unknown',
+      municipality: municipality ? `${municipality.municipality} · ${municipality.department}` : null,
+    },
+    service: {
+      level: serviceContext.serviceLevel,
+      coverage_level: serviceContext.coverageLevel,
+      source_priority: serviceContext.sourcePriority,
+      recommended_use: serviceContext.recommendedUse,
+      limits: serviceContext.limits,
+      module_label: serviceContext.moduleLabel,
+      last_verified_at: serviceContext.lastVerifiedAt,
+    },
+    map: {
+      center: centerRef ? { lat: Number(centerRef.lat.toFixed(4)), lon: Number(centerRef.lon.toFixed(4)) } : null,
+      zoom: leafletMap ? leafletMap.getZoom() : null,
+      bbox,
+      basemap: basemapMeta.label,
+      basemap_note: basemapMeta.note,
+      overlays: overlayDescriptors,
+    },
+    geometry: {
+      source_label: geometry.sourceLabel,
+      polygon: geometry.polygon,
+      river_path: geometry.riverPath,
+      outlet: geometry.outlet,
+    },
+    hydro: {
+      count: hydroNetwork.length,
+      lines: hydroNetwork,
+      source_label: hydroNetwork.length ? 'HydroRIVERS / HydroSHEDS recortado al ámbito de figura' : null,
+    },
+    climate: {
+      source_label: climate?.sourceLabel || 'Sin base climática activa',
+      period_label: climate?.historyLabel || 'Sin periodo activo',
+      annual_precip_mm: annualP ? Number(annualP.toFixed(1)) : null,
+      annual_et0_mm: annualET ? Number(annualET.toFixed(1)) : null,
+      aridity_index: Number.isFinite(aridity) ? Number(aridity.toFixed(2)) : null,
+      aridity_class: aridityClass,
+    },
+    stations: {
+      count: stations.length,
+      hydrological_count: stations.filter((item) => item.networkType === 'hydrological').length,
+      points: stations,
+    },
+    support,
+  };
+  currentReportMapState = state;
+  return state;
+}
+
+function persistReportMapState(state) {
+  currentReportMapState = state;
+  try {
+    localStorage.setItem(REPORT_MAP_STATE_STORAGE_KEY, JSON.stringify(state));
+  } catch (_) {
+    // Ignora almacenamiento no disponible
+  }
+}
+
+function loadPersistedReportMapState() {
+  try {
+    const raw = localStorage.getItem(REPORT_MAP_STATE_STORAGE_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch (_) {
+    return null;
+  }
+}
+
+function getFigureScaleLabel(state) {
+  const bbox = state?.map?.bbox;
+  if (!bbox) return 'Escala referencial';
+  const latMid = (bbox.minLat + bbox.maxLat) / 2;
+  const widthKm = haversineKm(latMid, bbox.minLon, latMid, bbox.maxLon);
+  const target = widthKm / 4;
+  const steps = [5, 10, 20, 25, 50, 100, 200, 250, 500, 1000];
+  const value = steps.find((item) => item >= target) || Math.round(target);
+  return `${value} km · vista referencial`;
+}
+
+function buildFigureLegendItems(state, variant) {
+  const normalizedVariant = normalizeReportFigureVariant(variant, state);
+  const items = [];
+  const hasSpainOfficialStations = (state?.map?.overlays || []).some((item) => item.key === 'spain-official-stations');
+  const officialFigureOverlays = getFigureOfficialOverlayMetas(
+    state,
+    normalizedVariant,
+    state?.map?.bbox || null,
+    480,
+    320
+  );
+  if (normalizedVariant === 'localizacion') {
+    items.push({ kind: 'fill', label: 'Unidad hidrológica activa' });
+    items.push({ kind: 'line', label: 'Marco territorial de referencia' });
+    if (state.geometry?.outlet) items.push({ kind: 'dot', label: 'Punto de salida / referencia' });
+    return items;
+  }
+  items.push({ kind: 'fill', label: 'Límite de cuenca o subcuenca' });
+  if (state.geometry?.river_path?.length) items.push({ kind: 'line-river', label: 'Eje principal de drenaje' });
+  if (state?.hydro?.count) items.push({ kind: 'line-river-secondary', label: 'Red hidrográfica contextual' });
+  officialFigureOverlays.forEach((overlay) => {
+    if (!overlay?.label || !overlay?.kind) return;
+    items.push({ kind: overlay.kind, label: overlay.label });
+  });
+  if (normalizedVariant === 'stations') {
+    if (state.stations?.hydrological_count) items.push({ kind: 'dot-hydro', label: 'Estaciones hidrológicas visibles' });
+    const meteorologicalCount = Math.max(Number(state?.stations?.count || 0) - Number(state?.stations?.hydrological_count || 0), 0);
+    if (meteorologicalCount) items.push({ kind: 'dot-meteo', label: 'Estaciones meteorológicas visibles' });
+    if (!state.stations?.count && hasSpainOfficialStations) {
+      items.push({ kind: 'dot-hydro', label: 'Aforos oficiales España · catálogo georreferenciado visible' });
+    } else if (!state.stations?.count) {
+      items.push({ kind: 'dot', label: 'Inventario observacional en preparación' });
+    }
+  }
+  if (normalizedVariant === 'climate') {
+    items.push({ kind: 'fill-climate', label: 'Base climática y lectura temática' });
+    if ((state?.map?.overlays || []).some((item) => /temper/i.test(item.label))) {
+      items.push({ kind: 'line', label: 'Isotermas derivadas activas' });
+    }
+    if ((state?.map?.overlays || []).some((item) => /precip|isoye/i.test(item.label))) {
+      items.push({ kind: 'line-river', label: 'Isoyetas derivadas activas' });
+    }
+  }
+  if (normalizedVariant === 'premium') {
+    items.push({ kind: 'fill-climate', label: `Nivel ${state.service?.level} · ${state.service?.coverage_level}` });
+    if (state.stations?.count) items.push({ kind: 'dot-meteo', label: 'Red observacional visible' });
+  }
+  return items;
+}
+
+function buildFigureSwatchHtml(kind) {
+  if (kind === 'line-river') return '<span class="tn-swatch tn-swatch-line-river"></span>';
+  if (kind === 'line-river-secondary') return '<span class="tn-swatch tn-swatch-line-river-secondary"></span>';
+  if (kind === 'dot-hydro') return '<span class="tn-swatch tn-swatch-dot-hydro"></span>';
+  if (kind === 'dot-meteo') return '<span class="tn-swatch tn-swatch-dot-meteo"></span>';
+  if (kind === 'fill-climate') return '<span class="tn-swatch tn-swatch-fill-climate"></span>';
+  if (kind === 'line') return '<span class="tn-swatch tn-swatch-line"></span>';
+  if (kind === 'dot') return '<span class="tn-swatch tn-swatch-dot"></span>';
+  return '<span class="tn-swatch tn-swatch-fill"></span>';
+}
+
+function buildReportMapSvg(state, variant = 'basin', width = 720, height = 460) {
+  const normalizedVariant = normalizeReportFigureVariant(variant, state);
+  const bbox = state?.map?.bbox;
+  const polygon = state?.geometry?.polygon || [];
+  const riverPath = state?.geometry?.river_path || [];
+  const outlet = state?.geometry?.outlet || null;
+  const stations = state?.stations?.points || [];
+  const hydroNetwork = state?.hydro?.lines || [];
+  if (!bbox || !polygon.length) {
+    return `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Mapa no disponible"><rect x="0" y="0" width="${width}" height="${height}" fill="#f8fafc"/><text x="${width/2}" y="${height/2}" text-anchor="middle" fill="#64748b" font-size="16" font-family="Arial">Sin geometría activa para la figura cartográfica</text></svg>`;
+  }
+
+  const variantPadding = normalizedVariant === 'localizacion' ? 56 : normalizedVariant === 'premium' ? 34 : 28;
+  const expanded = expandFigureBBox(bbox, normalizedVariant === 'localizacion' ? 0.34 : 0.12);
+  const polygonPath = buildFigurePath(polygon, expanded, width, height, variantPadding, true);
+  const viewportPath = buildFigureViewportPath(width, height, variantPadding);
+  const riverSvgPath = riverPath.length ? buildFigurePath(riverPath, expanded, width, height, variantPadding, false) : '';
+  const basemapMeta = getFigureBasemapMeta(state, expanded, width - variantPadding * 2, height - variantPadding * 2);
+  const satelliteUrl = basemapMeta.url;
+  const officialOverlays = getFigureOfficialOverlayMetas(state, normalizedVariant, expanded, width - variantPadding * 2, height - variantPadding * 2);
+  const officialOverlayImages = officialOverlays.map((overlay) => `
+        <image href="${escapeReportHtml(overlay.url)}" x="${variantPadding}" y="${variantPadding}" width="${width - variantPadding * 2}" height="${height - variantPadding * 2}" preserveAspectRatio="xMidYMid slice" opacity="${overlay.opacity ?? 0.88}"></image>
+  `).join('');
+  const hydroNetworkPaths = hydroNetwork.map((line) => {
+    const path = buildFigurePath(line.coords, expanded, width, height, variantPadding, false);
+    if (!path) return '';
+    const order = Number(line.order || 1);
+    const stroke = order >= 6 ? '#3d78cf' : order >= 4 ? '#6f9fdb' : '#aecaeb';
+    const opacity = order >= 6 ? 0.82 : order >= 4 ? 0.66 : 0.5;
+    const weight = order >= 6 ? 2.6 : order >= 4 ? 1.9 : 1.25;
+    return `<path d="${path}" fill="none" stroke="${stroke}" stroke-width="${weight}" stroke-opacity="${opacity}" stroke-linecap="round" stroke-linejoin="round"></path>`;
+  }).join('');
+  const hydroNetworkHalos = hydroNetwork.map((line) => {
+    const path = buildFigurePath(line.coords, expanded, width, height, variantPadding, false);
+    if (!path) return '';
+    const order = Number(line.order || 1);
+    const weight = order >= 6 ? 5.2 : order >= 4 ? 3.9 : 2.9;
+    return `<path d="${path}" fill="none" stroke="rgba(255,255,255,.68)" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round"></path>`;
+  }).join('');
+  const outletPoint = outlet ? projectLonLatToFigure(outlet[0], outlet[1], expanded, width, height, variantPadding) : null;
+  const stationCircles = normalizedVariant === 'stations'
+    ? stations.map((point) => {
+        const [x, y] = projectLonLatToFigure(point.lon, point.lat, expanded, width, height, variantPadding);
+        const fill = point.networkType === 'hydrological' ? '#0f766e' : '#f59e0b';
+        return `<circle cx="${x}" cy="${y}" r="5" fill="${fill}" stroke="#ffffff" stroke-width="1.8"/>`;
+      }).join('')
+    : '';
+  const reliefLines = buildFigureContourLines(width, height, normalizedVariant);
+  const fillColor = normalizedVariant === 'climate'
+    ? '#f5e8af'
+    : normalizedVariant === 'stations'
+      ? '#d8efe4'
+      : normalizedVariant === 'localizacion'
+        ? '#dbeafe'
+        : '#d9e3ef';
+  const strokeColor = normalizedVariant === 'localizacion' ? '#1d4ed8' : '#b42318';
+  const climateLabel = state?.climate?.aridity_class || 'Referencia climática';
+  const stationLabel = !stations.length && normalizedVariant === 'stations'
+    ? (state?.support?.station_inventory?.summary_note || state?.support?.stations_meta?.summary_note || 'Inventario observacional en preparación')
+    : '';
+  const showGrid = normalizedVariant !== 'premium';
+  const showContours = normalizedVariant !== 'premium';
+  const outerWashOpacity = normalizedVariant === 'premium' ? 0.36 : normalizedVariant === 'stations' ? 0.22 : 0.18;
+  const polygonFillOpacity = normalizedVariant === 'localizacion' ? 0.08 : normalizedVariant === 'premium' ? 0.04 : 0.1;
+  const polygonStrokeWidth = normalizedVariant === 'premium' ? 3.6 : 2.6;
+
+  return `
+    <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeReportHtml(state.unit?.label || 'Mapa AquaRisk')}">
+      <defs>
+        <linearGradient id="tnFigureGradient-${normalizedVariant}" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="${normalizedVariant === 'climate' ? '#fef3c7' : '#f8fafc'}"/>
+          <stop offset="100%" stop-color="${normalizedVariant === 'climate' ? '#86efac' : '#e5edf5'}"/>
+        </linearGradient>
+        <clipPath id="tnFigureClip-${normalizedVariant}">
+          <path d="${polygonPath}"></path>
+        </clipPath>
+      </defs>
+      <rect x="0" y="0" width="${width}" height="${height}" fill="#f8fafc"/>
+      ${showGrid ? buildFigureGrid(expanded, width, height, variantPadding, 5) : ''}
+      ${showContours ? reliefLines : ''}
+      <image href="${escapeReportHtml(satelliteUrl)}" x="${variantPadding}" y="${variantPadding}" width="${width - variantPadding * 2}" height="${height - variantPadding * 2}" preserveAspectRatio="xMidYMid slice"></image>
+      <rect x="${variantPadding}" y="${variantPadding}" width="${width - variantPadding * 2}" height="${height - variantPadding * 2}" fill="url(#tnFigureGradient-${normalizedVariant})" fill-opacity="${normalizedVariant === 'premium' ? 0.05 : normalizedVariant === 'stations' ? 0.1 : normalizedVariant === 'localizacion' ? 0.15 : normalizedVariant === 'climate' ? 0.16 : 0.12}"></rect>
+      <rect x="${variantPadding}" y="${variantPadding}" width="${width - variantPadding * 2}" height="${height - variantPadding * 2}" fill="rgba(255,255,255,${normalizedVariant === 'premium' ? '0.08' : normalizedVariant === 'climate' ? '0.10' : '0.14'})"></rect>
+      ${officialOverlayImages}
+      <path d="${viewportPath} ${polygonPath}" fill="rgba(255,255,255,${outerWashOpacity})" fill-rule="evenodd"></path>
+      ${hydroNetworkHalos}
+      ${hydroNetworkPaths}
+      <path d="${polygonPath}" fill="${fillColor}" fill-opacity="${polygonFillOpacity}" stroke="${strokeColor}" stroke-width="${polygonStrokeWidth}"></path>
+      ${riverSvgPath ? `<path d="${riverSvgPath}" fill="none" stroke="rgba(255,255,255,.94)" stroke-width="${normalizedVariant === 'premium' ? 7.4 : 5.8}" stroke-linecap="round" stroke-linejoin="round"></path>` : ''}
+      ${riverSvgPath ? `<path d="${riverSvgPath}" fill="none" stroke="#0f5fb8" stroke-width="${normalizedVariant === 'premium' ? 4.8 : 3.8}" stroke-linecap="round" stroke-linejoin="round"></path>` : ''}
+      ${riverSvgPath ? `<path d="${riverSvgPath}" fill="none" stroke="#7ec7ff" stroke-width="${normalizedVariant === 'premium' ? 1.9 : 1.45}" stroke-opacity=".92" stroke-linecap="round" stroke-linejoin="round"></path>` : ''}
+      ${stationCircles}
+      ${outletPoint ? `<circle cx="${outletPoint[0]}" cy="${outletPoint[1]}" r="6" fill="#0f172a" stroke="#fff" stroke-width="2"></circle>` : ''}
+      ${normalizedVariant === 'climate' ? `<text x="${width - 36}" y="${height - 24}" text-anchor="end" fill="#166534" font-size="12" font-family="Arial">${escapeReportHtml(climateLabel)}</text>` : ''}
+      ${stationLabel ? `<text x="${width - 36}" y="${height - 24}" text-anchor="end" fill="#475569" font-size="11" font-family="Arial">${escapeReportHtml(stationLabel)}</text>` : ''}
+    </svg>
+  `;
+}
+
+function getReportFigureHeading(state, variant) {
+  const normalizedVariant = normalizeReportFigureVariant(variant, state);
+  if (normalizedVariant === 'localizacion') return 'Mapa de localización y contexto territorial';
+  if (normalizedVariant === 'stations') return 'Mapa de estaciones y respaldo observacional';
+  if (normalizedVariant === 'climate') return 'Mapa climático y lectura hidrológica de referencia';
+  if (normalizedVariant === 'premium') return state?.unit?.country === 'España'
+    ? 'Página cartográfica premium · España backbone en preparación'
+    : 'Página cartográfica premium · referencia institucional';
+  return 'Mapa técnico de cuenca y estructura hidrológica';
+}
+
+function getReportFigureSubtitle(state, variant) {
+  const normalizedVariant = normalizeReportFigureVariant(variant, state);
+  if (normalizedVariant === 'localizacion') {
+    return 'Ubica la unidad analizada dentro de un marco territorial de referencia y fija la identidad espacial del informe.';
+  }
+  if (normalizedVariant === 'stations') {
+    return state?.stations?.count
+      ? 'Integra la unidad hidrológica con la red observacional georreferenciada disponible dentro del ámbito activo.'
+      : 'Documenta el estado del respaldo observacional oficial o en preparación para esta cobertura sin sugerir puntos no verificados.';
+  }
+  if (normalizedVariant === 'climate') {
+    return 'Resume la base climática activa, su periodo visible y la lectura temática admitida para apoyo técnico e interpretación hidrológica.';
+  }
+  if (normalizedVariant === 'premium') {
+    return state?.unit?.country === 'España'
+      ? 'Compone una figura institucional con trazabilidad del backbone premium, fuentes oficiales prioritarias y límites visibles para el caso España.'
+      : 'Compone una figura completa con mapa, leyenda, fuentes, límites y nivel de servicio para informes premium o anexos institucionales.';
+  }
+  return 'Muestra el límite de cuenca, el eje principal de drenaje y el contexto geomorfológico de lectura.';
+}
+
+function buildReportFigureHtml(state, variant, figureNumber) {
+  const normalizedVariant = normalizeReportFigureVariant(variant, state);
+  const tone = getReportMapTone(state?.service?.level);
+  const legends = buildFigureLegendItems(state, variant);
+  const isPremium = normalizedVariant === 'premium';
+  const width = isPremium ? 760 : 720;
+  const height = isPremium ? 520 : 420;
+  const mapSvg = buildReportMapSvg(state, normalizedVariant === 'basin' ? 'basin' : normalizedVariant, width, height);
+  const insetSvg = buildInsetSvg(state, 'localizacion', 170, 130);
+  const notes = {
+    localizacion: 'Figura de contexto territorial. No reemplaza cartografía oficial ni deslinde administrativo.',
+    basin: 'Figura técnica de cuenca basada en geometría activa TerraNava / atlas. Útil para lectura morfométrica preliminar.',
+    stations: state?.stations?.count
+      ? 'La presencia de estaciones visibles refuerza trazabilidad, pero no equivale por sí sola a calibración hidrológica.'
+      : 'La figura de estaciones puede documentar inventario y soporte oficial aun cuando no existan puntos públicos listos para renderizar.',
+    climate: 'La lectura climática se apoya en la base activa y en sus derivados visibles. No expresa una superficie observada continua si el método no lo declara.',
+    premium: 'Composición institucional para informe preliminar. Mantiene trazabilidad y límites visibles en una sola página.',
+  };
+  const gridClass = isPremium ? 'tn-figure-grid is-premium' : 'tn-figure-grid';
+  const boxes = buildReportFigureBoxes(state, normalizedVariant);
+  const rightColumnBlocks = `
+    <div class="tn-figure-box">
+      <div class="tn-figure-box-label">Leyenda</div>
+      <div class="tn-legend-list">
+        ${legends.map((item) => `<div class="tn-legend-item">${buildFigureSwatchHtml(item.kind)}<span>${escapeReportHtml(item.label)}</span></div>`).join('')}
+      </div>
+    </div>
+    ${boxes.map((box) => `
+      <div class="tn-figure-box">
+        <div class="tn-figure-box-label">${escapeReportHtml(box.label)}</div>
+        ${box.html}
+      </div>
+    `).join('')}
+  `;
+
+  const footerHtml = `
+    <div class="tn-figure-footer">
+      <div class="tn-figure-box">
+        <div class="tn-figure-box-label">Pie de figura</div>
+        <p>${notes[normalizedVariant]}</p>
+        <p class="tn-figure-note">Figura ${figureNumber}. ${escapeReportHtml(getReportFigureHeading(state, variant))}. TerraNava / AquaRisk · ${escapeReportHtml(state?.unit?.label || 'Unidad activa')}.</p>
+      </div>
+      <div class="tn-figure-box">
+        <div class="tn-figure-box-label">Metadatos cartográficos</div>
+        <ul>
+          <li>Unidad: ${escapeReportHtml(state?.unit?.label || '—')}</li>
+          <li>Hidro-unidad: ${escapeReportHtml(String(state?.unit?.hydro_unit || '—'))}</li>
+          <li>Capas activas: ${escapeReportHtml(String((state?.map?.overlays || []).length || 0))}</li>
+          <li>Estado cartográfico: ${escapeReportHtml(state?.state_id || '—')}</li>
+          <li>Generado: ${escapeReportHtml(state?.generated_at || '—')}</li>
+        </ul>
+      </div>
+    </div>
+  `;
+
+  return `
+    <article class="tn-figure">
+      <div class="tn-figure-header">
+        <div>
+          <div class="tn-figure-code">Figura ${figureNumber}</div>
+          <div class="tn-figure-title">${escapeReportHtml(getReportFigureHeading(state, variant))}</div>
+          <div class="tn-figure-subtitle">${escapeReportHtml(getReportFigureSubtitle(state, variant))}</div>
+        </div>
+        <div class="tn-figure-badge" style="background:${tone.bg};border-color:${tone.border};color:${tone.text}">
+          ${escapeReportHtml(state?.service?.level || 'L2')} · ${escapeReportHtml(state?.unit?.country || 'Cobertura activa')}
+        </div>
+      </div>
+      <div class="tn-figure-frame ${isPremium ? 'is-premium' : ''}">
+        <div class="${gridClass}">
+          <div>
+            <div class="tn-figure-canvas">
+              <div class="tn-figure-map-controls">
+                <div class="tn-figure-north">N</div>
+                <div class="tn-figure-scale">${escapeReportHtml(getFigureScaleLabel(state))}</div>
+              </div>
+              ${mapSvg}
+            </div>
+            ${footerHtml}
+          </div>
+          <div class="tn-figure-aside">
+            ${isPremium ? `
+              <div class="tn-figure-box">
+                <div class="tn-figure-box-label">Mapa de ubicación</div>
+                <div style="border:1px solid #dce6d4;background:#fff;padding:8px">${insetSvg}</div>
+              </div>
+            ` : ''}
+            ${rightColumnBlocks}
+          </div>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function buildReportMapSectionHtml(state) {
+  const json = JSON.stringify(state, null, 2);
+  return `
+    <div class="tn-figure-section">
+      ${buildReportFigureHtml(state, 'localizacion', '4.1')}
+      ${buildReportFigureHtml(state, 'basin', '4.2')}
+      ${buildReportFigureHtml(state, 'stations', '4.3')}
+      ${buildReportFigureHtml(state, 'climate', '4.4')}
+      ${buildReportFigureHtml(state, 'premium', '4.5')}
+      <div class="tn-json-box">
+        <div class="tn-json-title">Estado cartográfico serializado · soporte de trazabilidad y reimpresión</div>
+        <pre>${escapeReportHtml(json)}</pre>
+      </div>
+    </div>
+  `;
+}
+
+async function copyReportMapState() {
+  const state = currentReportMapState || loadPersistedReportMapState();
+  if (!state) {
+    alert('Primero genera una vista previa del informe para crear el estado cartográfico.');
+    return;
+  }
+  const payload = JSON.stringify(state, null, 2);
+  try {
+    await navigator.clipboard.writeText(payload);
+    alert('Estado cartográfico copiado.');
+  } catch (_) {
+    alert('No fue posible copiar el estado cartográfico en este navegador.');
+  }
+}
+
+function buildPrintMapRouteUrl(variant = 'premium') {
+  const url = new URL(window.location.href);
+  url.search = '';
+  url.hash = '';
+  url.searchParams.set('print-map', '1');
+  url.searchParams.set('variant', variant);
+  return url.toString();
+}
+
+async function openReportFigureRoute(variant = 'premium') {
+  const state = currentReportMapState || await buildReportMapState();
+  persistReportMapState(state);
+  window.open(buildPrintMapRouteUrl(variant), '_blank');
+}
+
+function renderStandalonePrintMapPage(state, variant = 'premium') {
+  const normalizedVariant = normalizeReportFigureVariant(variant, state);
+  const title = normalizedVariant === 'premium'
+    ? 'Figura cartográfica premium'
+    : normalizedVariant === 'stations'
+      ? 'Figura de estaciones y red observacional'
+      : normalizedVariant === 'climate'
+        ? 'Figura climática e interpretación hidrológica'
+        : 'Figura cartográfica';
+  return `
+    <div class="print-map-shell">
+      <div class="print-map-toolbar">
+        <div>
+          <div class="title">${escapeReportHtml(title)} · AquaRisk</div>
+          <div class="sub">${escapeReportHtml(state?.unit?.label || 'Unidad activa')} · ${escapeReportHtml(state?.service?.level || 'L2')} · ${escapeReportHtml(state?.unit?.country || '')}</div>
+        </div>
+        <div class="actions">
+          <button type="button" onclick="window.print()">Imprimir / Guardar PDF</button>
+          <button type="button" class="secondary" onclick="window.close()">Cerrar</button>
+        </div>
+      </div>
+      <div class="print-map-card">
+        ${buildReportFigureHtml(state, normalizedVariant, 'Mapa')}
+      </div>
+    </div>
+  `;
+}
+
+function initStandalonePrintMapRoute() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('print-map') !== '1') return false;
+  const state = loadPersistedReportMapState();
+  const variant = params.get('variant') || 'premium';
+  document.body.classList.add('print-map-mode');
+  document.body.innerHTML = state
+    ? renderStandalonePrintMapPage(state, variant)
+    : `
+      <div class="print-map-shell">
+        <div class="print-map-toolbar">
+          <div>
+            <div class="title">Figura cartográfica · AquaRisk</div>
+            <div class="sub">No se encontró un estado cartográfico persistido para esta sesión.</div>
+          </div>
+          <div class="actions">
+            <button type="button" class="secondary" onclick="window.close()">Cerrar</button>
+          </div>
+        </div>
+        <div class="print-map-card">
+          <div class="tn-figure-box">
+            <div class="tn-figure-box-label">Estado no disponible</div>
+            <p>Genera primero una vista previa del informe desde AquaRisk para crear y persistir el estado cartográfico usado por la ruta de impresión.</p>
+          </div>
+        </div>
+      </div>`;
+  const normalizedVariant = normalizeReportFigureVariant(variant, state);
+  document.title = `${normalizedVariant === 'premium' ? 'Figura premium' : normalizedVariant === 'stations' ? 'Figura estaciones' : normalizedVariant === 'climate' ? 'Figura clima' : 'Figura'} · AquaRisk`;
+  return true;
 }
 
 function buildReportClimateHtml() {
@@ -8525,12 +10886,12 @@ function buildReportClimateHtml() {
       {
         label: 'Precipitación anual',
         value: `${formatReportNumber(totalP, 0)} mm`,
-        note: 'Suma de climatología mensual activa',
+        note: 'Agregado anual de la climatología activa',
       },
       {
         label: 'ET₀ anual',
         value: `${formatReportNumber(totalET, 0)} mm`,
-        note: 'Demanda atmosférica potencial agregada',
+        note: 'Demanda atmosférica potencial de referencia',
       },
       {
         label: 'Temperatura media',
@@ -8557,6 +10918,9 @@ function buildReportClimateHtml() {
       </div>
       <div style="border:1px solid #dce6d4;border-radius:6px;padding:12px;background:#f8fafc">
         <div style="font-size:11px;color:#6b7c5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Lectura hidrológica de referencia</div>
+        <p style="font-size:11px;line-height:1.7;color:#475569;margin:0 0 8px">
+          La base climática activa describe el comportamiento medio esperado de la unidad analizada y permite contextualizar periodos de concentración de precipitación, demanda atmosférica y estacionalidad hidrológica.
+        </p>
         <p style="font-size:11px;line-height:1.7;color:#475569;margin:0">${escapeReportHtml(riskText)}</p>
       </div>
     </div>
@@ -8607,7 +10971,7 @@ function buildReportMunicipalHtml() {
           ${escapeReportHtml(props.summary_text || 'La lectura municipal resume población oficial e indicadores derivados de amenaza y prioridad.')}
         </p>
         <p style="font-size:11px;line-height:1.7;color:#64748b;margin:0">
-          La población y las viviendas provienen de <strong>INE Bolivia 2024</strong>. La prioridad institucional, la amenaza relativa y la síntesis climática municipal corresponden a <strong>derivados TerraNava</strong> integrados a HydroBASINS/HydroRIVERS y deben interpretarse como indicadores de apoyo, no como mediciones directas de exposición. El vínculo municipal incorporado en este documento se apoya en: <strong>${escapeReportHtml(props._reportSourceLabel || 'No especificado')}</strong>.
+          La población y las viviendas provienen de <strong>INE Bolivia 2024</strong>. La prioridad institucional, la amenaza relativa y la síntesis climática municipal corresponden a <strong>derivados TerraNava</strong> integrados a HydroBASINS/HydroRIVERS y deben interpretarse como indicadores de apoyo a priorización y formulación, no como mediciones directas de exposición o daño. El vínculo municipal incorporado en este documento se apoya en: <strong>${escapeReportHtml(props._reportSourceLabel || 'No especificado')}</strong>.
         </p>
       </div>
     </div>
@@ -8618,6 +10982,7 @@ async function generateAndPrint() {
   try {
     await ensureClimateDatasetManifest();
     await ensureCoverageMatrix();
+    await ensureGuideMorphometryCatalog();
   } catch (_) {
     // Mantiene la generación del informe incluso si la matriz de cobertura no pudo cargarse.
   }
@@ -8639,6 +11004,8 @@ async function generateAndPrint() {
   [
     'pr-scope-section',
     'pr-exec-section',
+    'pr-trace-section',
+    'pr-map-section',
     'pr-basin-section',
     'pr-climate-section',
     'pr-municipal-section',
@@ -8653,6 +11020,8 @@ async function generateAndPrint() {
   [
     'pr-scope-content',
     'pr-exec-content',
+    'pr-trace-content',
+    'pr-map-content',
     'pr-basin-content',
     'pr-climate-content',
     'pr-municipal-content',
@@ -8667,6 +11036,7 @@ async function generateAndPrint() {
 
   let hasContent = false;
   const municipality = getReportMunicipalityProps();
+  const guideMorphometry = getGuideMorphometryRecord(currentClimateData?.ws || currentWatershedContext || null);
   const hasHydroContext = !!(currentClimateData || municipality || (document.getElementById('bs-area')?.textContent || '').trim() !== '—');
 
   if (!hasHydroContext) {
@@ -8687,13 +11057,36 @@ async function generateAndPrint() {
     document.getElementById('pr-exec-section').style.display = 'block';
   }
 
+  const traceHtml = buildReportTraceabilityHtml();
+  if (traceHtml) {
+    document.getElementById('pr-trace-content').innerHTML = traceHtml;
+    document.getElementById('pr-trace-section').style.display = 'block';
+  }
+
+  const mapState = await buildReportMapState();
+  if (mapState) {
+    persistReportMapState(mapState);
+    const mapContent = document.getElementById('pr-map-content');
+    const mapSection = document.getElementById('pr-map-section');
+    const mapStateScript = document.getElementById('pr-map-state-json');
+    if (mapContent && mapSection) {
+      mapContent.innerHTML = buildReportMapSectionHtml(mapState);
+      mapSection.style.display = 'block';
+    }
+    if (mapStateScript) {
+      mapStateScript.textContent = JSON.stringify(mapState, null, 2);
+    }
+  }
+
   // Basin data
   const bsTitle = document.getElementById('bs-card-title');
   const bsArea  = document.getElementById('bs-area');
   if(bsTitle && bsArea && bsArea.textContent !== '—') {
     const sec = document.getElementById('pr-basin-section');
+    const guideMetrics = guideMorphometry?.metrics || null;
+    const guideSignature = guideMorphometry?.signature || null;
     document.getElementById('pr-basin-content').innerHTML = `
-      <p style="font-size:11px;line-height:1.7;color:#475569;margin:0 0 12px">Unidad hidrológica activa: <strong>${escapeReportHtml(bsTitle.textContent || 'Cuenca analizada')}</strong>. Los parámetros siguientes describen la geometría y la respuesta morfométrica adoptada para el análisis preliminar. Cuando existe trazabilidad DEM o catálogo morfométrico, AquaRisk la utiliza preferentemente y la declara en el panel correspondiente.</p>
+      <p style="font-size:11px;line-height:1.7;color:#475569;margin:0 0 12px">Unidad hidrológica activa: <strong>${escapeReportHtml(bsTitle.textContent || 'Cuenca analizada')}</strong>. Los parámetros siguientes describen la geometría básica de la cuenca y su respuesta física esperable a escala preliminar. Cuando existe trazabilidad DEM o catálogo morfométrico, AquaRisk lo incorpora de forma preferente y lo declara expresamente en este apartado.</p>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px">
         <div style="border:1px solid #dce6d4;border-radius:6px;padding:8px;text-align:center">
           <div style="font-size:11px;color:#6b7c5e">Área</div>
@@ -8710,9 +11103,19 @@ async function generateAndPrint() {
         </div>
         <div style="border:1px solid #dce6d4;border-radius:6px;padding:8px;text-align:center">
           <div style="font-size:11px;color:#6b7c5e">Tc (Kirpich)</div>
-          <div style="font-size:18px;font-weight:700;color:#0f172a">${document.getElementById('bs2-tc')?.textContent||'—'}</div>
+          <div style="font-size:18px;font-weight:700;color:#0f172a">${guideMetrics?.tc_estimate?.mean_hours ? `${Number(guideMetrics.tc_estimate.mean_hours).toFixed(1)} h` : (document.getElementById('bs2-tc')?.textContent||'—')}</div>
         </div>
-      </div>`;
+      </div>
+      ${guideMorphometry ? `
+      <div style="border:1px solid #dce6d4;border-radius:6px;padding:12px;background:#f8fafc;margin-top:12px">
+        <div style="font-size:11px;color:#6b7c5e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Firma morfométrica relativa</div>
+        <div style="font-size:12px;line-height:1.75;color:#334155">
+          <div><strong>Base:</strong> ${escapeReportHtml(guideMorphometry.source_label)} · ${escapeReportHtml(guideMorphometry.quality_flag)}</div>
+          <div><strong>Longitud de cauce:</strong> ${formatReportNumber(guideMetrics?.main_channel_length_km, 1)} km · <strong>Pendiente del eje:</strong> ${formatReportNumber(guideMetrics?.main_channel_slope_pct, 2)} %</div>
+          <div><strong>Servicio:</strong> ${escapeReportHtml(guideMorphometry.service_level)} · <strong>Verificado:</strong> ${escapeReportHtml(guideMorphometry.last_verified_at || '—')}</div>
+          <div><strong>Lectura:</strong> ${escapeReportHtml(guideSignature?.response_summary || guideMorphometry.limits || 'Sin firma relativa disponible')}</div>
+        </div>
+      </div>` : ''}`;
     sec.style.display = 'block'; hasContent = true;
   }
 
@@ -8733,7 +11136,7 @@ async function generateAndPrint() {
   if(wbTbl && wbTbl.rows.length > 1) {
     const cards = document.getElementById('wb-summary-cards');
     document.getElementById('pr-wb-content').innerHTML =
-      '<p style="font-size:11px;line-height:1.7;color:#475569;margin:0 0 12px">La tabla siguiente resume el balance hídrico mensual de referencia con el método Thornthwaite-Mather. Su lectura permite identificar meses de déficit, excedente, almacenamiento en suelo y escorrentía modelada a escala anual.</p>' +
+      '<p style="font-size:11px;line-height:1.7;color:#475569;margin:0 0 12px">La tabla siguiente resume el balance hídrico mensual de referencia con el método Thornthwaite-Mather. Su lectura permite identificar la secuencia anual de déficit, excedente, almacenamiento en suelo y escorrentía modelada, y debe interpretarse como una aproximación de apoyo a diagnóstico, no como sustituto de calibración local.</p>' +
       (cards ? '<div style="margin-bottom:12px">'+cards.innerHTML+'</div>' : '') +
       '<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:11px">'+wbTbl.innerHTML+'</table></div>';
     document.getElementById('pr-wb-section').style.display = 'block'; hasContent = true;
@@ -8780,22 +11183,58 @@ async function generateAndPrint() {
     alert('Primero carga una cuenca o un municipio y luego genera el informe.');
     return;
   }
-  openReportPreviewWindow();
+  openReportPreviewOverlay();
 }
 
-function openReportPreviewWindow() {
+function buildReportPreviewMarkup() {
   const reportRoot = document.getElementById('print-report');
-  if (!reportRoot) return;
-
-  const previewWindow = window.open('', '_blank');
-  if (!previewWindow) {
-    alert('El navegador bloqueó la vista previa. Permite ventanas emergentes para AquaRisk e inténtalo de nuevo.');
-    return;
-  }
+  if (!reportRoot) return '';
 
   const reportClone = reportRoot.cloneNode(true);
   reportClone.style.display = 'block';
   reportClone.id = 'print-report-preview';
+  return reportClone.innerHTML;
+}
+
+function openReportPreviewOverlay() {
+  const overlay = document.getElementById('report-preview-overlay');
+  const previewContent = document.getElementById('report-preview-content');
+  const markup = buildReportPreviewMarkup();
+  if (!overlay || !previewContent || !markup) return;
+
+  previewContent.innerHTML = markup;
+  overlay.classList.add('is-open');
+  overlay.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('report-preview-open');
+  const body = overlay.querySelector('.report-preview-body');
+  if (body) body.scrollTop = 0;
+}
+
+function closeReportPreviewOverlay() {
+  const overlay = document.getElementById('report-preview-overlay');
+  const previewContent = document.getElementById('report-preview-content');
+  if (!overlay || !previewContent) return;
+  overlay.classList.remove('is-open');
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('report-preview-open');
+  previewContent.innerHTML = '';
+}
+
+function printReportFromPreview() {
+  window.print();
+}
+
+function openReportPreviewWindow(silent = false) {
+  const markup = buildReportPreviewMarkup();
+  if (!markup) return false;
+
+  const previewWindow = window.open('', '_blank');
+  if (!previewWindow) {
+    if (!silent) {
+      openReportPreviewOverlay();
+    }
+    return false;
+  }
 
   const previewHtml = `<!doctype html>
   <html lang="es">
@@ -8840,7 +11279,7 @@ function openReportPreviewWindow() {
     </div>
     <div class="preview-shell">
       <div class="preview-card">
-        ${reportClone.innerHTML}
+        ${markup}
       </div>
       <p class="preview-note">La vista previa conserva el formato del informe técnico y evita abrir el diálogo de impresión de forma inmediata.</p>
     </div>
@@ -8851,13 +11290,24 @@ function openReportPreviewWindow() {
   previewWindow.document.write(previewHtml);
   previewWindow.document.close();
   previewWindow.focus();
+  return true;
 }
 
 // Override the export button to use generateAndPrint
 document.addEventListener('DOMContentLoaded', function() {
+  if (initStandalonePrintMapRoute()) return;
   // Hook the print button to use report generator
   const exportBtn = document.querySelector('.btn-export');
   if(exportBtn) exportBtn.setAttribute('onclick','generateAndPrint()');
+  const previewOverlay = document.getElementById('report-preview-overlay');
+  if (previewOverlay) {
+    previewOverlay.addEventListener('click', (event) => {
+      if (event.target === previewOverlay) closeReportPreviewOverlay();
+    });
+  }
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeReportPreviewOverlay();
+  });
   // Initialize risk dashboard
   renderRiskDashboard('bolivia');
   toggleSCSRainSource(false);

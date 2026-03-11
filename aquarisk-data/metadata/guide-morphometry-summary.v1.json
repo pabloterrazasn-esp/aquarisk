@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "generated_at": "2026-03-11T12:10:00.875Z",
+  "source_label": "Morfometría relativa TerraNava",
+  "description": "Paquete precalculado de perfiles longitudinales relativos y curvas hipsométricas relativas para cuencas guía Bolivia y España.",
+  "service_level": "L2",
+  "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+  "last_verified_at": "2026-03-11",
+  "record_count": 31,
+  "countries": {
+    "bolivia": 17,
+    "spain": 14
+  },
+  "limits": "Producto orientativo para web e informe. No equivale a topografía absoluta derivada de DEM premium."
+}

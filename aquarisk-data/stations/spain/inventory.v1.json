@@ -1,0 +1,120 @@
+{
+  "version": "v1",
+  "country": "España",
+  "label": "Inventario premium de estaciones · España",
+  "verified_at": "2026-03-11",
+  "policy": "official_primero_con_fallback_abierto_trazable",
+  "source_gml_path": "/Volumes/Crucial X10/Data/TerraNava/raw/stations/spain/miteco-aforos/browser-download/gml/extracted/4capas.gml",
+  "summary_note": "AquaRisk integra un catálogo georreferenciado oficial de 2191 estaciones hidrológicas de MITECO (SAIH-ROEA 2020-21). El WMS oficial sigue disponible como apoyo visual y de verificación.",
+  "bbox": {
+    "minLon": -9.190758,
+    "minLat": 35.896137,
+    "maxLon": 1.933178,
+    "maxLat": 43.70433
+  },
+  "catalogs": [
+    {
+      "key": "meteorological_official",
+      "label": "Estaciones meteorológicas oficiales",
+      "operator": "AEMET",
+      "status": "planned",
+      "service_level": "L1",
+      "coverage_level": "Inventario premium en preparación",
+      "access_mode": "opendata_official",
+      "source": {
+        "id": "aemet_opendata",
+        "label": "AEMET OpenData",
+        "role": "Estaciones meteorológicas y climatología oficial reutilizable",
+        "priority": "official_primary",
+        "url": "https://www.aemet.es/es/datos_abiertos/AEMET_OpenData",
+        "status": "verified_http_200"
+      },
+      "intended_outputs": [
+        "catálogo de estaciones meteorológicas",
+        "metadatos de operador y verificación",
+        "soporte a climatología premium"
+      ],
+      "limits": "Pendiente de integración programática y control de cobertura por cuenca."
+    },
+    {
+      "key": "hydrological_official",
+      "label": "Estaciones hidrológicas oficiales",
+      "operator": "MITECO",
+      "status": "active",
+      "service_level": "L2",
+      "coverage_level": "Catálogo georreferenciado oficial activo · España",
+      "access_mode": "official_gml_wms",
+      "source": {
+        "id": "miteco_aforos",
+        "label": "MITECO · Anuario de Aforos",
+        "role": "Estaciones hidrológicas oficiales y metadatos de aforo",
+        "priority": "official_primary",
+        "url": "https://www.miteco.gob.es/es/cartografia-y-sig/ide/descargas/agua/anuario-de-aforos.html",
+        "status": "verified_http_200"
+      },
+      "source_download_url": "https://www.mapama.gob.es/app/descargas/descargafichero.aspx?f=gml-roea.zip",
+      "geojson": "/aquarisk-data/stations/spain/stations.v1.geojson",
+      "wms": {
+        "type": "wms",
+        "label": "MITECO · Red Integrada de Estaciones de Aforos (SAIH-ROEA)",
+        "url": "https://wms.mapama.gob.es/sig/Agua/Aforos/wms.aspx",
+        "layers": "EF.EnvironmentalMonitoringFacilities",
+        "capabilities": "https://wms.mapama.gob.es/sig/Agua/Aforos/wms.aspx?request=GetCapabilities&Service=WMS",
+        "status": "verified_http_200"
+      },
+      "station_count": 2191,
+      "status_counts": {
+        "histórica": 713,
+        "operativa": 1478
+      },
+      "situation_counts": {
+        "Conducción": 219,
+        "Embalse": 390,
+        "Estación evaporimétrica": 91,
+        "Estación hidrológica": 1491
+      },
+      "intended_outputs": [
+        "catálogo georreferenciado de aforos",
+        "metadatos hidrológicos oficiales",
+        "soporte a trazabilidad de informes por cuenca",
+        "capa observacional premium en AquaRisk"
+      ],
+      "limits": "Corresponde al Anuario de Aforos 2020-21; no implica disponibilidad operativa en tiempo real ni actualización instantánea."
+    },
+    {
+      "key": "hydrological_operational_reference",
+      "label": "Referencia operativa hidrológica",
+      "operator": "MITECO / SAIH",
+      "status": "planned",
+      "service_level": "L1",
+      "coverage_level": "Referencia operativa en preparación",
+      "access_mode": "official_support",
+      "source": {
+        "id": "miteco_saih",
+        "label": "MITECO · Capas SAIH",
+        "role": "Referencia hidrológica operativa y apoyo QA",
+        "priority": "official_support",
+        "url": "https://www.miteco.gob.es/en/cartografia-y-sig/ide/descargas/agua/capas-saih.html",
+        "status": "verified_http_200"
+      },
+      "intended_outputs": [
+        "control QA de estaciones",
+        "contraste operativo de red hidrológica",
+        "soporte a estados de verificación"
+      ],
+      "limits": "No se publicará como servicio operativo AquaRisk mientras no exista pipeline y QA específicos."
+    }
+  ],
+  "sample_fields": [
+    "COD_HIDRO",
+    "NOM_ANUARI",
+    "ESTADO",
+    "SITUACION_",
+    "ORGANISMO_",
+    "RIO",
+    "TERMINO_MU",
+    "PROVINCIA",
+    "ANO_INICIO",
+    "COTA_Z"
+  ]
+}

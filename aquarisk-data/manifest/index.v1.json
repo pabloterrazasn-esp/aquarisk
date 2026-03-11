@@ -1,6 +1,6 @@
 {
   "version": "v1",
-  "generated_at": "2026-03-10T12:26:45.630Z",
+  "generated_at": "2026-03-11T13:45:00.000Z",
   "product_label": "AquaRisk · TerraNava",
   "product_promise": "Plataforma tecnica de apoyo a decision hidrologica y territorial",
   "service_level": "L3",
@@ -8,7 +8,7 @@
   "source_priority": "oficial_primero_con_fallback_abierto_trazable",
   "source_priority_policy": "oficial_primero_con_fallback_abierto_trazable",
   "country": "multi-country",
-  "last_verified_at": "2026-03-10",
+  "last_verified_at": "2026-03-11",
   "coverage_matrix": "embedded:countries",
   "countries": {
     "bolivia": {
@@ -18,13 +18,46 @@
       "coverage_level": "Cobertura nacional base + piloto reforzado Tarija",
       "service_level": "L3",
       "source_priority": "oficial_primero_con_fallback_abierto_trazable",
-      "last_verified_at": "2026-03-10",
+      "last_verified_at": "2026-03-11",
       "recommended_use": "Apoyo tecnico defendible para lectura territorial, cribado hidrologico, formulacion y cooperacion.",
       "limits": "No equivale a modelacion calibrada ni a servicio oficial de alerta.",
       "notes": [
         "Tarija funciona como laboratorio de mayor detalle dentro del despliegue Bolivia.",
         "Las estaciones hidrologicas sin coordenada oficial se mantienen como derivado TerraNava con trazabilidad explicita."
       ],
+      "backbone": {
+        "label": "Backbone Bolivia v1",
+        "status": "active",
+        "target_service_level": "L3",
+        "current_stage": "Cobertura nacional base activa + Tarija reforzado",
+        "readiness_note": "Bolivia funciona como cobertura operativa de referencia y Tarija como laboratorio de mayor detalle para relieve, estaciones, firmas morfometricas e informes.",
+        "checklist": [
+          {
+            "id": "bo_dem",
+            "label": "DEM backbone y derivados web",
+            "status": "active",
+            "summary": "Tarija ya publica relieve y pendiente derivados; la extension nacional sigue en consolidacion progresiva."
+          },
+          {
+            "id": "bo_hydro",
+            "label": "Subcuencas e hidrografia",
+            "status": "active",
+            "summary": "HydroBASINS e HydroRIVERS operan como atlas y soporte basin-first."
+          },
+          {
+            "id": "bo_stations",
+            "label": "Estaciones y trazabilidad observacional",
+            "status": "active",
+            "summary": "Catalogo Bolivia y subcatalogo Tarija publicados con operador, estado y confianza."
+          },
+          {
+            "id": "bo_reports",
+            "label": "Informes y control de limites",
+            "status": "active",
+            "summary": "Los informes preliminares ya imprimen nivel de servicio, cobertura, fuentes y limites de uso."
+          }
+        ]
+      },
       "modules": {
         "observation": {
           "label": "Observacion y estaciones",
@@ -75,13 +108,96 @@
       "coverage_level": "Cuencas guia e historicos locales precargados + atlas regional Europa",
       "service_level": "L2",
       "source_priority": "oficial_primero_con_fallback_abierto_trazable",
-      "last_verified_at": "2026-03-10",
+      "last_verified_at": "2026-03-11",
       "recommended_use": "Screening hidrologico por cuencas precargadas, lectura territorial e informes preliminares por unidad hidrologica.",
       "limits": "No equivale todavia a un despliegue premium nacional; DEM, estaciones, hidrografia e informes QA siguen en preparacion.",
       "notes": [
         "España ya publica cuencas guia con series historicas locales precargadas y navegacion HydroBASINS.",
         "El estandar premium sigue condicionado a DEM, estaciones oficiales trazables, hidrografia reforzada e informes QA."
       ],
+    "backbone": {
+      "label": "España premium v1",
+      "status": "in_progress",
+      "target_service_level": "L3",
+      "current_stage": "Backbone premium en arranque",
+      "source_inventory": "/aquarisk-data/reference/spain/source-inventory.v1.json",
+      "readiness_note": "España se mantiene como caso premium en preparacion. La beta actual usa cuencas guia e historicos precargados; el despliegue premium exige backbone DEM, red observacional, hidrografia, QA e inventario metodologico nacional.",
+        "checklist": [
+          {
+            "id": "es_dem",
+            "label": "DEM backbone nacional",
+            "status": "in_progress",
+            "summary": "Base oficial prioritaria definida en CNIG/IGN; falta cerrar adquisicion y pipeline operativo."
+          },
+          {
+            "id": "es_relief",
+            "label": "Derivados de relieve",
+            "status": "planned",
+            "summary": "Pendiente, hillshade, hipsometria y perfiles todavia no se publican para España."
+          },
+          {
+            "id": "es_hydro",
+            "label": "Hidrografia y cuencas premium",
+            "status": "in_progress",
+            "summary": "El atlas guia opera con HydroBASINS; falta refuerzo con hidrografia y referencias nacionales."
+          },
+          {
+            "id": "es_meteo",
+            "label": "Estaciones meteorologicas oficiales",
+            "status": "planned",
+            "summary": "Inventario premium previsto con AEMET OpenData y trazabilidad de operador y verificacion."
+          },
+          {
+            "id": "es_hydro_stations",
+            "label": "Estaciones hidrologicas oficiales",
+            "status": "planned",
+            "summary": "Pendiente integrar Anuario de Aforos / SAIH-ROEA y su cobertura efectiva por cuenca."
+          },
+          {
+            "id": "es_reports",
+            "label": "Informe premium nacional",
+            "status": "in_progress",
+            "summary": "El formato preliminar ya opera; falta completar QA, DEM y respaldo observacional para activacion premium."
+          }
+        ],
+        "sources": [
+          {
+            "label": "CNIG / IGN · MDT02",
+            "operator": "Centro Nacional de Informacion Geografica / Instituto Geografico Nacional",
+            "role": "DEM backbone nacional prioritario",
+            "priority": "official_primary",
+            "url": "https://centrodedescargas.cnig.es/CentroDescargas/modelos-digitales-elevaciones"
+          },
+          {
+            "label": "CNIG / IGN · Hidrografia",
+            "operator": "Centro Nacional de Informacion Geografica / Instituto Geografico Nacional",
+            "role": "Red hidrográfica y soporte cartografico premium",
+            "priority": "official_primary",
+            "url": "https://centrodedescargas.cnig.es/CentroDescargas/hidrografia"
+          },
+          {
+            "label": "AEMET OpenData",
+            "operator": "Agencia Estatal de Meteorologia",
+            "role": "Estaciones meteorologicas y climatologia oficial reutilizable",
+            "priority": "official_primary",
+            "url": "https://www.aemet.es/es/datos_abiertos/AEMET_OpenData"
+          },
+          {
+            "label": "MITECO · Anuario de Aforos (SAIH-ROEA)",
+            "operator": "Ministerio para la Transicion Ecologica y el Reto Demografico",
+            "role": "Estaciones hidrologicas oficiales y metadatos de aforo",
+            "priority": "official_primary",
+            "url": "https://www.miteco.gob.es/es/cartografia-y-sig/ide/descargas/agua/anuario-de-aforos.html"
+          },
+          {
+            "label": "MITECO · SAIH",
+            "operator": "Ministerio para la Transicion Ecologica y el Reto Demografico",
+            "role": "Referencia hidrologica operativa y cartografia de puntos de medida",
+            "priority": "official_support",
+            "url": "https://www.miteco.gob.es/en/cartografia-y-sig/ide/descargas/agua/capas-saih.html"
+          }
+        ]
+      },
       "modules": {
         "observation": {
           "label": "Observacion y estaciones",
@@ -140,6 +256,15 @@
       "service_level": "L2",
       "source_priority": "oficial_primero_con_fallback_abierto_trazable",
       "last_verified_at": "2026-03-10"
+    },
+    "spain": {
+      "country": "España",
+      "status": "in_progress",
+      "coverage_level": "Backbone DEM premium en preparación",
+      "service_level": "L1",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "summary_note": "El DEM backbone premium de España se prepara offline; AquaRisk no publicará el DEM crudo, solo derivados ligeros y trazables."
     }
   },
   "terrain_overlays": {
@@ -162,6 +287,14 @@
       "bolivia": "/aquarisk-data/history/guide-basins/chunks/bolivia.v1.json",
       "spain": "/aquarisk-data/history/guide-basins/chunks/spain.v1.json"
     }
+  },
+  "guide_morphometry": {
+    "index": "/aquarisk-data/metadata/guide-morphometry.v1.json",
+    "summary": "/aquarisk-data/metadata/guide-morphometry-summary.v1.json",
+    "service_level": "L2",
+    "coverage_level": "Bolivia activo · España hidrologia beta",
+    "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+    "last_verified_at": "2026-03-11"
   },
   "hybas": {
     "sa": {
@@ -243,6 +376,29 @@
       "service_level": "L3",
       "source_priority": "oficial_primero_con_fallback_abierto_trazable",
       "last_verified_at": "2026-03-10"
+    },
+    "spain": {
+      "country": "España",
+      "status": "active",
+      "geojson": "/aquarisk-data/stations/spain/stations.v1.geojson",
+      "summary": "/aquarisk-data/stations/spain/summary.v1.json",
+      "inventory": "/aquarisk-data/stations/spain/inventory.v1.json",
+      "coverage_level": "Catálogo georreferenciado oficial · España",
+      "service_level": "L2",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "summary_note": "AquaRisk integra el catálogo georreferenciado oficial de estaciones hidrológicas MITECO (SAIH-ROEA 2020-21). El WMS oficial se mantiene como apoyo visual y de verificación.",
+      "wms_hydrological_official": {
+        "label": "MITECO · Red Integrada de Estaciones de Aforos (SAIH-ROEA)",
+        "url": "https://wms.mapama.gob.es/sig/Agua/Aforos/wms.aspx",
+        "layers": "EF.EnvironmentalMonitoringFacilities",
+        "capabilities": "https://wms.mapama.gob.es/sig/Agua/Aforos/wms.aspx?request=GetCapabilities&Service=WMS",
+        "service_level": "L1",
+        "coverage_level": "España oficial · hidrología observacional visible",
+        "source_priority": "oficial_primero",
+        "last_verified_at": "2026-03-11",
+        "summary": "Capa oficial WMS utilizada como primer soporte observacional visible de aforos para España en AquaRisk."
+      }
     }
   }
 }

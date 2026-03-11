@@ -1,0 +1,4208 @@
+{
+  "version": "v1",
+  "generated_at": "2026-03-11T12:10:00.875Z",
+  "source_label": "Morfometría relativa TerraNava",
+  "description": "Paquete precalculado de perfiles longitudinales relativos y curvas hipsométricas relativas para cuencas guía Bolivia y España.",
+  "service_level": "L2",
+  "last_verified_at": "2026-03-11",
+  "records": {
+    "bol-amazonica": {
+      "id": "bol-amazonica",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_basin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Media",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_basin_geometry",
+      "dem_status": "regional_backbone_pending",
+      "name": "Cuenca Amazónica · Bolivia",
+      "parent_id": null,
+      "climate_context": "Húmedo",
+      "metrics": {
+        "area_km2": 724000,
+        "perimeter_km": 4200,
+        "main_channel_length_km": 1200,
+        "main_channel_slope_pct": 0.8,
+        "compactness_kc": 1.382,
+        "form_factor_ff": 0.503,
+        "drainage_density_kmkm2": 0.42,
+        "cn_ref": 68,
+        "tc_estimate": {
+          "mean_hours": 181.53,
+          "kirpich_hours": 100.04,
+          "temez_hours": 68.5,
+          "scs_lag_hours": 376.06
+        }
+      },
+      "signature": {
+        "terrain_family": "tropical_lowland",
+        "terrain_label": "Llanura húmeda con pendiente longitudinal baja y amplia capacidad de almacenamiento.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 96
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 91
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 84
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 76
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 66
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 55
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 43
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 30
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 16
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 97
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 93
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 87
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 79
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 69
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 56
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 42
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 28
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 14
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Llanura húmeda extensa",
+        "response_summary": "Llanura húmeda con pendiente longitudinal baja y amplia capacidad de almacenamiento. La unidad sugiere propagación lenta, con propagación con almacenamiento amplio y un contexto de superávit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "bol-amazonica__0": {
+      "id": "bol-amazonica__0",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "regional_backbone_pending",
+      "name": "Subcuenca del Beni",
+      "parent_id": "bol-amazonica",
+      "climate_context": "Húmedo",
+      "metrics": {
+        "area_km2": 100400,
+        "terrain_family": "chaco_transition",
+        "perimeter_km": 1595.6,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.41,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.668,
+        "cn_ref": 68,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "chaco_transition",
+        "terrain_label": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 95
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 89
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 81
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 72
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 61
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 49
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 36
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 24
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 11
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 95
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 90
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 83
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 75
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 65
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 53
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 40
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 26
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 12
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de superávit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "bol-amazonica__1": {
+      "id": "bol-amazonica__1",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "regional_backbone_pending",
+      "name": "Subcuenca del Mamoré",
+      "parent_id": "bol-amazonica",
+      "climate_context": "Húmedo",
+      "metrics": {
+        "area_km2": 183800,
+        "terrain_family": "chaco_transition",
+        "perimeter_km": 2204.8,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.44,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.649,
+        "cn_ref": 68,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "chaco_transition",
+        "terrain_label": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 95
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 89
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 81
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 72
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 61
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 49
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 36
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 24
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 11
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 95
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 90
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 83
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 75
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 65
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 53
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 40
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 26
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 12
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de superávit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "bol-amazonica__2": {
+      "id": "bol-amazonica__2",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "regional_backbone_pending",
+      "name": "Subcuenca del Madre de Dios",
+      "parent_id": "bol-amazonica",
+      "climate_context": "Húmedo",
+      "metrics": {
+        "area_km2": 109000,
+        "terrain_family": "chaco_transition",
+        "perimeter_km": 1733.3,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.47,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.666,
+        "cn_ref": 68,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "chaco_transition",
+        "terrain_label": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 96.5
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 90.5
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 82.5
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 73.5
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 62.5
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 50.5
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 37.5
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 25.5
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 12.5
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 96.5
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 91.5
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 84.5
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 76.5
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 66.5
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 54.5
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 41.5
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 27.5
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 13.5
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de superávit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "bol-pilcomayo": {
+      "id": "bol-pilcomayo",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_basin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Media",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_basin_geometry",
+      "dem_status": "regional_backbone_pending",
+      "name": "Río Pilcomayo · Bolivia / Paraguay",
+      "parent_id": null,
+      "climate_context": "Semiárido",
+      "metrics": {
+        "area_km2": 97600,
+        "perimeter_km": 2200,
+        "main_channel_length_km": 1100,
+        "main_channel_slope_pct": 1.8,
+        "compactness_kc": 1.972,
+        "form_factor_ff": 0.081,
+        "drainage_density_kmkm2": 0.58,
+        "cn_ref": 82,
+        "tc_estimate": {
+          "mean_hours": 93.09,
+          "kirpich_hours": 68.47,
+          "temez_hours": 54.96,
+          "scs_lag_hours": 155.83
+        }
+      },
+      "signature": {
+        "terrain_family": "chaco_transition",
+        "terrain_label": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 95
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 89
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 81
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 72
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 61
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 49
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 36
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 24
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 11
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 95
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 90
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 83
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 75
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 65
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 53
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 40
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 26
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 12
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Cuenca semiárida de transición",
+        "response_summary": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas. La unidad sugiere respuesta moderada, con amortiguación parcial y un contexto de déficit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "bol-pilcomayo__0": {
+      "id": "bol-pilcomayo__0",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "regional_backbone_pending",
+      "name": "Alto Pilcomayo — Tarija, Bolivia",
+      "parent_id": "bol-pilcomayo",
+      "climate_context": "Semiárido",
+      "metrics": {
+        "area_km2": 35200,
+        "terrain_family": "andean_valley",
+        "perimeter_km": 877.8,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.31,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.936,
+        "cn_ref": 82,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "andean_valley",
+        "terrain_label": "Cabeceras andinas con fuertes gradientes relativos y valle de transición marcado.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 90
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 83
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 74
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 64
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 52
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 39
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 26
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 14
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 4
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 88
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 80
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 71
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 61
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 50
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 38
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 25
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 13
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 4
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Cabeceras andinas con fuertes gradientes relativos y valle de transición marcado. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de déficit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "bol-pilcomayo__1": {
+      "id": "bol-pilcomayo__1",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "regional_backbone_pending",
+      "name": "Medio Pilcomayo — Gran Chaco",
+      "parent_id": "bol-pilcomayo",
+      "climate_context": "Semiárido",
+      "metrics": {
+        "area_km2": 45600,
+        "terrain_family": "chaco_transition",
+        "perimeter_km": 1098.2,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.44,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.624,
+        "cn_ref": 82,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "chaco_transition",
+        "terrain_label": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 95
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 89
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 81
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 72
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 61
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 49
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 36
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 24
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 11
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 95
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 90
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 83
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 75
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 65
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 53
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 40
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 26
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 12
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de déficit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "bol-pilcomayo__2": {
+      "id": "bol-pilcomayo__2",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "regional_backbone_pending",
+      "name": "Bajo Pilcomayo — Paraguay / Argentina",
+      "parent_id": "bol-pilcomayo",
+      "climate_context": "Semiárido",
+      "metrics": {
+        "area_km2": 16800,
+        "terrain_family": "mediterranean_valley",
+        "perimeter_km": 657.3,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.42,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.712,
+        "cn_ref": 82,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "mediterranean_valley",
+        "terrain_label": "Valle mediterráneo estructurado, con contraste entre cabeceras y sector medio-bajo amplio.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 94
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 86
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 76
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 64
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 51
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 37
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 24
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 13
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 94
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 86
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 76
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 65
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 52
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 38
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 25
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 14
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Valle mediterráneo estructurado, con contraste entre cabeceras y sector medio-bajo amplio. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de déficit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "bol-pilcomayo-tarija": {
+      "id": "bol-pilcomayo-tarija",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_basin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Media",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_basin_geometry",
+      "dem_status": "regional_backbone_pending",
+      "name": "Río Pilcomayo (Alto) · Tarija, Bolivia",
+      "parent_id": null,
+      "climate_context": "Semiárido",
+      "metrics": {
+        "area_km2": 35200,
+        "perimeter_km": 920,
+        "main_channel_length_km": 340,
+        "main_channel_slope_pct": 4.2,
+        "compactness_kc": 1.373,
+        "form_factor_ff": 0.304,
+        "drainage_density_kmkm2": 0.88,
+        "cn_ref": 82,
+        "tc_estimate": {
+          "mean_hours": 26.35,
+          "kirpich_hours": 20.01,
+          "temez_hours": 19.17,
+          "scs_lag_hours": 39.88
+        }
+      },
+      "signature": {
+        "terrain_family": "andean_valley",
+        "terrain_label": "Cabeceras andinas con fuertes gradientes relativos y valle de transición marcado.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 90
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 83
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 74
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 64
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 52
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 39
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 26
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 14
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 4
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 88
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 80
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 71
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 61
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 50
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 38
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 25
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 13
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 4
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Cabeceras andinas activas",
+        "response_summary": "Cabeceras andinas con fuertes gradientes relativos y valle de transición marcado. La unidad sugiere respuesta intermedia, con escorrentía concentrada en cabeceras y un contexto de déficit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "bol-pilcomayo-tarija__0": {
+      "id": "bol-pilcomayo-tarija__0",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "regional_backbone_pending",
+      "name": "Nacientes Potosí / Chuquisaca",
+      "parent_id": "bol-pilcomayo-tarija",
+      "climate_context": "Semiárido",
+      "metrics": {
+        "area_km2": 12400,
+        "terrain_family": "andean_valley",
+        "perimeter_km": 521,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.31,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.937,
+        "cn_ref": 82,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "andean_valley",
+        "terrain_label": "Cabeceras andinas con fuertes gradientes relativos y valle de transición marcado.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 90
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 83
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 74
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 64
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 52
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 39
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 26
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 14
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 4
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 88
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 80
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 71
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 61
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 50
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 38
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 25
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 13
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 4
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Cabeceras andinas con fuertes gradientes relativos y valle de transición marcado. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de déficit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "bol-pilcomayo-tarija__1": {
+      "id": "bol-pilcomayo-tarija__1",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "regional_backbone_pending",
+      "name": "Cuenca de Tarija — Sector Central",
+      "parent_id": "bol-pilcomayo-tarija",
+      "climate_context": "Semiárido",
+      "metrics": {
+        "area_km2": 14800,
+        "terrain_family": "chaco_transition",
+        "perimeter_km": 625.7,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.44,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.629,
+        "cn_ref": 82,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "chaco_transition",
+        "terrain_label": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 95
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 89
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 81
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 72
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 61
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 49
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 36
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 24
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 11
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 95
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 90
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 83
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 75
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 65
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 53
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 40
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 26
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 12
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de déficit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "bol-pilcomayo-tarija__2": {
+      "id": "bol-pilcomayo-tarija__2",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "regional_backbone_pending",
+      "name": "Sector Chaco — Transición Boliviana",
+      "parent_id": "bol-pilcomayo-tarija",
+      "climate_context": "Semiárido",
+      "metrics": {
+        "area_km2": 8000,
+        "terrain_family": "chaco_transition",
+        "perimeter_km": 469.6,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.47,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.653,
+        "cn_ref": 82,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "chaco_transition",
+        "terrain_label": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 96.5
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 90.5
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 82.5
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 73.5
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 62.5
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 50.5
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 37.5
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 25.5
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 12.5
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 96.5
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 91.5
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 84.5
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 76.5
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 66.5
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 54.5
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 41.5
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 27.5
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 13.5
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de déficit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "bol-altiplano": {
+      "id": "bol-altiplano",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_basin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Media",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_basin_geometry",
+      "dem_status": "regional_backbone_pending",
+      "name": "Cuenca del Altiplano · Bolivia / Perú",
+      "parent_id": null,
+      "climate_context": "Semiárido",
+      "metrics": {
+        "area_km2": 145000,
+        "perimeter_km": 1850,
+        "main_channel_length_km": 560,
+        "main_channel_slope_pct": 0.4,
+        "compactness_kc": 1.36,
+        "form_factor_ff": 0.462,
+        "drainage_density_kmkm2": 0.34,
+        "cn_ref": 82,
+        "tc_estimate": {
+          "mean_hours": 103.02,
+          "kirpich_hours": 72.64,
+          "temez_hours": 43.79,
+          "scs_lag_hours": 192.62
+        }
+      },
+      "signature": {
+        "terrain_family": "high_plateau",
+        "terrain_label": "Superficie elevada y amplia con drenaje lento y relieve relativo repartido.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 98
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 95
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 91
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 84
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 74
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 61
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 45
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 28
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 13
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 98
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 95
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 90
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 82
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 71
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 58
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 42
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 25
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 11
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Sistema endorreico de altura",
+        "response_summary": "Superficie elevada y amplia con drenaje lento y relieve relativo repartido. La unidad sugiere propagación lenta, con propagación con almacenamiento amplio y un contexto de déficit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "bol-altiplano__0": {
+      "id": "bol-altiplano__0",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "regional_backbone_pending",
+      "name": "Cuenca del Titicaca",
+      "parent_id": "bol-altiplano",
+      "climate_context": "Semiárido",
+      "metrics": {
+        "area_km2": 58000,
+        "terrain_family": "chaco_transition",
+        "perimeter_km": 1212.8,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.41,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.631,
+        "cn_ref": 82,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "chaco_transition",
+        "terrain_label": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 95
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 89
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 81
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 72
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 61
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 49
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 36
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 24
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 11
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 95
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 90
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 83
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 75
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 65
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 53
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 40
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 26
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 12
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de déficit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "bol-altiplano__1": {
+      "id": "bol-altiplano__1",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "regional_backbone_pending",
+      "name": "Cuenca del Poopó",
+      "parent_id": "bol-altiplano",
+      "climate_context": "Semiárido",
+      "metrics": {
+        "area_km2": 26600,
+        "terrain_family": "chaco_transition",
+        "perimeter_km": 838.8,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.44,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.66,
+        "cn_ref": 82,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "chaco_transition",
+        "terrain_label": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 95
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 89
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 81
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 72
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 61
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 49
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 36
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 24
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 11
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 95
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 90
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 83
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 75
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 65
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 53
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 40
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 26
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 12
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de déficit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "bol-altiplano__2": {
+      "id": "bol-altiplano__2",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "regional_backbone_pending",
+      "name": "Salar de Uyuni / Coipasa",
+      "parent_id": "bol-altiplano",
+      "climate_context": "Semiárido",
+      "metrics": {
+        "area_km2": 60400,
+        "terrain_family": "chaco_transition",
+        "perimeter_km": 1290.3,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.47,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.63,
+        "cn_ref": 82,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "chaco_transition",
+        "terrain_label": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 96.5
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 90.5
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 82.5
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 73.5
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 62.5
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 50.5
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 37.5
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 25.5
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 12.5
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 96.5
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 91.5
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 84.5
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 76.5
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 66.5
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 54.5
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 41.5
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 27.5
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 13.5
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Transición semiárida con respuesta rápida en cabeceras y disipación en planicies bajas. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de déficit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "bol-mamore": {
+      "id": "bol-mamore",
+      "region": "bolivia",
+      "country": "Bolivia",
+      "source_type": "guide_basin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Media",
+      "service_level": "L2",
+      "coverage_level": "Bolivia activo",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_basin_geometry",
+      "dem_status": "regional_backbone_pending",
+      "name": "Río Mamoré · Bolivia",
+      "parent_id": null,
+      "climate_context": "Húmedo",
+      "metrics": {
+        "area_km2": 188000,
+        "perimeter_km": 2600,
+        "main_channel_length_km": 1900,
+        "main_channel_slope_pct": 0.3,
+        "compactness_kc": 1.679,
+        "form_factor_ff": 0.052,
+        "drainage_density_kmkm2": 0.42,
+        "cn_ref": 68,
+        "tc_estimate": {
+          "mean_hours": 403.96,
+          "kirpich_hours": 207.89,
+          "temez_hours": 117.04,
+          "scs_lag_hours": 886.96
+        }
+      },
+      "signature": {
+        "terrain_family": "tropical_lowland",
+        "terrain_label": "Llanura húmeda con pendiente longitudinal baja y amplia capacidad de almacenamiento.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 96
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 91
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 84
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 76
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 66
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 55
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 43
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 30
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 16
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 97
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 93
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 87
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 79
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 69
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 56
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 42
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 28
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 14
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Gran llanura tropical almacenadora",
+        "response_summary": "Llanura húmeda con pendiente longitudinal baja y amplia capacidad de almacenamiento. La unidad sugiere propagación lenta, con propagación con almacenamiento amplio y un contexto de superávit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "es-guadalquivir": {
+      "id": "es-guadalquivir",
+      "region": "spain",
+      "country": "España",
+      "source_type": "guide_basin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Media",
+      "service_level": "L2",
+      "coverage_level": "España hidrología beta",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_basin_geometry",
+      "dem_status": "premium_pending",
+      "name": "Río Guadalquivir · España",
+      "parent_id": null,
+      "climate_context": "Subhúmedo seco",
+      "metrics": {
+        "area_km2": 57527,
+        "perimeter_km": 1340,
+        "main_channel_length_km": 657,
+        "main_channel_slope_pct": 1.8,
+        "compactness_kc": 1.564,
+        "form_factor_ff": 0.133,
+        "drainage_density_kmkm2": 0.63,
+        "cn_ref": 78,
+        "tc_estimate": {
+          "mean_hours": 66.71,
+          "kirpich_hours": 46.04,
+          "temez_hours": 37.15,
+          "scs_lag_hours": 116.93
+        }
+      },
+      "signature": {
+        "terrain_family": "mediterranean_valley",
+        "terrain_label": "Valle mediterráneo estructurado, con contraste entre cabeceras y sector medio-bajo amplio.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 96
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 90
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 82
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 72
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 60
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 47
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 33
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 20
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 9
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 95
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 89
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 81
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 71
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 60
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 47
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 33
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 20
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 9
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Valle mediterráneo amplio",
+        "response_summary": "Valle mediterráneo estructurado, con contraste entre cabeceras y sector medio-bajo amplio. La unidad sugiere respuesta moderada, con amortiguación parcial y un contexto de balance climático mixto."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "es-guadalquivir__0": {
+      "id": "es-guadalquivir__0",
+      "region": "spain",
+      "country": "España",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "España hidrología beta",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "premium_pending",
+      "name": "Alto Guadalquivir — Sierra Cazorla",
+      "parent_id": "es-guadalquivir",
+      "climate_context": "Subhúmedo seco",
+      "metrics": {
+        "area_km2": 14200,
+        "terrain_family": "andean_valley",
+        "perimeter_km": 557.5,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.31,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.95,
+        "cn_ref": 78,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "andean_valley",
+        "terrain_label": "Cabeceras andinas con fuertes gradientes relativos y valle de transición marcado.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 90
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 83
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 74
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 64
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 52
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 39
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 26
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 14
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 4
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 88
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 80
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 71
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 61
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 50
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 38
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 25
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 13
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 4
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Cabeceras andinas con fuertes gradientes relativos y valle de transición marcado. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de déficit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "es-guadalquivir__1": {
+      "id": "es-guadalquivir__1",
+      "region": "spain",
+      "country": "España",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "España hidrología beta",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "premium_pending",
+      "name": "Cuenca del Genil",
+      "parent_id": "es-guadalquivir",
+      "climate_context": "Subhúmedo seco",
+      "metrics": {
+        "area_km2": 7986,
+        "terrain_family": "mediterranean_valley",
+        "perimeter_km": 443.6,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.39,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.718,
+        "cn_ref": 78,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "mediterranean_valley",
+        "terrain_label": "Valle mediterráneo estructurado, con contraste entre cabeceras y sector medio-bajo amplio.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 96
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 90
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 82
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 72
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 60
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 47
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 33
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 20
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 9
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 95
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 89
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 81
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 71
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 60
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 47
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 33
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 20
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 9
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Valle mediterráneo estructurado, con contraste entre cabeceras y sector medio-bajo amplio. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de déficit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "es-guadalquivir__2": {
+      "id": "es-guadalquivir__2",
+      "region": "spain",
+      "country": "España",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "España hidrología beta",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "premium_pending",
+      "name": "Medio Guadalquivir — Córdoba",
+      "parent_id": "es-guadalquivir",
+      "climate_context": "Subhúmedo seco",
+      "metrics": {
+        "area_km2": 18600,
+        "terrain_family": "mediterranean_plateau",
+        "perimeter_km": 711.1,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.46,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.58,
+        "cn_ref": 78,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "mediterranean_plateau",
+        "terrain_label": "Plataforma mediterránea con contraste moderado entre cabeceras y tramo medio.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 98.5
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 92.5
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 85.5
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 77.5
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 67.5
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 54.5
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 40.5
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 26.5
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 13.5
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 97.5
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 91.5
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 84.5
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 75.5
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 64.5
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 51.5
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 37.5
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 22.5
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 10.5
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Plataforma mediterránea con contraste moderado entre cabeceras y tramo medio. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de balance climático mixto."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "es-guadalquivir__3": {
+      "id": "es-guadalquivir__3",
+      "region": "spain",
+      "country": "España",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "España hidrología beta",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "premium_pending",
+      "name": "Bajo Guadalquivir — Delta",
+      "parent_id": "es-guadalquivir",
+      "climate_context": "Subhúmedo seco",
+      "metrics": {
+        "area_km2": 8800,
+        "terrain_family": "mediterranean_valley",
+        "perimeter_km": 485.8,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.45,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.715,
+        "cn_ref": 78,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "mediterranean_valley",
+        "terrain_label": "Valle mediterráneo estructurado, con contraste entre cabeceras y sector medio-bajo amplio.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 94
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 86
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 76
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 64
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 51
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 37
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 24
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 13
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 94
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 86
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 76
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 65
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 52
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 38
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 25
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 14
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Valle mediterráneo estructurado, con contraste entre cabeceras y sector medio-bajo amplio. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de balance climático mixto."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "es-ebro": {
+      "id": "es-ebro",
+      "region": "spain",
+      "country": "España",
+      "source_type": "guide_basin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Media",
+      "service_level": "L2",
+      "coverage_level": "España hidrología beta",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_basin_geometry",
+      "dem_status": "premium_pending",
+      "name": "Río Ebro · España",
+      "parent_id": null,
+      "climate_context": "Subhúmedo",
+      "metrics": {
+        "area_km2": 85362,
+        "perimeter_km": 1520,
+        "main_channel_length_km": 930,
+        "main_channel_slope_pct": 1.4,
+        "compactness_kc": 1.457,
+        "form_factor_ff": 0.099,
+        "drainage_density_kmkm2": 0.56,
+        "cn_ref": 75,
+        "tc_estimate": {
+          "mean_hours": 102.75,
+          "kirpich_hours": 66.28,
+          "temez_hours": 50.75,
+          "scs_lag_hours": 191.22
+        }
+      },
+      "signature": {
+        "terrain_family": "continental_mixed",
+        "terrain_label": "Combinación de cabeceras montañosas y ejes de valle amplios con respuesta intermedia.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 96
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 90
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 83
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 74
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 63
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 50
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 37
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 24
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 11
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 96
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 90
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 82
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 73
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 62
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 49
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 35
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 22
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 10
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Cuenca mixta pirenaica y continental",
+        "response_summary": "Combinación de cabeceras montañosas y ejes de valle amplios con respuesta intermedia. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de balance climático mixto."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "es-ebro__0": {
+      "id": "es-ebro__0",
+      "region": "spain",
+      "country": "España",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "España hidrología beta",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "premium_pending",
+      "name": "Alto Ebro — Cantabria",
+      "parent_id": "es-ebro",
+      "climate_context": "Subhúmedo",
+      "metrics": {
+        "area_km2": 10700,
+        "terrain_family": "andean_valley",
+        "perimeter_km": 484,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.31,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.97,
+        "cn_ref": 78,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "andean_valley",
+        "terrain_label": "Cabeceras andinas con fuertes gradientes relativos y valle de transición marcado.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 90
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 83
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 74
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 64
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 52
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 39
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 26
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 14
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 4
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 88
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 80
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 71
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 61
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 50
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 38
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 25
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 13
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 4
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Cabeceras andinas con fuertes gradientes relativos y valle de transición marcado. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de balance climático mixto."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "es-ebro__1": {
+      "id": "es-ebro__1",
+      "region": "spain",
+      "country": "España",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "España hidrología beta",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "premium_pending",
+      "name": "Cuenca del Aragón",
+      "parent_id": "es-ebro",
+      "climate_context": "Subhúmedo",
+      "metrics": {
+        "area_km2": 17700,
+        "terrain_family": "mediterranean_plateau",
+        "perimeter_km": 679.5,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.43,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.596,
+        "cn_ref": 78,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "mediterranean_plateau",
+        "terrain_label": "Plataforma mediterránea con contraste moderado entre cabeceras y tramo medio.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 97
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 91
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 84
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 76
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 66
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 53
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 39
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 25
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 12
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 96
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 90
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 83
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 74
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 63
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 50
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 36
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 21
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 9
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Plataforma mediterránea con contraste moderado entre cabeceras y tramo medio. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de balance climático mixto."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "es-ebro__2": {
+      "id": "es-ebro__2",
+      "region": "spain",
+      "country": "España",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "España hidrología beta",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "premium_pending",
+      "name": "Cuenca del Segre",
+      "parent_id": "es-ebro",
+      "climate_context": "Subhúmedo",
+      "metrics": {
+        "area_km2": 22900,
+        "terrain_family": "mediterranean_plateau",
+        "perimeter_km": 789.1,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.46,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.587,
+        "cn_ref": 75,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "mediterranean_plateau",
+        "terrain_label": "Plataforma mediterránea con contraste moderado entre cabeceras y tramo medio.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 98.5
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 92.5
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 85.5
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 77.5
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 67.5
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 54.5
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 40.5
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 26.5
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 13.5
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 97.5
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 91.5
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 84.5
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 75.5
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 64.5
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 51.5
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 37.5
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 22.5
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 10.5
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Plataforma mediterránea con contraste moderado entre cabeceras y tramo medio. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de balance climático mixto."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "es-ebro__3": {
+      "id": "es-ebro__3",
+      "region": "spain",
+      "country": "España",
+      "source_type": "guide_subbasin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Preliminar",
+      "service_level": "L2",
+      "coverage_level": "España hidrología beta",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_subbasin_derivation",
+      "dem_status": "premium_pending",
+      "name": "Bajo Ebro — Delta",
+      "parent_id": "es-ebro",
+      "climate_context": "Subhúmedo",
+      "metrics": {
+        "area_km2": 7600,
+        "terrain_family": "mediterranean_valley",
+        "perimeter_km": 451.5,
+        "main_channel_length_km": null,
+        "main_channel_slope_pct": null,
+        "compactness_kc": 1.45,
+        "form_factor_ff": null,
+        "drainage_density_kmkm2": 0.728,
+        "cn_ref": 75,
+        "tc_estimate": null
+      },
+      "signature": {
+        "terrain_family": "mediterranean_valley",
+        "terrain_label": "Valle mediterráneo estructurado, con contraste entre cabeceras y sector medio-bajo amplio.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 94
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 86
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 76
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 64
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 51
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 37
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 24
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 13
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 94
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 86
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 76
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 65
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 52
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 38
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 25
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 14
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Lectura morfométrica relativa",
+        "response_summary": "Valle mediterráneo estructurado, con contraste entre cabeceras y sector medio-bajo amplio. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de balance climático mixto."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "es-duero": {
+      "id": "es-duero",
+      "region": "spain",
+      "country": "España",
+      "source_type": "guide_basin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Media",
+      "service_level": "L2",
+      "coverage_level": "España hidrología beta",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_basin_geometry",
+      "dem_status": "premium_pending",
+      "name": "Río Duero · España / Portugal",
+      "parent_id": null,
+      "climate_context": "Subhúmedo",
+      "metrics": {
+        "area_km2": 78952,
+        "perimeter_km": 1480,
+        "main_channel_length_km": 897,
+        "main_channel_slope_pct": 1.1,
+        "compactness_kc": 1.475,
+        "form_factor_ff": 0.098,
+        "drainage_density_kmkm2": 0.49,
+        "cn_ref": 75,
+        "tc_estimate": {
+          "mean_hours": 110.66,
+          "kirpich_hours": 70.73,
+          "temez_hours": 51.69,
+          "scs_lag_hours": 209.58
+        }
+      },
+      "signature": {
+        "terrain_family": "plateau_river",
+        "terrain_label": "Meseta fluvial extensa, con gradiente moderado y propagación de crecida más lenta.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 97
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 92
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 86
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 78
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 68
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 56
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 42
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 28
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 14
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 97
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 92
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 86
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 78
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 68
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 55
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 41
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 26
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 12
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Meseta fluvial extensa",
+        "response_summary": "Meseta fluvial extensa, con gradiente moderado y propagación de crecida más lenta. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de balance climático mixto."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "es-tajo": {
+      "id": "es-tajo",
+      "region": "spain",
+      "country": "España",
+      "source_type": "guide_basin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Media",
+      "service_level": "L2",
+      "coverage_level": "España hidrología beta",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_basin_geometry",
+      "dem_status": "premium_pending",
+      "name": "Río Tajo · España / Portugal",
+      "parent_id": null,
+      "climate_context": "Subhúmedo",
+      "metrics": {
+        "area_km2": 80600,
+        "perimeter_km": 1480,
+        "main_channel_length_km": 1007,
+        "main_channel_slope_pct": 0.9,
+        "compactness_kc": 1.46,
+        "form_factor_ff": 0.079,
+        "drainage_density_kmkm2": 0.52,
+        "cn_ref": 75,
+        "tc_estimate": {
+          "mean_hours": 132.11,
+          "kirpich_hours": 83.53,
+          "temez_hours": 58.63,
+          "scs_lag_hours": 254.16
+        }
+      },
+      "signature": {
+        "terrain_family": "mediterranean_plateau",
+        "terrain_label": "Plataforma mediterránea con contraste moderado entre cabeceras y tramo medio.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 97
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 91
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 84
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 76
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 66
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 53
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 39
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 25
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 12
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 96
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 90
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 83
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 74
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 63
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 50
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 36
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 21
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 9
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Plataforma mediterránea estructurada",
+        "response_summary": "Plataforma mediterránea con contraste moderado entre cabeceras y tramo medio. La unidad sugiere propagación lenta, con amortiguación parcial y un contexto de balance climático mixto."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "es-jucar": {
+      "id": "es-jucar",
+      "region": "spain",
+      "country": "España",
+      "source_type": "guide_basin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Media",
+      "service_level": "L2",
+      "coverage_level": "España hidrología beta",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_basin_geometry",
+      "dem_status": "premium_pending",
+      "name": "Río Júcar · España",
+      "parent_id": null,
+      "climate_context": "Semiárido",
+      "metrics": {
+        "area_km2": 42988,
+        "perimeter_km": 1080,
+        "main_channel_length_km": 498,
+        "main_channel_slope_pct": 2.1,
+        "compactness_kc": 1.459,
+        "form_factor_ff": 0.173,
+        "drainage_density_kmkm2": 0.72,
+        "cn_ref": 82,
+        "tc_estimate": {
+          "mean_hours": 46.94,
+          "kirpich_hours": 35.05,
+          "temez_hours": 29.23,
+          "scs_lag_hours": 76.53
+        }
+      },
+      "signature": {
+        "terrain_family": "mediterranean_semiarid",
+        "terrain_label": "Cuenca semiárida con relieve relativamente concentrado y respuesta torrencial alta.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 92
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 84
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 75
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 65
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 53
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 40
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 28
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 16
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 7
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 90
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 81
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 71
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 60
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 49
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 37
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 25
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 15
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 7
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Cuenca mediterránea semiárida y torrencial",
+        "response_summary": "Cuenca semiárida con relieve relativamente concentrado y respuesta torrencial alta. La unidad sugiere respuesta intermedia, con amortiguación parcial y un contexto de déficit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    },
+    "es-miño": {
+      "id": "es-miño",
+      "region": "spain",
+      "country": "España",
+      "source_type": "guide_basin",
+      "source_label": "Morfometría relativa TerraNava",
+      "quality_flag": "Derivado TerraNava v1 · perfil relativo precalculado",
+      "confidence_label": "Media",
+      "service_level": "L2",
+      "coverage_level": "España hidrología beta",
+      "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+      "last_verified_at": "2026-03-11",
+      "morphometry_basis": "guide_basin_geometry",
+      "dem_status": "premium_pending",
+      "name": "Río Miño · España / Portugal",
+      "parent_id": null,
+      "climate_context": "Húmedo",
+      "metrics": {
+        "area_km2": 17594,
+        "perimeter_km": 720,
+        "main_channel_length_km": 340,
+        "main_channel_slope_pct": 2.8,
+        "compactness_kc": 1.52,
+        "form_factor_ff": 0.152,
+        "drainage_density_kmkm2": 0.78,
+        "cn_ref": 68,
+        "tc_estimate": {
+          "mean_hours": 39.13,
+          "kirpich_hours": 23.39,
+          "temez_hours": 20.71,
+          "scs_lag_hours": 73.29
+        }
+      },
+      "signature": {
+        "terrain_family": "atlantic_mountain",
+        "terrain_label": "Cuenca atlántica montañosa, con cabeceras activas y rápida organización del drenaje.",
+        "longitudinal_profile_relative": [
+          {
+            "distance_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "distance_pct": 10,
+            "elevation_pct": 91
+          },
+          {
+            "distance_pct": 20,
+            "elevation_pct": 82
+          },
+          {
+            "distance_pct": 30,
+            "elevation_pct": 72
+          },
+          {
+            "distance_pct": 40,
+            "elevation_pct": 61
+          },
+          {
+            "distance_pct": 50,
+            "elevation_pct": 49
+          },
+          {
+            "distance_pct": 60,
+            "elevation_pct": 37
+          },
+          {
+            "distance_pct": 70,
+            "elevation_pct": 25
+          },
+          {
+            "distance_pct": 80,
+            "elevation_pct": 15
+          },
+          {
+            "distance_pct": 90,
+            "elevation_pct": 6
+          },
+          {
+            "distance_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "hypsometric_curve_relative": [
+          {
+            "area_pct": 0,
+            "elevation_pct": 100
+          },
+          {
+            "area_pct": 10,
+            "elevation_pct": 90
+          },
+          {
+            "area_pct": 20,
+            "elevation_pct": 80
+          },
+          {
+            "area_pct": 30,
+            "elevation_pct": 69
+          },
+          {
+            "area_pct": 40,
+            "elevation_pct": 58
+          },
+          {
+            "area_pct": 50,
+            "elevation_pct": 47
+          },
+          {
+            "area_pct": 60,
+            "elevation_pct": 35
+          },
+          {
+            "area_pct": 70,
+            "elevation_pct": 24
+          },
+          {
+            "area_pct": 80,
+            "elevation_pct": 14
+          },
+          {
+            "area_pct": 90,
+            "elevation_pct": 6
+          },
+          {
+            "area_pct": 100,
+            "elevation_pct": 0
+          }
+        ],
+        "response_label": "Cuenca atlántica montañosa",
+        "response_summary": "Cuenca atlántica montañosa, con cabeceras activas y rápida organización del drenaje. La unidad sugiere respuesta intermedia, con escorrentía concentrada en cabeceras y un contexto de superávit hídrico estructural."
+      },
+      "recommended_use": "Lectura morfométrica comparativa, apoyo a fichas por cuenca e informes preliminares.",
+      "limits": "Perfil e hipsometría relativos precalculados. No representan elevaciones absolutas ni sustituyen un perfil DEM premium por proyecto.",
+      "notes": [
+        "Usar junto con series históricas locales por cuenca y con el nivel de servicio activo.",
+        "Cuando exista DEM premium por país, esta firma relativa debe reemplazarse por derivados topográficos observables."
+      ]
+    }
+  }
+}

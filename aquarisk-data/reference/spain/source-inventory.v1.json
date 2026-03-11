@@ -1,0 +1,57 @@
+{
+  "version": "v1",
+  "country": "spain",
+  "label": "Spain Premium Source Inventory",
+  "verified_at": "2026-03-11",
+  "policy": "official_primero_con_fallback_abierto_trazable",
+  "sources": [
+    {
+      "id": "cnig_mde",
+      "label": "CNIG / IGN · Modelos Digitales de Elevaciones",
+      "role": "DEM backbone nacional prioritario",
+      "priority": "official_primary",
+      "url": "https://centrodedescargas.cnig.es/CentroDescargas/modelos-digitales-elevaciones",
+      "status": "verified_http_200"
+    },
+    {
+      "id": "cnig_hydro",
+      "label": "CNIG / IGN · Hidrografía",
+      "role": "Red hidrográfica y soporte cartográfico premium",
+      "priority": "official_primary",
+      "url": "https://centrodedescargas.cnig.es/CentroDescargas/hidrografia",
+      "status": "verified_http_200"
+    },
+    {
+      "id": "aemet_opendata",
+      "label": "AEMET OpenData",
+      "role": "Estaciones meteorológicas y climatología oficial reutilizable",
+      "priority": "official_primary",
+      "url": "https://www.aemet.es/es/datos_abiertos/AEMET_OpenData",
+      "status": "verified_http_200"
+    },
+    {
+      "id": "miteco_aforos",
+      "label": "MITECO · Anuario de Aforos",
+      "role": "Estaciones hidrológicas oficiales y metadatos de aforo",
+      "priority": "official_primary",
+      "url": "https://www.miteco.gob.es/es/cartografia-y-sig/ide/descargas/agua/anuario-de-aforos.html",
+      "status": "verified_http_200"
+    },
+    {
+      "id": "miteco_aforos_wms",
+      "label": "MITECO · WMS Red Integrada de Estaciones de Aforos (SAIH-ROEA)",
+      "role": "Primer soporte observacional visible de aforos oficiales dentro de AquaRisk",
+      "priority": "official_primary",
+      "url": "https://wms.mapama.gob.es/sig/Agua/Aforos/wms.aspx?request=GetCapabilities&Service=WMS",
+      "status": "verified_http_200"
+    },
+    {
+      "id": "miteco_saih",
+      "label": "MITECO · Capas SAIH",
+      "role": "Referencia hidrológica operativa y apoyo QA",
+      "priority": "official_support",
+      "url": "https://www.miteco.gob.es/en/cartografia-y-sig/ide/descargas/agua/capas-saih.html",
+      "status": "verified_http_200"
+    }
+  ]
+}
