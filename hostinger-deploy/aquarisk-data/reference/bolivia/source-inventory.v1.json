@@ -1,0 +1,49 @@
+{
+  "version": "v1",
+  "country": "bolivia",
+  "label": "Bolivia Source Inventory",
+  "verified_at": "2026-03-12",
+  "policy": "official_primero_con_fallback_abierto_trazable",
+  "sources": [
+    {
+      "id": "senamhi_bolivia",
+      "label": "SENAMHI Bolivia",
+      "role": "Referencia institucional para estaciones, boletines y respaldo observacional en Bolivia.",
+      "priority": "official_primary",
+      "url": "https://senamhi.gob.bo/",
+      "status": "verified_http_200"
+    },
+    {
+      "id": "ine_bolivia",
+      "label": "INE Bolivia",
+      "role": "Base estadística oficial usada para soporte municipal y cruces institucionales en pilotos Bolivia.",
+      "priority": "official_primary",
+      "url": "https://www.ine.gob.bo/",
+      "status": "verified_http_200"
+    },
+    {
+      "id": "geobolivia",
+      "label": "GeoBolivia",
+      "role": "Referencia institucional para capas territoriales abiertas cuando existe publicación reutilizable.",
+      "priority": "official_support",
+      "url": "https://geo.gob.bo/",
+      "status": "verified_http_200"
+    },
+    {
+      "id": "hydrobasins_sa",
+      "label": "HydroBASINS Sudamérica",
+      "role": "Atlas hidrológico basin-first usado como soporte regional trazable para navegación por cuencas.",
+      "priority": "open_traceable_support",
+      "url": "https://www.hydrosheds.org/products/hydrobasins",
+      "status": "verified_http_200"
+    },
+    {
+      "id": "hydrorivers_sa",
+      "label": "HydroRIVERS Sudamérica",
+      "role": "Red hidrográfica contextual usada como fallback abierto trazable en Bolivia.",
+      "priority": "open_traceable_support",
+      "url": "https://www.hydrosheds.org/products/hydrorivers",
+      "status": "verified_http_200"
+    }
+  ]
+}

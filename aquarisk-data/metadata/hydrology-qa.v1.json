@@ -1,0 +1,246 @@
+{
+  "version": "v1",
+  "generated_at": "2026-03-12T17:47:57.838Z",
+  "scope": "AquaRisk hydrology climate datasets",
+  "totals": {
+    "datasets": 11,
+    "records": 69728,
+    "errors": 0,
+    "warnings": 0,
+    "issues": {
+      "invalid_monthly_shape": 0,
+      "negative_precipitation": 0,
+      "negative_et0": 0,
+      "invalid_temperature": 0,
+      "out_of_range_temperature": 0,
+      "annual_water_balance_mismatch": 0,
+      "annual_aridity_mismatch": 0,
+      "classification_mismatch": 0,
+      "missing_quality_flag": 0,
+      "unexpected_nulls": 0,
+      "invalid_calibration_distance": 0
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "guide-basins",
+      "record_count": 31,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": {
+        "invalid_monthly_shape": 0,
+        "negative_precipitation": 0,
+        "negative_et0": 0,
+        "invalid_temperature": 0,
+        "out_of_range_temperature": 0,
+        "annual_water_balance_mismatch": 0,
+        "annual_aridity_mismatch": 0,
+        "classification_mismatch": 0,
+        "missing_quality_flag": 0,
+        "unexpected_nulls": 0,
+        "invalid_calibration_distance": 0
+      },
+      "samples": []
+    },
+    {
+      "dataset": "hybas-sa-lev04",
+      "record_count": 147,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": {
+        "invalid_monthly_shape": 0,
+        "negative_precipitation": 0,
+        "negative_et0": 0,
+        "invalid_temperature": 0,
+        "out_of_range_temperature": 0,
+        "annual_water_balance_mismatch": 0,
+        "annual_aridity_mismatch": 0,
+        "classification_mismatch": 0,
+        "missing_quality_flag": 0,
+        "unexpected_nulls": 0,
+        "invalid_calibration_distance": 0
+      },
+      "samples": []
+    },
+    {
+      "dataset": "hybas-sa-lev05",
+      "record_count": 496,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": {
+        "invalid_monthly_shape": 0,
+        "negative_precipitation": 0,
+        "negative_et0": 0,
+        "invalid_temperature": 0,
+        "out_of_range_temperature": 0,
+        "annual_water_balance_mismatch": 0,
+        "annual_aridity_mismatch": 0,
+        "classification_mismatch": 0,
+        "missing_quality_flag": 0,
+        "unexpected_nulls": 0,
+        "invalid_calibration_distance": 0
+      },
+      "samples": []
+    },
+    {
+      "dataset": "hybas-sa-lev06",
+      "record_count": 1946,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": {
+        "invalid_monthly_shape": 0,
+        "negative_precipitation": 0,
+        "negative_et0": 0,
+        "invalid_temperature": 0,
+        "out_of_range_temperature": 0,
+        "annual_water_balance_mismatch": 0,
+        "annual_aridity_mismatch": 0,
+        "classification_mismatch": 0,
+        "missing_quality_flag": 0,
+        "unexpected_nulls": 0,
+        "invalid_calibration_distance": 0
+      },
+      "samples": []
+    },
+    {
+      "dataset": "hybas-sa-lev07",
+      "record_count": 7036,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": {
+        "invalid_monthly_shape": 0,
+        "negative_precipitation": 0,
+        "negative_et0": 0,
+        "invalid_temperature": 0,
+        "out_of_range_temperature": 0,
+        "annual_water_balance_mismatch": 0,
+        "annual_aridity_mismatch": 0,
+        "classification_mismatch": 0,
+        "missing_quality_flag": 0,
+        "unexpected_nulls": 0,
+        "invalid_calibration_distance": 0
+      },
+      "samples": []
+    },
+    {
+      "dataset": "hybas-sa-lev08",
+      "record_count": 23783,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": {
+        "invalid_monthly_shape": 0,
+        "negative_precipitation": 0,
+        "negative_et0": 0,
+        "invalid_temperature": 0,
+        "out_of_range_temperature": 0,
+        "annual_water_balance_mismatch": 0,
+        "annual_aridity_mismatch": 0,
+        "classification_mismatch": 0,
+        "missing_quality_flag": 0,
+        "unexpected_nulls": 0,
+        "invalid_calibration_distance": 0
+      },
+      "samples": []
+    },
+    {
+      "dataset": "hybas-eu-lev04",
+      "record_count": 240,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": {
+        "invalid_monthly_shape": 0,
+        "negative_precipitation": 0,
+        "negative_et0": 0,
+        "invalid_temperature": 0,
+        "out_of_range_temperature": 0,
+        "annual_water_balance_mismatch": 0,
+        "annual_aridity_mismatch": 0,
+        "classification_mismatch": 0,
+        "missing_quality_flag": 0,
+        "unexpected_nulls": 0,
+        "invalid_calibration_distance": 0
+      },
+      "samples": []
+    },
+    {
+      "dataset": "hybas-eu-lev05",
+      "record_count": 674,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": {
+        "invalid_monthly_shape": 0,
+        "negative_precipitation": 0,
+        "negative_et0": 0,
+        "invalid_temperature": 0,
+        "out_of_range_temperature": 0,
+        "annual_water_balance_mismatch": 0,
+        "annual_aridity_mismatch": 0,
+        "classification_mismatch": 0,
+        "missing_quality_flag": 0,
+        "unexpected_nulls": 0,
+        "invalid_calibration_distance": 0
+      },
+      "samples": []
+    },
+    {
+      "dataset": "hybas-eu-lev06",
+      "record_count": 2240,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": {
+        "invalid_monthly_shape": 0,
+        "negative_precipitation": 0,
+        "negative_et0": 0,
+        "invalid_temperature": 0,
+        "out_of_range_temperature": 0,
+        "annual_water_balance_mismatch": 0,
+        "annual_aridity_mismatch": 0,
+        "classification_mismatch": 0,
+        "missing_quality_flag": 0,
+        "unexpected_nulls": 0,
+        "invalid_calibration_distance": 0
+      },
+      "samples": []
+    },
+    {
+      "dataset": "hybas-eu-lev07",
+      "record_count": 7820,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": {
+        "invalid_monthly_shape": 0,
+        "negative_precipitation": 0,
+        "negative_et0": 0,
+        "invalid_temperature": 0,
+        "out_of_range_temperature": 0,
+        "annual_water_balance_mismatch": 0,
+        "annual_aridity_mismatch": 0,
+        "classification_mismatch": 0,
+        "missing_quality_flag": 0,
+        "unexpected_nulls": 0,
+        "invalid_calibration_distance": 0
+      },
+      "samples": []
+    },
+    {
+      "dataset": "hybas-eu-lev08",
+      "record_count": 25315,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": {
+        "invalid_monthly_shape": 0,
+        "negative_precipitation": 0,
+        "negative_et0": 0,
+        "invalid_temperature": 0,
+        "out_of_range_temperature": 0,
+        "annual_water_balance_mismatch": 0,
+        "annual_aridity_mismatch": 0,
+        "classification_mismatch": 0,
+        "missing_quality_flag": 0,
+        "unexpected_nulls": 0,
+        "invalid_calibration_distance": 0
+      },
+      "samples": []
+    }
+  ]
+}

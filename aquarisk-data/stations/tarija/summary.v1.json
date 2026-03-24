@@ -1,0 +1,116 @@
+{
+  "version": "v1",
+  "generated_at": "2026-03-11T01:04:59.305Z",
+  "scope": "Tarija · red observacional prioritaria",
+  "department": "Tarija",
+  "country": "Bolivia",
+  "coverage_level": "Tarija observacional prioritaria",
+  "service_level": "L3",
+  "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+  "last_verified_at": "2026-03-10",
+  "recommended_use": "Apoyo tecnico defendible para lectura observacional, proximidad a estaciones y briefings preliminares.",
+  "limits": "No sustituye un inventario oficial exhaustivo ni garantiza disponibilidad de series completas en AquaRisk.",
+  "station_count": 7,
+  "station_count_note": "7 estaciones visibles en el subcatálogo Tarija derivado desde la red Bolivia.",
+  "type_counts": {
+    "hydrological": 1,
+    "meteorological": 6
+  },
+  "status_counts": {
+    "operativa": 7
+  },
+  "municipality_counts": {
+    "El Puente": 1,
+    "Tarija": 2,
+    "Villa Montes": 1,
+    "Villa San Lorenzo": 1,
+    "Villamontes": 1,
+    "Yacuiba": 1
+  },
+  "macrobasin_counts": {
+    "Sistema Pilcomayo": 7
+  },
+  "confidence_counts": {
+    "Alta": 6,
+    "Media": 1
+  },
+  "focus_units": [
+    "6060759190",
+    "6060724140",
+    "6060762840",
+    "6060796820"
+  ],
+  "suggested_view": {
+    "center": {
+      "lat": -21.571,
+      "lon": -64.2008
+    },
+    "zoom": 8,
+    "bounds": {
+      "minLon": -64.9756,
+      "minLat": -21.965,
+      "maxLon": -63.426,
+      "maxLat": -21.177
+    }
+  },
+  "filters": {
+    "municipalities": [
+      "El Puente",
+      "Tarija",
+      "Villa Montes",
+      "Villa San Lorenzo",
+      "Villamontes",
+      "Yacuiba"
+    ],
+    "types": [
+      "hydrological",
+      "meteorological"
+    ],
+    "statuses": [
+      "operativa"
+    ],
+    "macrobasins": [
+      "Sistema Pilcomayo"
+    ]
+  },
+  "sources": [
+    {
+      "type": "official_stats",
+      "label": "INE/ANDA · Estadísticas de Meteorología",
+      "url": "https://anda.ine.gob.bo/index.php/catalog/239",
+      "notes": "La operación estadística nacional reporta cobertura en 36 estaciones meteorológicas de monitoreo."
+    },
+    {
+      "type": "official_public_feed",
+      "label": "SENAMHI Bolivia · referencia pública diaria",
+      "url": "https://senamhi.gob.bo/pronjsondiario.php?dias=1",
+      "notes": "Coordenadas públicas reutilizadas por AquaRisk como red meteorológica de referencia."
+    },
+    {
+      "type": "official_stats",
+      "label": "INE/ANDA · Estadísticas de Caudales y Niveles de Ríos",
+      "url": "https://anda.ine.gob.bo/index.php/catalog/209",
+      "notes": "Catálogo oficial de 19 estaciones de medición para caudal y nivel de ríos."
+    },
+    {
+      "type": "operational_network",
+      "label": "SENAMHI Bolivia · Rendición Pública de Cuentas 2023",
+      "url": "https://senamhi.gob.bo/redCuentas/2023/INFORME%20RENDICION%20PUBLICA%20DE%20CUENTAS%20FINAL%202023.pdf",
+      "notes": "El informe reporta 16 estaciones hidrológicas automáticas funcionando y más de 50 subcuencas atendidas con pronóstico hidrológico."
+    },
+    {
+      "type": "operational_bulletins",
+      "label": "SENAMHI Bolivia · boletines hidrológicos recientes",
+      "url": "https://senamhi.gob.bo/meteorologia/boletines/reporte_de_niveles/2025/03/reporte_de_niveles_09032025.pdf",
+      "notes": "Sirven como evidencia puntual para distinguir estaciones operativas de red histórica/pendiente."
+    }
+  ],
+  "caveats": [
+    "El subcatálogo Tarija deriva del catálogo Bolivia ya publicado por AquaRisk. No sustituye un inventario oficial exhaustivo de estaciones activas a escala departamental.",
+    "Las estaciones hidrológicas con coordenada no oficial siguen tratándose como ubicación derivada TerraNava, incluso dentro del foco Tarija.",
+    "La presencia de una estación en este overlay no implica disponibilidad inmediata de series completas dentro de AquaRisk.",
+    "Las estaciones meteorológicas públicas SENAMHI integradas aquí no equivalen automáticamente a la base estadística ANDA/INE de 36 estaciones; AquaRisk las trata como red pública de referencia.",
+    "Las estaciones hidrológicas se presentan como oficiales cuando figuran en ANDA/INE. Su estado operativo solo se marca como operativa si existe evidencia reciente en boletines o reportes públicos de SENAMHI.",
+    "Las ubicaciones hidrológicas se geocodifican a partir de topónimos oficiales y, cuando conviene, se ajustan al cauce HydroRIVERS. AquaRisk declara esta localización como derivada TerraNava, no como coordenada oficial de aforo."
+  ]
+}

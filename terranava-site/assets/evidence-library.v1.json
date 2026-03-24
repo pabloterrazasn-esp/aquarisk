@@ -1,0 +1,327 @@
+{
+  "updatedAt": "2026-03-12",
+  "updatedLabel": "12 marzo 2026",
+  "featuredIds": [
+    "wmo-state-global-water-resources-2023",
+    "rapid-groundwater-decline-global",
+    "chile-water-stress-novel-datasets"
+  ],
+  "readingTracks": [
+    {
+      "id": "global-governance",
+      "label": "Ruta 01",
+      "title": "Marco global y gobernanza del agua",
+      "description": "Reportes para ubicar agua, resiliencia, cooperacion y riesgo dentro de marcos multilaterales y regulatorios defendibles.",
+      "publicationIds": [
+        "wmo-state-global-water-resources-2023",
+        "unesco-wwdr-2024",
+        "ipcc-ar6-water",
+        "eea-europes-state-of-water-2024"
+      ]
+    },
+    {
+      "id": "drought-response",
+      "label": "Ruta 02",
+      "title": "Sequia, escasez y respuesta hidrologica",
+      "description": "Piezas para entender como cambian caudales, estres hidrico y exposicion institucional bajo sequias persistentes.",
+      "publicationIds": [
+        "floods-droughts-multivariate-perspective",
+        "drought-streamflow-response-arid",
+        "aquifer-depletion-high-plains",
+        "chile-water-stress-novel-datasets"
+      ]
+    },
+    {
+      "id": "groundwater",
+      "label": "Ruta 03",
+      "title": "Aguas subterraneas, agotamiento y recuperacion",
+      "description": "Lectura basica para pasar de la alarma sobre agotamiento a estrategias de gestion, recuperacion y observacion.",
+      "publicationIds": [
+        "rapid-groundwater-decline-global",
+        "aquifer-recovery-human-intervention",
+        "groundwater-drought-germany",
+        "aquifer-depletion-high-plains"
+      ]
+    },
+    {
+      "id": "earth-observation",
+      "label": "Ruta 04",
+      "title": "Observacion satelital, irrigacion y cuencas",
+      "description": "Trabajos utiles para conectar teledeteccion, monitoreo hidrologico y cuantificacion operativa en cuencas y territorios irrigados.",
+      "publicationIds": [
+        "satellite-altimetry-river-variability",
+        "irrigation-from-satellite-data",
+        "chile-water-stress-novel-datasets",
+        "wmo-state-global-water-resources-2023"
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "id": "wmo-state-global-water-resources-2023",
+      "title": "State of Global Water Resources 2023",
+      "year": 2024,
+      "type": "official-report",
+      "source": "World Meteorological Organization",
+      "authors": "WMO",
+      "url": "https://public.wmo.int/publication-series/state-of-global-water-resources-2023",
+      "access": "Open access",
+      "regions": [
+        "Global"
+      ],
+      "topics": [
+        "drought",
+        "floods",
+        "climate-risk",
+        "remote-sensing"
+      ],
+      "summary": "Reporte anual de WMO sobre caudales, reservorios, almacenamiento terrestre, glaciares y anomalias hidrologicas a escala global.",
+      "whyItMatters": "Aporta una base institucional fuerte para hablar de ciclo hidrologico erratico, monitoreo y riesgos hidricos con lenguaje multilateral."
+    },
+    {
+      "id": "unesco-wwdr-2024",
+      "title": "The United Nations World Water Development Report 2024: Water for Prosperity and Peace",
+      "year": 2024,
+      "type": "official-report",
+      "source": "UNESCO / UN-Water",
+      "authors": "UNESCO World Water Assessment Programme",
+      "url": "https://www.unesco.org/en/articles/united-nations-world-water-development-report-2024-water-prosperity-and-peace",
+      "access": "Open access",
+      "regions": [
+        "Global"
+      ],
+      "topics": [
+        "governance",
+        "climate-risk",
+        "drought"
+      ],
+      "summary": "El informe mundial de UNESCO relaciona agua, prosperidad, paz y cooperacion, mostrando como la inseguridad hidrica agrava vulnerabilidades y conflictos.",
+      "whyItMatters": "Sirve para enmarcar trabajo tecnico de TerraNava dentro de gobernanza, cooperacion y seguridad hidrica, no solo dentro de cartografia o modelado."
+    },
+    {
+      "id": "ipcc-ar6-water",
+      "title": "Climate Change 2022: Impacts, Adaptation and Vulnerability - Chapter 4: Water",
+      "year": 2022,
+      "type": "official-report",
+      "source": "IPCC AR6 WGII",
+      "authors": "IPCC",
+      "url": "https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-4/",
+      "access": "Open access",
+      "regions": [
+        "Global"
+      ],
+      "topics": [
+        "climate-risk",
+        "drought",
+        "floods",
+        "governance"
+      ],
+      "summary": "Capitulo de evaluacion sobre cambios observados y proyectados en el ciclo del agua, impactos sobre sistemas humanos y naturales y respuestas de adaptacion.",
+      "whyItMatters": "Es el marco mas solido para justificar que el agua es un eje central de adaptacion climatica, gestion del riesgo y planificacion territorial."
+    },
+    {
+      "id": "eea-europes-state-of-water-2024",
+      "title": "Europe's State of Water 2024: The Need for Improved Water Resilience",
+      "year": 2024,
+      "type": "official-report",
+      "source": "European Environment Agency",
+      "authors": "EEA",
+      "url": "https://www.eea.europa.eu/en/analysis/publications/europes-state-of-water-2024",
+      "access": "Open access",
+      "regions": [
+        "Europa"
+      ],
+      "topics": [
+        "governance",
+        "drought",
+        "floods",
+        "groundwater"
+      ],
+      "summary": "Reporte europeo sobre estado de las aguas, resiliencia, contaminacion, sequia, inundaciones y presiones sobre aguas superficiales y subterraneas.",
+      "whyItMatters": "Aporta una referencia oficial clave para estructurar la expansion europea de TerraNava con lenguaje regulatorio y prioridades reales de resiliencia."
+    },
+    {
+      "id": "rapid-groundwater-decline-global",
+      "title": "Rapid Groundwater Decline and Some Cases of Recovery in Aquifers Globally",
+      "year": 2024,
+      "type": "research-article",
+      "source": "Nature",
+      "authors": "Scott Jasechko et al.",
+      "url": "https://www.nature.com/articles/s41586-023-06879-8",
+      "access": "Publisher page",
+      "regions": [
+        "Global"
+      ],
+      "topics": [
+        "groundwater",
+        "drought",
+        "governance"
+      ],
+      "summary": "Analisis global de tendencias de niveles piezometricos que identifica hotspots de descenso rapido y algunos casos documentados de recuperacion.",
+      "whyItMatters": "Permite hablar de acuiferos con evidencia comparativa global y, sobre todo, muestra que la recuperacion existe cuando hay gestion y medidas concretas."
+    },
+    {
+      "id": "aquifer-depletion-high-plains",
+      "title": "Aquifer Depletion Exacerbates Agricultural Drought Losses in the US High Plains",
+      "year": 2024,
+      "type": "research-article",
+      "source": "Nature Water",
+      "authors": "Yann Chemin et al.",
+      "url": "https://www.nature.com/articles/s44221-023-00173-7",
+      "access": "Publisher page",
+      "regions": [
+        "Estados Unidos"
+      ],
+      "topics": [
+        "groundwater",
+        "drought",
+        "irrigation",
+        "climate-risk"
+      ],
+      "summary": "Trabajo sobre High Plains que conecta agotamiento del acuifero con menor resiliencia de la agricultura irrigada frente a sequias.",
+      "whyItMatters": "Ayuda a explicar por que el agua subterranea no puede tratarse como reserva infinita en territorios agricolas sometidos a sequia y variabilidad."
+    },
+    {
+      "id": "aquifer-recovery-human-intervention",
+      "title": "Unprecedented Large-Scale Aquifer Recovery Through Human Intervention in River-Connected Aquifers Over China",
+      "year": 2025,
+      "type": "research-article",
+      "source": "Nature Communications",
+      "authors": "Lijuan Yang et al.",
+      "url": "https://www.nature.com/articles/s41467-025-62719-5",
+      "access": "Open access",
+      "regions": [
+        "China"
+      ],
+      "topics": [
+        "groundwater",
+        "governance"
+      ],
+      "summary": "Estudio que documenta recuperacion de acuiferos conectados a rios a gran escala a partir de intervenciones humanas y cambios de gestion.",
+      "whyItMatters": "Es util para evitar narrativas fatalistas: muestra que la gobernanza hidrica y las intervenciones fisicas pueden revertir deterioros severos."
+    },
+    {
+      "id": "groundwater-drought-germany",
+      "title": "Groundwater Head Responses to Droughts Are Strongly Spatially Varying and Determined by Local and Regional Conditions Across Germany",
+      "year": 2025,
+      "type": "research-article",
+      "source": "Hydrology and Earth System Sciences",
+      "authors": "Sophie Apel et al.",
+      "url": "https://hess.copernicus.org/articles/29/2925/2025/",
+      "access": "Open access",
+      "regions": [
+        "Alemania",
+        "Europa"
+      ],
+      "topics": [
+        "groundwater",
+        "drought",
+        "climate-risk"
+      ],
+      "summary": "Analiza respuestas de niveles subterraneos a sequias en Alemania y muestra variacion espacial fuerte segun condicion local y regional.",
+      "whyItMatters": "Es muy util para la expansion europea porque desmonta la idea de respuestas uniformes y obliga a leer acuiferos con detalle territorial."
+    },
+    {
+      "id": "floods-droughts-multivariate-perspective",
+      "title": "Floods and Droughts: A Multivariate Perspective",
+      "year": 2023,
+      "type": "review-perspective",
+      "source": "Hydrology and Earth System Sciences",
+      "authors": "Anne F. Van Loon",
+      "url": "https://hess.copernicus.org/articles/27/2479/2023/index.html",
+      "access": "Open access",
+      "regions": [
+        "Global"
+      ],
+      "topics": [
+        "drought",
+        "floods",
+        "climate-risk"
+      ],
+      "summary": "Perspectiva metodologica sobre extremos hidrologicos multivariantes, incluyendo sequias sucesivas, grandes inundaciones y transiciones sequia-inundacion.",
+      "whyItMatters": "Aporta una mirada mas madura para leer extremos compuestos y ayuda a evitar analisis simplistas basados en una sola variable."
+    },
+    {
+      "id": "drought-streamflow-response-arid",
+      "title": "Drought Decreases Annual Streamflow Response to Precipitation, Especially in Arid Regions",
+      "year": 2025,
+      "type": "research-article",
+      "source": "Hydrology and Earth System Sciences",
+      "authors": "Alessia Matano et al.",
+      "url": "https://hess.copernicus.org/articles/29/2749/2025/index.html",
+      "access": "Open access",
+      "regions": [
+        "Global"
+      ],
+      "topics": [
+        "drought",
+        "climate-risk"
+      ],
+      "summary": "Analisis global sobre miles de cuencas que muestra como sequias persistentes reducen la respuesta anual del caudal frente a la precipitacion, sobre todo en regiones aridas.",
+      "whyItMatters": "Ayuda a interpretar por que precipitar mas no siempre devuelve la misma respuesta hidrologica tras sequias largas o severas."
+    },
+    {
+      "id": "satellite-altimetry-river-variability",
+      "title": "Satellite Altimetry Reveals Intensifying Global River Water Level Variability",
+      "year": 2026,
+      "type": "research-article",
+      "source": "Nature Communications",
+      "authors": "X. Zhao et al.",
+      "url": "https://www.nature.com/articles/s41467-025-67682-9",
+      "access": "Open access",
+      "regions": [
+        "Global"
+      ],
+      "topics": [
+        "remote-sensing",
+        "floods",
+        "drought",
+        "climate-risk"
+      ],
+      "summary": "Evaluacion global basada en altimetria Sentinel-3 que muestra aumento de la variabilidad de niveles fluviales y mayor inestabilidad hidrologica reciente.",
+      "whyItMatters": "Refuerza la utilidad de la observacion satelital para ríos poco aforados y para seguimiento casi global de extremos y cambios de regimen."
+    },
+    {
+      "id": "irrigation-from-satellite-data",
+      "title": "An Inter-Comparison of Approaches and Frameworks to Quantify Irrigation From Satellite Data",
+      "year": 2024,
+      "type": "research-article",
+      "source": "Hydrology and Earth System Sciences",
+      "authors": "Soren Julsgaard Kragh et al.",
+      "url": "https://hess.copernicus.org/articles/28/441/2024/",
+      "access": "Open access",
+      "regions": [
+        "Espana",
+        "Europa"
+      ],
+      "topics": [
+        "remote-sensing",
+        "irrigation"
+      ],
+      "summary": "Comparacion de enfoques para estimar irrigacion con humedad del suelo, evapotranspiracion y marcos de referencia basados en observacion satelital.",
+      "whyItMatters": "Es especialmente util para AquaRisk y para una futura capa de demanda o riego porque compara metodologias con benchmarking real en la cuenca baja del Ebro."
+    },
+    {
+      "id": "chile-water-stress-novel-datasets",
+      "title": "Increasing Water Stress in Chile Revealed by Novel Datasets of Water Availability, Land Use and Water Use",
+      "year": 2025,
+      "type": "research-article",
+      "source": "Hydrology and Earth System Sciences",
+      "authors": "Juan Pablo Boisier et al.",
+      "url": "https://hess.copernicus.org/articles/29/5185/2025/",
+      "access": "Open access",
+      "regions": [
+        "Chile",
+        "America Latina"
+      ],
+      "topics": [
+        "drought",
+        "governance",
+        "climate-risk",
+        "irrigation"
+      ],
+      "summary": "Estudio que integra disponibilidad, uso de suelo y demanda de agua para reconstruir y proyectar estres hidrico en cuencas chilenas.",
+      "whyItMatters": "Es una referencia muy buena para Latinoamerica porque traduce datos dispersos en un indicador defendible de estres hidrico y gobernanza."
+    }
+  ]
+}
