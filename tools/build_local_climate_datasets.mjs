@@ -17,6 +17,7 @@ const ROOT_DIR = path.resolve(process.env.ROOT_DIR || process.cwd());
 const HTML_PATH = path.join(ROOT_DIR, 'aquarisk-ong.html');
 const DATA_DIR = path.join(ROOT_DIR, 'aquarisk-data');
 const VERSION = 'v1';
+const PUBLISHED_CLIMATE_CALIBRATION_PATH = path.join(DATA_DIR, 'climate', `calibration-published.${VERSION}.json`);
 const HYBAS_HISTORY_MAX_LEVEL = Number(process.env.HYBAS_HISTORY_MAX_LEVEL || 7);
 const YEARS = Array.from({ length: 45 }, (_, index) => 1981 + index);
 const MONTH_CODES = ['E', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
@@ -548,7 +549,89 @@ async function writeJson(filePath, data) {
   await fs.writeFile(filePath, JSON.stringify(data));
 }
 
-async function buildGuideDatasets(context, senamhiStations = []) {
+async function loadPublishedClimateCalibrationCatalog() {
+  try {
+    const raw = await fs.readFile(PUBLISHED_CLIMATE_CALIBRATION_PATH, 'utf8');
+    return JSON.parse(raw);
+  } catch (error) {
+    if (error?.code === 'ENOENT') return { version: VERSION, sources: {}, overrides: {} };
+    throw error;
+  }
+}
+
+function cloneRecord(record) {
+  return JSON.parse(JSON.stringify(record));
+}
+
+function applyPublishedClimateCalibration(record, datasetId, calibrationCatalog = null) {
+  const override = calibrationCatalog?.overrides?.[datasetId];
+  if (!override || override.status !== 'active') return record;
+
+  const calibrated = cloneRecord(record);
+  calibrated.monthly ||= {};
+  calibrated.annual ||= {};
+
+  if (Array.isArray(override.monthly?.p_mm) && override.monthly.p_mm.length === 12) {
+    calibrated.monthly.p_mm = override.monthly.p_mm.map((value) => Number(value));
+  }
+  if (Array.isArray(override.monthly?.et0_mm) && override.monthly.et0_mm.length === 12) {
+    calibrated.monthly.et0_mm = override.monthly.et0_mm.map((value) => Number(value));
+  }
+  if (Array.isArray(override.monthly?.t_c) && override.monthly.t_c.length === 12) {
+    calibrated.monthly.t_c = override.monthly.t_c.map((value) => Number(value));
+  }
+
+  if (Number.isFinite(Number(override.annual?.p_mm))) calibrated.annual.p_mm = Number(override.annual.p_mm);
+  if (Number.isFinite(Number(override.annual?.et0_mm))) calibrated.annual.et0_mm = Number(override.annual.et0_mm);
+  if (Number.isFinite(Number(override.annual?.t_mean_c))) calibrated.annual.t_mean_c = Number(override.annual.t_mean_c);
+
+  const annualP = Number.isFinite(Number(calibrated.annual.p_mm))
+    ? Number(calibrated.annual.p_mm)
+    : calibrated.monthly.p_mm.reduce((sum, value) => sum + Number(value || 0), 0);
+  const annualET = Number.isFinite(Number(calibrated.annual.et0_mm))
+    ? Number(calibrated.annual.et0_mm)
+    : calibrated.monthly.et0_mm.reduce((sum, value) => sum + Number(value || 0), 0);
+  const annualT = Number.isFinite(Number(calibrated.annual.t_mean_c))
+    ? Number(calibrated.annual.t_mean_c)
+    : round(calibrated.monthly.t_c.reduce((sum, value) => sum + Number(value || 0), 0) / calibrated.monthly.t_c.length, 1);
+  const aridityIndex = Number.isFinite(Number(override.annual?.aridity_index))
+    ? Number(override.annual.aridity_index)
+    : round(annualET > 0 ? annualP / annualET : 0, 2);
+  const waterBalance = Number.isFinite(Number(override.annual?.water_balance_mm))
+    ? Number(override.annual.water_balance_mm)
+    : Math.round(annualP - annualET);
+
+  calibrated.annual = {
+    ...calibrated.annual,
+    p_mm: Math.round(annualP),
+    et0_mm: round(annualET, 1),
+    t_mean_c: annualT,
+    aridity_index: aridityIndex,
+    water_balance_mm: waterBalance,
+  };
+
+  calibrated.classification = override.classification
+    ? { ...override.classification }
+    : classifyClimate(aridityIndex);
+  if (override.source_label) calibrated.source_label = override.source_label;
+  if (override.quality_flag) calibrated.quality_flag = override.quality_flag;
+  if (override.diagnostic_text) calibrated.diagnostic_text = override.diagnostic_text;
+
+  const sourceMeta = override.source_id ? calibrationCatalog?.sources?.[override.source_id] : null;
+  calibrated.published_calibration = {
+    active: true,
+    status: 'applied',
+    ...(override.published_calibration || {}),
+    scope_label: override.scope_label || override.published_calibration?.scope_label || null,
+    scope_note: override.scope_note || override.published_calibration?.scope_note || null,
+    confidence: override.confidence || override.published_calibration?.confidence || null,
+    source: sourceMeta ? { ...sourceMeta } : null,
+  };
+
+  return calibrated;
+}
+
+async function buildGuideDatasets(context, senamhiStations = [], publishedCalibrationCatalog = null) {
   const guideEntries = {};
   const historyChunks = {
     bolivia: { version: VERSION, years: YEARS, series: {} },
@@ -588,7 +671,7 @@ async function buildGuideDatasets(context, senamhiStations = []) {
         calibrationAnchor,
         region === 'bolivia',
       );
-      guideEntries[ws.id] = base.record;
+      guideEntries[ws.id] = applyPublishedClimateCalibration(base.record, ws.id, publishedCalibrationCatalog);
       historyChunks[region].series[ws.id] = { p: base.history };
 
       const subbasins = context.SUBBASINS[ws.id] || [];
@@ -624,7 +707,7 @@ async function buildGuideDatasets(context, senamhiStations = []) {
           subAnchor,
           region === 'bolivia',
         );
-        guideEntries[subId] = subRecord.record;
+        guideEntries[subId] = applyPublishedClimateCalibration(subRecord.record, subId, publishedCalibrationCatalog);
         historyChunks[region].series[subId] = { p: subRecord.history };
       });
     });
@@ -754,6 +837,7 @@ async function buildHybasDatasets(senamhiStations = []) {
 async function main() {
   const html = await fs.readFile(HTML_PATH, 'utf8');
   const senamhiStations = await fetchSenamhiStationCatalog();
+  const publishedCalibrationCatalog = await loadPublishedClimateCalibrationCatalog();
   const context = {
     WS_GEO: evaluateLiteral(extractLiteral(html, 'WS_GEO')),
     SUBBASINS: evaluateLiteral(extractLiteral(html, 'SUBBASINS')),
@@ -770,7 +854,7 @@ async function main() {
   });
 
   await writeClimateReferenceAssets(ROOT_DIR);
-  await buildGuideDatasets(context, senamhiStations);
+  await buildGuideDatasets(context, senamhiStations, publishedCalibrationCatalog);
   await buildHybasDatasets(senamhiStations);
   console.log(`Datasets climáticos locales generados en ${DATA_DIR}`);
 }

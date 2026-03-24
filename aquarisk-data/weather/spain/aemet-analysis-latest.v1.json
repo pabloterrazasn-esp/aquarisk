@@ -1,0 +1,20 @@
+{
+  "version": "v1",
+  "country": "España",
+  "product": "AEMET OpenData · Mapas de análisis · última pasada",
+  "status": "blocked_missing_api_key",
+  "last_verified_at": "2026-03-12",
+  "requires_secret": true,
+  "secret_name": "AEMET_OPENDATA_API_KEY",
+  "refresh_cadence_hours": 12,
+  "endpoint_path": "/api/mapasygraficos/analisis",
+  "specification_url": "https://opendata.aemet.es/AEMET_OpenData_specification.json",
+  "portal_url": "https://opendata.aemet.es/dist/index.html#/mapas-y-graficos/Mapas%20de%20an%C3%A1lisis.%20%C3%9Altima%20pasada.",
+  "summary": "Artefacto reservado para el contexto sinóptico oficial de España. La ingestión queda preparada pero no se activa sin api_key válida en cabecera.",
+  "activation": {
+    "builder": "/tools/fetch_aemet_analysis_latest.mjs",
+    "command": "AEMET_OPENDATA_API_KEY=... node tools/fetch_aemet_analysis_latest.mjs",
+    "output": "/aquarisk-data/weather/spain/aemet-analysis-latest.v1.json"
+  },
+  "items": []
+}
