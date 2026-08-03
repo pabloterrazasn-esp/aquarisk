@@ -1,0 +1,94 @@
+{
+  "version": "v1",
+  "generated_at": "2026-03-07T17:07:06.275Z",
+  "country": "Bolivia",
+  "municipality_count": 339,
+  "total_population": 11317322,
+  "total_housing": 4456179,
+  "hazard_breaks": [
+    0.391,
+    0.634,
+    0.693
+  ],
+  "exposure_breaks": [
+    0.27,
+    0.351,
+    0.424
+  ],
+  "priority_breaks": [
+    0.392,
+    0.488,
+    0.546
+  ],
+  "modes": {
+    "hazard": {
+      "label": "Amenaza hidrológica",
+      "colors": [
+        "#d9f0d3",
+        "#f6d365",
+        "#f59e0b",
+        "#c0392b"
+      ],
+      "classes": [
+        "Baja",
+        "Media",
+        "Alta",
+        "Muy alta"
+      ]
+    },
+    "exposure": {
+      "label": "Exposición demográfica",
+      "colors": [
+        "#dbeafe",
+        "#93c5fd",
+        "#3b82f6",
+        "#1d4ed8"
+      ],
+      "classes": [
+        "Baja",
+        "Media",
+        "Alta",
+        "Muy alta"
+      ]
+    },
+    "priority": {
+      "label": "Prioridad institucional",
+      "colors": [
+        "#d9f0d3",
+        "#f6d365",
+        "#f28c28",
+        "#b42318"
+      ],
+      "classes": [
+        "Baja",
+        "Media",
+        "Alta",
+        "Muy alta"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "type": "official_stats",
+      "label": "INE Bolivia · Censo de Población y Vivienda 2024",
+      "url": "https://cpv2024.ine.gob.bo/",
+      "notes": "Población municipal total, urbana/rural y viviendas censadas."
+    },
+    {
+      "type": "geometry",
+      "label": "GeoBolivia / geoBoundaries ADM3",
+      "url": "https://www.geoboundaries.org/api/current/gbOpen/BOL/ADM3/",
+      "notes": "Geometría municipal derivada de GeoBolivia, dominio público."
+    },
+    {
+      "type": "hydrology",
+      "label": "HydroSHEDS / HydroBASINS / HydroRIVERS",
+      "url": "https://www.hydrosheds.org/",
+      "notes": "Base hidrológica TerraNava para lectura de amenaza relativa y red de drenaje."
+    }
+  ],
+  "caveats": [
+    "La capa de exposición usa población y viviendas municipales totales; no representa por sí sola población expuesta directa a inundación.",
+    "La amenaza hidrológica municipal es un índice relativo TerraNava derivado de la unidad HYBAS dominante y no sustituye un mapa oficial de inundación."
+  ]
+}

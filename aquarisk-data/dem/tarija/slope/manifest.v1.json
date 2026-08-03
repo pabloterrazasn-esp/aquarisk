@@ -1,0 +1,27 @@
+{
+  "version": "v1",
+  "layer": "tarija_slope",
+  "label": "Pendiente Tarija",
+  "country": "Bolivia",
+  "coverage_level": "Tarija regional",
+  "service_level": "L2",
+  "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+  "last_verified_at": "2026-03-10",
+  "tile_url": "/aquarisk-data/dem/tarija/slope/{z}/{x}/{y}.webp",
+  "bounds": [-22.048002, -65.190310, -20.751012, -64.145904],
+  "min_zoom": 8,
+  "max_zoom": 10,
+  "opacity": 0.78,
+  "attribution": "SRTM skadi public domain derivatives served by TerraNava",
+  "source_label": "Pendiente porcentual derivada TerraNava desde SRTM 30 m remuestreado a 90 m",
+  "method": "Pendiente porcentual derivada desde DEM remuestreado y clasificada para lectura hidromorfologica.",
+  "period": "Topografia estatica",
+  "resolution": "90 m",
+  "recommended_use": "Diagnostico orientativo de relieve y respuesta hidromorfologica.",
+  "limits": "No debe leerse como mapa directo de riesgo ni sustituye verificacion local.",
+  "classes_pct": [0, 3, 12, 25, 50, 80],
+  "notes": [
+    "La capa expresa pendiente porcentual por clases para lectura hidromorfologica.",
+    "No debe leerse como mapa directo de riesgo."
+  ]
+}

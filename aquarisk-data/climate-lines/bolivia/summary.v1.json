@@ -1,0 +1,68 @@
+{
+  "version": "v1",
+  "generated_at": "2026-03-08T01:40:03.276Z",
+  "country": "Bolivia",
+  "sample_count": 339,
+  "methodology": {
+    "interpolation": "IDW (gdal_grid · invdist)",
+    "grid_size": {
+      "width": 560,
+      "height": 620
+    },
+    "bbox": {
+      "minLon": -69.8,
+      "maxLon": -57.2,
+      "minLat": -23.2,
+      "maxLat": -9.2
+    },
+    "source_points": "/aquarisk-data/risk/bolivia/municipios.v1.geojson",
+    "source_label": "Síntesis municipal TerraNava Bolivia · HydroBASINS dominante + calibración SENAMHI"
+  },
+  "datasets": {
+    "temperature": {
+      "label": "Isotermas medias anuales",
+      "unit": "°C",
+      "interval": 2,
+      "path": "/aquarisk-data/climate-lines/bolivia/isotermas-anuales.v1.geojson",
+      "key": "temperature",
+      "feature_count": 82,
+      "contour_values": [
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26
+      ],
+      "min_value": 10,
+      "max_value": 26
+    },
+    "precipitation": {
+      "label": "Isoyetas anuales",
+      "unit": "mm/año",
+      "interval": 200,
+      "path": "/aquarisk-data/climate-lines/bolivia/isoyetas-anuales.v1.geojson",
+      "key": "precipitation",
+      "feature_count": 60,
+      "contour_values": [
+        400,
+        600,
+        800,
+        1000,
+        1200,
+        1400,
+        1600,
+        1800
+      ],
+      "min_value": 400,
+      "max_value": 1800
+    }
+  },
+  "caveats": [
+    "Las isolíneas son un derivado TerraNava interpolado desde la síntesis climática municipal de Bolivia; no sustituyen cartas climáticas oficiales.",
+    "La capa busca lectura territorial continua y comparación hidrológica entre cuencas, manteniendo la experiencia AquaRisk local-first."
+  ]
+}

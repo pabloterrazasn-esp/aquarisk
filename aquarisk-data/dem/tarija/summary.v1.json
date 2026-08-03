@@ -1,0 +1,30 @@
+{
+  "version": "v1",
+  "generated_at": "2026-03-11T01:04:20Z",
+  "scope": "Tarija · San Lorenzo · Uriondo",
+  "country": "Bolivia",
+  "coverage_level": "Tarija regional",
+  "service_level": "L2",
+  "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+  "last_verified_at": "2026-03-10",
+  "bbox": {
+    "minLon": -65.190310,
+    "minLat": -22.048002,
+    "maxLon": -64.145904,
+    "maxLat": -20.751012
+  },
+  "source_label": "Tarija terrain stack TerraNava",
+  "dem_source": "SRTM 30 m skadi remuestreado a 90 m",
+  "local_projection": "EPSG:32720",
+  "recommended_use": "Lectura de relieve, pendiente y apoyo a informes preliminares.",
+  "limits": "Derivados ligeros para web; no equivale a DEM oficial de proyecto ni a modelacion calibrada.",
+  "products": {
+    "relief": "/aquarisk-data/dem/tarija/relief/manifest.v1.json",
+    "slope": "/aquarisk-data/dem/tarija/slope/manifest.v1.json"
+  },
+  "zoom_range": [8, 10],
+  "notes": [
+    "El stack cubre la unidad hidrologica regional donde cae Tarija/Guadalquivir con un pequeno buffer.",
+    "Se usa para lectura de relieve y pendiente dentro de AquaRisk."
+  ]
+}

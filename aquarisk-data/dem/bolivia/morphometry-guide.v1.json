@@ -1,0 +1,204 @@
+{
+  "version": "v1",
+  "generated_at": "2026-03-09T19:42:08.106Z",
+  "country": "Bolivia",
+  "label": "Motor DEM piloto Bolivia",
+  "description": "Catálogo piloto de morfometría para cuencas guía Bolivia. Prepara la arquitectura local-first del Motor DEM antes de la ingestión completa de Copernicus DEM GLO-30.",
+  "records": {
+    "bol-amazonica": {
+      "id": "bol-amazonica",
+      "country": "Bolivia",
+      "source_type": "guide_basin",
+      "source_label": "Motor morfométrico guía TerraNava",
+      "quality_flag": "Derivado TerraNava v0 · geometría guía (sin DEM final)",
+      "confidence_label": "Preliminar",
+      "morphometry_basis": "guide_geometry",
+      "dem_status": "pilot_geometry_ready_for_copernicus",
+      "name": "Cuenca Amazónica · Bolivia",
+      "river": "Río Mamoré / Beni / Madre de Dios",
+      "climate_context": "Tropical húmedo",
+      "metrics": {
+        "area_km2": 724000,
+        "main_channel_length_km": 1200,
+        "main_channel_slope_pct": 0.8,
+        "cn_ref": 72,
+        "tc_estimate": {
+          "mean_hours": 168.682,
+          "kirpich_hours": 100.038,
+          "temez_hours": 68.503,
+          "scs_lag_hours": 337.506
+        }
+      },
+      "derivation": {
+        "terrain_source": "Geometría guía TerraNava",
+        "intended_dem_source": "Copernicus DEM GLO-30",
+        "tc_method": "Promedio Kirpich + Témez + SCS Lag"
+      },
+      "pending_fields": [
+        "elevation_min_m",
+        "elevation_max_m",
+        "relief_m",
+        "longitudinal_profile",
+        "hypsometric_curve",
+        "slope_raster",
+        "hand_screening"
+      ]
+    },
+    "bol-pilcomayo": {
+      "id": "bol-pilcomayo",
+      "country": "Bolivia",
+      "source_type": "guide_basin",
+      "source_label": "Motor morfométrico guía TerraNava",
+      "quality_flag": "Derivado TerraNava v0 · geometría guía (sin DEM final)",
+      "confidence_label": "Preliminar",
+      "morphometry_basis": "guide_geometry",
+      "dem_status": "pilot_geometry_ready_for_copernicus",
+      "name": "Río Pilcomayo · Bolivia / Paraguay",
+      "river": "Río Pilcomayo → Río Paraguay",
+      "climate_context": "Subtropical semiárido / Chaqueño",
+      "metrics": {
+        "area_km2": 97600,
+        "main_channel_length_km": 1100,
+        "main_channel_slope_pct": 1.8,
+        "cn_ref": 80,
+        "tc_estimate": {
+          "mean_hours": 96.509,
+          "kirpich_hours": 68.466,
+          "temez_hours": 54.964,
+          "scs_lag_hours": 166.096
+        }
+      },
+      "derivation": {
+        "terrain_source": "Geometría guía TerraNava",
+        "intended_dem_source": "Copernicus DEM GLO-30",
+        "tc_method": "Promedio Kirpich + Témez + SCS Lag"
+      },
+      "pending_fields": [
+        "elevation_min_m",
+        "elevation_max_m",
+        "relief_m",
+        "longitudinal_profile",
+        "hypsometric_curve",
+        "slope_raster",
+        "hand_screening"
+      ]
+    },
+    "bol-pilcomayo-tarija": {
+      "id": "bol-pilcomayo-tarija",
+      "country": "Bolivia",
+      "source_type": "guide_basin",
+      "source_label": "Motor morfométrico guía TerraNava",
+      "quality_flag": "Derivado TerraNava v0 · geometría guía (sin DEM final)",
+      "confidence_label": "Preliminar",
+      "morphometry_basis": "guide_geometry",
+      "dem_status": "pilot_geometry_ready_for_copernicus",
+      "name": "Río Pilcomayo (Alto) · Tarija, Bolivia",
+      "river": "Río Pilcomayo superior",
+      "climate_context": "Semiárido andino",
+      "metrics": {
+        "area_km2": 35200,
+        "main_channel_length_km": 340,
+        "main_channel_slope_pct": 4.2,
+        "cn_ref": 78,
+        "tc_estimate": {
+          "mean_hours": 28.123,
+          "kirpich_hours": 20.007,
+          "temez_hours": 19.17,
+          "scs_lag_hours": 45.194
+        }
+      },
+      "derivation": {
+        "terrain_source": "Geometría guía TerraNava",
+        "intended_dem_source": "Copernicus DEM GLO-30",
+        "tc_method": "Promedio Kirpich + Témez + SCS Lag"
+      },
+      "pending_fields": [
+        "elevation_min_m",
+        "elevation_max_m",
+        "relief_m",
+        "longitudinal_profile",
+        "hypsometric_curve",
+        "slope_raster",
+        "hand_screening"
+      ]
+    },
+    "bol-altiplano": {
+      "id": "bol-altiplano",
+      "country": "Bolivia",
+      "source_type": "guide_basin",
+      "source_label": "Motor morfométrico guía TerraNava",
+      "quality_flag": "Derivado TerraNava v0 · geometría guía (sin DEM final)",
+      "confidence_label": "Preliminar",
+      "morphometry_basis": "guide_geometry",
+      "dem_status": "pilot_geometry_ready_for_copernicus",
+      "name": "Cuenca del Altiplano · Bolivia / Perú",
+      "river": "Lago Titicaca → Desaguadero → Poopó / Uyuni",
+      "climate_context": "Semiárido de altura",
+      "metrics": {
+        "area_km2": 145000,
+        "main_channel_length_km": 560,
+        "main_channel_slope_pct": 0.4,
+        "cn_ref": 68,
+        "tc_estimate": {
+          "mean_hours": 135.162,
+          "kirpich_hours": 72.643,
+          "temez_hours": 43.788,
+          "scs_lag_hours": 289.055
+        }
+      },
+      "derivation": {
+        "terrain_source": "Geometría guía TerraNava",
+        "intended_dem_source": "Copernicus DEM GLO-30",
+        "tc_method": "Promedio Kirpich + Témez + SCS Lag"
+      },
+      "pending_fields": [
+        "elevation_min_m",
+        "elevation_max_m",
+        "relief_m",
+        "longitudinal_profile",
+        "hypsometric_curve",
+        "slope_raster",
+        "hand_screening"
+      ]
+    },
+    "bol-mamore": {
+      "id": "bol-mamore",
+      "country": "Bolivia",
+      "source_type": "guide_basin",
+      "source_label": "Motor morfométrico guía TerraNava",
+      "quality_flag": "Derivado TerraNava v0 · geometría guía (sin DEM final)",
+      "confidence_label": "Preliminar",
+      "morphometry_basis": "guide_geometry",
+      "dem_status": "pilot_geometry_ready_for_copernicus",
+      "name": "Río Mamoré · Bolivia",
+      "river": "Río Mamoré → Madeira",
+      "climate_context": "Tropical húmedo / Sabana",
+      "metrics": {
+        "area_km2": 188000,
+        "main_channel_length_km": 1900,
+        "main_channel_slope_pct": 0.3,
+        "cn_ref": 70,
+        "tc_estimate": {
+          "mean_hours": 388.547,
+          "kirpich_hours": 207.889,
+          "temez_hours": 117.036,
+          "scs_lag_hours": 840.716
+        }
+      },
+      "derivation": {
+        "terrain_source": "Geometría guía TerraNava",
+        "intended_dem_source": "Copernicus DEM GLO-30",
+        "tc_method": "Promedio Kirpich + Témez + SCS Lag"
+      },
+      "pending_fields": [
+        "elevation_min_m",
+        "elevation_max_m",
+        "relief_m",
+        "longitudinal_profile",
+        "hypsometric_curve",
+        "slope_raster",
+        "hand_screening"
+      ]
+    }
+  }
+}

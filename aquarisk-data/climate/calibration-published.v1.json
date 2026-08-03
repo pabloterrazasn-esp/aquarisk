@@ -1,0 +1,253 @@
+{
+  "version": "v1",
+  "generated_at": "2026-03-12T18:20:00.000Z",
+  "policy": "published_climate_overrides_preserve_local_precip_history",
+  "notes": [
+    "Las calibraciones publicadas sustituyen temperatura y demanda evaporativa cuando existe una fuente aceptada y trazable.",
+    "La precipitación histórica local por año se conserva salvo que la fuente publicada aporte una serie mensual/annual explícita de mejor calidad.",
+    "No todos los overrides tienen el mismo alcance territorial; revisar scope_label y confidence antes de presentar el valor como equivalente regulatorio."
+  ],
+  "sources": {
+    "bo_tarija_guadalquivir_balance_2016": {
+      "country": "Bolivia",
+      "title": "Balance hídrico integral para la cuenca del río Guadalquivir",
+      "subtitle": "Informe de revisión del estudio TESA",
+      "year": 2016,
+      "period": "1980-2014",
+      "authority": "Documento técnico publicado para la cuenca del río Guadalquivir en Tarija",
+      "local_document_path": "/Volumes/Crucial X10/Documentos/Balance hidrico Tarija.pdf",
+      "tables": {
+        "temperature_mean": "Tabla 10",
+        "potential_evapotranspiration": "Tabla 16",
+        "annual_precipitation_context": "Figura 21"
+      }
+    }
+  },
+  "overrides": {
+    "bol-pilcomayo-tarija": {
+      "status": "active",
+      "source_id": "bo_tarija_guadalquivir_balance_2016",
+      "scope_label": "Tarija · proxy publicado Yesera/Guadalquivir para Alto Pilcomayo",
+      "scope_note": "La unidad AquaRisk es más amplia que la subcuenca Yesera. Se usa como proxy publicado para corregir temperatura y demanda evaporativa mientras no exista una climatología aceptada de igual calidad para toda la unidad.",
+      "confidence": "medium",
+      "override_fields": [
+        "monthly.t_c",
+        "monthly.et0_mm",
+        "annual.t_mean_c",
+        "annual.et0_mm",
+        "annual.aridity_index",
+        "annual.water_balance_mm",
+        "classification",
+        "source_label",
+        "quality_flag",
+        "diagnostic_text",
+        "published_calibration"
+      ],
+      "monthly": {
+        "t_c": [
+          16.7,
+          16.1,
+          15.8,
+          14.6,
+          12.8,
+          11.7,
+          11.3,
+          12.6,
+          13.8,
+          15.8,
+          16.3,
+          16.9
+        ],
+        "et0_mm": [
+          86.3,
+          73.0,
+          74.8,
+          63.5,
+          54.9,
+          46.1,
+          52.4,
+          68.7,
+          82.0,
+          93.4,
+          91.0,
+          90.6
+        ]
+      },
+      "annual": {
+        "t_mean_c": 14.5,
+        "et0_mm": 876.7,
+        "aridity_index": 0.63,
+        "water_balance_mm": -329
+      },
+      "classification": {
+        "label": "Subhúmedo seco",
+        "color": "#f39c12",
+        "scheme": "UNESCO"
+      },
+      "source_label": "Serie local TerraNava + calibración publicada Tarija/Yesera",
+      "quality_flag": "Derivado TerraNava v1 · precipitación histórica local + temperatura/ETP publicadas",
+      "diagnostic_text": "Río Pilcomayo (Alto) · Tarija, Bolivia conserva precipitación histórica local TerraNava y aplica una calibración publicada para temperatura media y demanda evaporativa a partir del Balance hídrico integral de la cuenca del río Guadalquivir (Tarija, periodo 1980-2014; Yesera Norte / subcuenca Yesera). Usar como proxy publicado de Tarija mientras no exista una climatología aceptada de igual calidad para toda la unidad.",
+      "published_calibration": {
+        "status": "applied",
+        "source_id": "bo_tarija_guadalquivir_balance_2016",
+        "source_title": "Balance hídrico integral para la cuenca del río Guadalquivir",
+        "period": "1980-2014",
+        "scope_label": "Tarija · proxy publicado Yesera/Guadalquivir para Alto Pilcomayo",
+        "scope_note": "Proxy territorial publicado para Tarija; no equivale a una calibración específica de toda la cuenca alta del Pilcomayo.",
+        "temperature_basis": "Yesera Norte · Tabla 10",
+        "evapotranspiration_basis": "Subcuenca Yesera · Tabla 16",
+        "confidence": "medium"
+      }
+    },
+    "bol-pilcomayo__0": {
+      "status": "active",
+      "source_id": "bo_tarija_guadalquivir_balance_2016",
+      "scope_label": "Alto Pilcomayo · proxy publicado Yesera/Guadalquivir",
+      "scope_note": "Subcuenca guía equivalente en AquaRisk al caso Tarija del Alto Pilcomayo. Se corrige con el mismo proxy publicado.",
+      "confidence": "medium",
+      "override_fields": [
+        "monthly.t_c",
+        "monthly.et0_mm",
+        "annual.t_mean_c",
+        "annual.et0_mm",
+        "annual.aridity_index",
+        "annual.water_balance_mm",
+        "classification",
+        "source_label",
+        "quality_flag",
+        "diagnostic_text",
+        "published_calibration"
+      ],
+      "monthly": {
+        "t_c": [
+          16.7,
+          16.1,
+          15.8,
+          14.6,
+          12.8,
+          11.7,
+          11.3,
+          12.6,
+          13.8,
+          15.8,
+          16.3,
+          16.9
+        ],
+        "et0_mm": [
+          86.3,
+          73.0,
+          74.8,
+          63.5,
+          54.9,
+          46.1,
+          52.4,
+          68.7,
+          82.0,
+          93.4,
+          91.0,
+          90.6
+        ]
+      },
+      "annual": {
+        "t_mean_c": 14.5,
+        "et0_mm": 876.7,
+        "aridity_index": 0.66,
+        "water_balance_mm": -298
+      },
+      "classification": {
+        "label": "Subhúmedo",
+        "color": "#27ae60",
+        "scheme": "UNESCO"
+      },
+      "source_label": "Serie local TerraNava + calibración publicada Tarija/Yesera",
+      "quality_flag": "Derivado TerraNava v1 · precipitación histórica local + temperatura/ETP publicadas",
+      "diagnostic_text": "Alto Pilcomayo — Tarija, Bolivia conserva precipitación histórica local TerraNava y aplica una calibración publicada para temperatura media y demanda evaporativa a partir del Balance hídrico integral de la cuenca del río Guadalquivir (Tarija, periodo 1980-2014; Yesera Norte / subcuenca Yesera).",
+      "published_calibration": {
+        "status": "applied",
+        "source_id": "bo_tarija_guadalquivir_balance_2016",
+        "source_title": "Balance hídrico integral para la cuenca del río Guadalquivir",
+        "period": "1980-2014",
+        "scope_label": "Alto Pilcomayo · proxy publicado Yesera/Guadalquivir",
+        "scope_note": "Proxy territorial publicado para Tarija; no equivale a una calibración específica de toda la cuenca alta del Pilcomayo.",
+        "temperature_basis": "Yesera Norte · Tabla 10",
+        "evapotranspiration_basis": "Subcuenca Yesera · Tabla 16",
+        "confidence": "medium"
+      }
+    },
+    "bol-pilcomayo-tarija__1": {
+      "status": "active",
+      "source_id": "bo_tarija_guadalquivir_balance_2016",
+      "scope_label": "Cuenca de Tarija · sector central · proxy publicado Yesera/Guadalquivir",
+      "scope_note": "Este sector es el más próximo al alcance territorial del estudio publicado dentro de las unidades guía de AquaRisk.",
+      "confidence": "high",
+      "override_fields": [
+        "monthly.t_c",
+        "monthly.et0_mm",
+        "annual.t_mean_c",
+        "annual.et0_mm",
+        "annual.aridity_index",
+        "annual.water_balance_mm",
+        "classification",
+        "source_label",
+        "quality_flag",
+        "diagnostic_text",
+        "published_calibration"
+      ],
+      "monthly": {
+        "t_c": [
+          16.7,
+          16.1,
+          15.8,
+          14.6,
+          12.8,
+          11.7,
+          11.3,
+          12.6,
+          13.8,
+          15.8,
+          16.3,
+          16.9
+        ],
+        "et0_mm": [
+          86.3,
+          73.0,
+          74.8,
+          63.5,
+          54.9,
+          46.1,
+          52.4,
+          68.7,
+          82.0,
+          93.4,
+          91.0,
+          90.6
+        ]
+      },
+      "annual": {
+        "t_mean_c": 14.5,
+        "et0_mm": 876.7,
+        "aridity_index": 0.62,
+        "water_balance_mm": -334
+      },
+      "classification": {
+        "label": "Subhúmedo seco",
+        "color": "#f39c12",
+        "scheme": "UNESCO"
+      },
+      "source_label": "Serie local TerraNava + calibración publicada Tarija/Yesera",
+      "quality_flag": "Derivado TerraNava v1 · precipitación histórica local + temperatura/ETP publicadas",
+      "diagnostic_text": "Cuenca de Tarija — Sector Central conserva precipitación histórica local TerraNava y aplica una calibración publicada para temperatura media y demanda evaporativa a partir del Balance hídrico integral de la cuenca del río Guadalquivir (Tarija, periodo 1980-2014; Yesera Norte / subcuenca Yesera).",
+      "published_calibration": {
+        "status": "applied",
+        "source_id": "bo_tarija_guadalquivir_balance_2016",
+        "source_title": "Balance hídrico integral para la cuenca del río Guadalquivir",
+        "period": "1980-2014",
+        "scope_label": "Cuenca de Tarija · sector central · proxy publicado Yesera/Guadalquivir",
+        "scope_note": "Proxy territorial publicado dentro del bloque Tarija/Guadalquivir con el mejor ajuste disponible en AquaRisk.",
+        "temperature_basis": "Yesera Norte · Tabla 10",
+        "evapotranspiration_basis": "Subcuenca Yesera · Tabla 16",
+        "confidence": "high"
+      }
+    }
+  }
+}

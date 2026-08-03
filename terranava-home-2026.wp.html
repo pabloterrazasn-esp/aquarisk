@@ -1,0 +1,651 @@
+<!-- wp:html -->
+<style>
+  .tni-home{
+    --tni-bg:#f3f5f1;
+    --tni-surface:#ffffff;
+    --tni-surface-2:#eef2eb;
+    --tni-ink:#172419;
+    --tni-muted:#5e7060;
+    --tni-line:#d9e2d5;
+    --tni-green:#31453a;
+    --tni-green-2:#607466;
+    --tni-gold:#c6a14a;
+    --tni-shadow:0 18px 48px rgba(23,36,25,.08);
+    color:var(--tni-ink);
+    background:var(--tni-bg);
+    font-family:"DM Sans",sans-serif;
+    margin:0;
+  }
+  .tni-home *{box-sizing:border-box}
+  .tni-shell{max-width:1180px;margin:0 auto;padding:0 28px}
+  .tni-section{padding:92px 0}
+  .tni-overline{
+    display:inline-block;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--tni-green-2);
+    margin-bottom:18px;
+  }
+  .tni-hero{
+    position:relative;
+    overflow:hidden;
+    background:
+      linear-gradient(115deg, rgba(17,28,20,.92), rgba(43,60,50,.84)),
+      url("https://terranava.org/wp-content/uploads/2022/01/header-hero.jpg") center/cover no-repeat;
+    padding:118px 0 44px;
+  }
+  .tni-hero-grid{
+    display:grid;
+    grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);
+    gap:28px;
+    align-items:end;
+  }
+  .tni-title{
+    font-family:"Forum",serif;
+    font-size:clamp(48px,7vw,88px);
+    line-height:.98;
+    letter-spacing:-.03em;
+    color:#fff;
+    margin:0 0 22px;
+    font-weight:400;
+    max-width:760px;
+  }
+  .tni-title span{color:var(--tni-gold)}
+  .tni-lead{
+    max-width:760px;
+    margin:0;
+    color:rgba(255,255,255,.82);
+    font-size:18px;
+    line-height:1.85;
+  }
+  .tni-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:34px;
+  }
+  .tni-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:52px;
+    padding:0 24px;
+    border-radius:999px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.02em;
+    border:1px solid transparent;
+    transition:transform .18s ease, background .18s ease, border-color .18s ease;
+  }
+  .tni-btn:hover{transform:translateY(-1px)}
+  .tni-btn-primary{background:var(--tni-gold);color:#1d2a20}
+  .tni-btn-secondary{
+    background:rgba(255,255,255,.08);
+    color:#fff;
+    border-color:rgba(255,255,255,.18);
+    backdrop-filter:blur(8px);
+  }
+  .tni-btn-secondary:hover{background:rgba(255,255,255,.13)}
+  .tni-aside{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:28px;
+    padding:26px 26px 22px;
+    color:#fff;
+    box-shadow:0 20px 44px rgba(0,0,0,.14);
+    backdrop-filter:blur(12px);
+  }
+  .tni-aside h3{
+    margin:0 0 12px;
+    color:#fff;
+    font-size:24px;
+    line-height:1.3;
+    font-weight:600;
+  }
+  .tni-aside p{
+    margin:0 0 18px;
+    color:rgba(255,255,255,.76);
+    font-size:15px;
+    line-height:1.78;
+  }
+  .tni-aside ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    gap:10px;
+  }
+  .tni-aside li{
+    padding:11px 14px;
+    border-radius:16px;
+    background:rgba(255,255,255,.06);
+    color:rgba(255,255,255,.86);
+    font-size:13px;
+    line-height:1.65;
+  }
+  .tni-ribbon{
+    margin-top:34px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+  }
+  .tni-ribbon-item{
+    background:#fff;
+    border-radius:20px;
+    border:1px solid rgba(23,36,25,.06);
+    padding:18px 20px;
+    box-shadow:var(--tni-shadow);
+  }
+  .tni-ribbon-item strong{
+    display:block;
+    color:var(--tni-green);
+    font-size:13px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .tni-ribbon-item span{
+    display:block;
+    color:var(--tni-muted);
+    font-size:14px;
+    line-height:1.7;
+  }
+  .tni-grid-2{
+    display:grid;
+    grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);
+    gap:34px;
+    align-items:start;
+  }
+  .tni-headline{
+    font-family:"Forum",serif;
+    font-size:clamp(34px,4.2vw,58px);
+    line-height:1.04;
+    letter-spacing:-.02em;
+    color:var(--tni-ink);
+    margin:0 0 18px;
+    font-weight:400;
+  }
+  .tni-copy{
+    margin:0;
+    color:var(--tni-muted);
+    font-size:17px;
+    line-height:1.88;
+  }
+  .tni-principles{
+    display:grid;
+    gap:16px;
+  }
+  .tni-principle{
+    background:var(--tni-surface);
+    border:1px solid var(--tni-line);
+    border-radius:22px;
+    padding:22px 22px 20px;
+    box-shadow:0 10px 28px rgba(23,36,25,.04);
+  }
+  .tni-principle strong{
+    display:block;
+    color:var(--tni-green);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .tni-principle h3{
+    margin:0 0 8px;
+    font-size:21px;
+    line-height:1.35;
+    color:var(--tni-ink);
+  }
+  .tni-principle p{
+    margin:0;
+    color:var(--tni-muted);
+    font-size:15px;
+    line-height:1.8;
+  }
+  .tni-band{
+    background:linear-gradient(180deg, #ffffff, #f7f9f5);
+    border-top:1px solid var(--tni-line);
+    border-bottom:1px solid var(--tni-line);
+  }
+  .tni-card-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:34px;
+  }
+  .tni-card{
+    background:var(--tni-surface);
+    border:1px solid var(--tni-line);
+    border-radius:24px;
+    padding:28px;
+    box-shadow:0 10px 30px rgba(23,36,25,.04);
+  }
+  .tni-card .tni-index{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:34px;
+    height:34px;
+    border-radius:999px;
+    background:var(--tni-surface-2);
+    color:var(--tni-green);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  .tni-card h3{
+    margin:0 0 10px;
+    color:var(--tni-ink);
+    font-size:24px;
+    line-height:1.3;
+  }
+  .tni-card p{
+    margin:0;
+    color:var(--tni-muted);
+    font-size:15px;
+    line-height:1.84;
+  }
+  .tni-method{
+    background:var(--tni-surface);
+    border:1px solid var(--tni-line);
+    border-radius:28px;
+    padding:34px;
+    box-shadow:var(--tni-shadow);
+  }
+  .tni-steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-top:28px;
+  }
+  .tni-step{
+    padding:18px 18px 16px;
+    border-radius:18px;
+    background:var(--tni-surface-2);
+    border:1px solid var(--tni-line);
+  }
+  .tni-step strong{
+    display:block;
+    color:var(--tni-green);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .tni-step h3{
+    margin:0 0 8px;
+    color:var(--tni-ink);
+    font-size:19px;
+    line-height:1.35;
+  }
+  .tni-step p{
+    margin:0;
+    color:var(--tni-muted);
+    font-size:14px;
+    line-height:1.75;
+  }
+  .tni-tool{
+    background:linear-gradient(135deg, #1f2f26, #455c4e);
+    border-radius:34px;
+    padding:40px;
+    color:#fff;
+    box-shadow:var(--tni-shadow);
+  }
+  .tni-tool-grid{
+    display:grid;
+    grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);
+    gap:28px;
+    align-items:start;
+  }
+  .tni-tool .tni-overline{color:rgba(255,255,255,.68)}
+  .tni-tool .tni-headline{color:#fff;margin-bottom:16px}
+  .tni-tool .tni-copy{color:rgba(255,255,255,.8)}
+  .tni-tool-panel{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:26px;
+    padding:24px;
+  }
+  .tni-tool-panel h3{
+    margin:0 0 12px;
+    font-size:24px;
+    color:#fff;
+    line-height:1.3;
+  }
+  .tni-tool-panel ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    gap:10px;
+  }
+  .tni-tool-panel li{
+    padding:11px 12px;
+    border-radius:15px;
+    background:rgba(255,255,255,.06);
+    color:rgba(255,255,255,.84);
+    font-size:14px;
+    line-height:1.7;
+  }
+  .tni-audience{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:34px;
+  }
+  .tni-audience-card{
+    background:#fff;
+    border:1px solid var(--tni-line);
+    border-radius:24px;
+    padding:28px;
+    box-shadow:0 10px 28px rgba(23,36,25,.04);
+  }
+  .tni-audience-card h3{
+    margin:0 0 12px;
+    font-size:24px;
+    line-height:1.3;
+    color:var(--tni-ink);
+  }
+  .tni-audience-card p{
+    margin:0;
+    color:var(--tni-muted);
+    font-size:15px;
+    line-height:1.84;
+  }
+  .tni-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:20px;
+  }
+  .tni-tag{
+    display:inline-flex;
+    align-items:center;
+    min-height:38px;
+    padding:0 14px;
+    border-radius:999px;
+    background:var(--tni-surface-2);
+    border:1px solid var(--tni-line);
+    color:var(--tni-green);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.03em;
+  }
+  .tni-cta{
+    background:#17241a;
+    color:#fff;
+    border-radius:34px;
+    padding:42px;
+    position:relative;
+    overflow:hidden;
+  }
+  .tni-cta::after{
+    content:"";
+    position:absolute;
+    right:-80px;
+    bottom:-120px;
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(198,161,74,.18), transparent 70%);
+  }
+  .tni-cta .tni-headline{color:#fff;margin-bottom:14px}
+  .tni-cta .tni-copy{color:rgba(255,255,255,.8)}
+  .tni-note{
+    margin-top:18px;
+    font-size:13px;
+    line-height:1.75;
+    color:rgba(255,255,255,.55);
+  }
+  @media (max-width: 1040px){
+    .tni-ribbon,
+    .tni-steps{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width: 900px){
+    .tni-hero-grid,
+    .tni-grid-2,
+    .tni-tool-grid,
+    .tni-audience{grid-template-columns:1fr}
+    .tni-card-grid{grid-template-columns:1fr}
+  }
+  @media (max-width: 640px){
+    .tni-shell{padding:0 18px}
+    .tni-section{padding:72px 0}
+    .tni-hero{padding:94px 0 34px}
+    .tni-ribbon,
+    .tni-steps{grid-template-columns:1fr}
+    .tni-aside,
+    .tni-card,
+    .tni-method,
+    .tni-tool,
+    .tni-tool-panel,
+    .tni-audience-card,
+    .tni-cta,
+    .tni-principle{padding:22px}
+  }
+</style>
+
+<div class="tni-home">
+  <section class="tni-hero">
+    <div class="tni-shell">
+      <div class="tni-hero-grid">
+        <div>
+          <span class="tni-overline">TerraNava · organizacion sin animo de lucro</span>
+          <h1 class="tni-title">Gesti&oacute;n del agua y riesgo territorial con <span>base en evidencia</span></h1>
+          <p class="tni-lead">TerraNava es una ONG t&eacute;cnica orientada a la investigaci&oacute;n aplicada, la cooperaci&oacute;n especializada y el fortalecimiento de capacidades en gesti&oacute;n h&iacute;drica, planificaci&oacute;n territorial y riesgo de inundaci&oacute;n.</p>
+          <div class="tni-actions">
+            <a class="tni-btn tni-btn-primary" href="https://terranava.org/about/">Conocer TerraNava</a>
+            <a class="tni-btn tni-btn-secondary" href="https://terranava.org/services/">Ejes de intervencion</a>
+            <a class="tni-btn tni-btn-secondary" href="https://terranava.org/aquarisk/">Explorar AquaRisk</a>
+          </div>
+        </div>
+
+        <aside class="tni-aside">
+          <h3>Perfil institucional</h3>
+          <p>La p&aacute;gina principal debe presentar a TerraNava como una organizaci&oacute;n seria, capaz de traducir conocimiento t&eacute;cnico en procesos de planificaci&oacute;n, asistencia y herramientas &uacute;tiles.</p>
+          <ul>
+            <li>Investigacion aplicada para decisiones publicas y territoriales.</li>
+            <li>Cooperacion tecnica con administraciones, comunidades y equipos locales.</li>
+            <li>Herramientas abiertas que materializan el trabajo de la ONG.</li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="tni-ribbon">
+        <div class="tni-ribbon-item">
+          <strong>Enfoque</strong>
+          <span>Lectura territorial, rigor tecnico y utilidad publica.</span>
+        </div>
+        <div class="tni-ribbon-item">
+          <strong>Campo</strong>
+          <span>Gestion del agua, cuencas, riesgo de inundacion y gobernanza.</span>
+        </div>
+        <div class="tni-ribbon-item">
+          <strong>Escala</strong>
+          <span>Espa&ntilde;a, America Latina y cooperacion internacional.</span>
+        </div>
+        <div class="tni-ribbon-item">
+          <strong>Instrumentos</strong>
+          <span>Asistencia, formacion, analisis aplicado y herramientas abiertas.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tni-section">
+    <div class="tni-shell">
+      <div class="tni-grid-2">
+        <div>
+          <span class="tni-overline">Mision institucional</span>
+          <h2 class="tni-headline">Una organizacion tecnica orientada a intervenir donde el agua condiciona el territorio</h2>
+          <p class="tni-copy">TerraNava parte de una idea simple: el agua no es un tema sectorial aislado, sino una dimensi&oacute;n material que afecta la producci&oacute;n, la organizaci&oacute;n del espacio, la vida cotidiana y la exposici&oacute;n al riesgo. Por eso trabajamos en la intersecci&oacute;n entre investigaci&oacute;n aplicada, cooperaci&oacute;n t&eacute;cnica y herramientas que ayuden a tomar decisiones m&aacute;s s&oacute;lidas.</p>
+        </div>
+
+        <div class="tni-principles">
+          <article class="tni-principle">
+            <strong>Principio 01</strong>
+            <h3>Rigor tecnico</h3>
+            <p>Los diagn&oacute;sticos, herramientas y recomendaciones deben sostenerse en metodolog&iacute;a expl&iacute;cita y evidencia verificable.</p>
+          </article>
+          <article class="tni-principle">
+            <strong>Principio 02</strong>
+            <h3>Utilidad publica</h3>
+            <p>El conocimiento solo tiene valor institucional si sirve para fortalecer capacidades, orientar decisiones y mejorar la gesti&oacute;n.</p>
+          </article>
+          <article class="tni-principle">
+            <strong>Principio 03</strong>
+            <h3>Enfoque territorial</h3>
+            <p>Las soluciones deben responder a cuencas, actores y contextos concretos, no a recetas abstractas.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tni-section tni-band">
+    <div class="tni-shell">
+      <span class="tni-overline">Lineas de trabajo</span>
+      <h2 class="tni-headline">Que hace TerraNava</h2>
+      <p class="tni-copy">La portada institucional debe dejar claro que TerraNava no es solo una herramienta digital. Es una organizaci&oacute;n con capacidades t&eacute;cnicas y una agenda de intervenci&oacute;n definida.</p>
+
+      <div class="tni-card-grid">
+        <article class="tni-card">
+          <span class="tni-index">01</span>
+          <h3>Investigacion aplicada</h3>
+          <p>Analisis de cuencas, riesgo de inundacion, variabilidad hidrologica y procesos territoriales para producir evidencia util en planificacion y gestion.</p>
+        </article>
+        <article class="tni-card">
+          <span class="tni-index">02</span>
+          <h3>Cooperacion tecnica</h3>
+          <p>Asistencia especializada a administraciones publicas, equipos territoriales y procesos de planificacion del agua en distintos contextos institucionales.</p>
+        </article>
+        <article class="tni-card">
+          <span class="tni-index">03</span>
+          <h3>Formacion y capacidades</h3>
+          <p>Programas de capacitacion, transferencia metodologica y fortalecimiento institucional para actores locales, tecnicos y organizaciones.</p>
+        </article>
+        <article class="tni-card">
+          <span class="tni-index">04</span>
+          <h3>Herramientas abiertas</h3>
+          <p>Desarrollo de instrumentos que acerquen el trabajo tecnico a usos reales y mejoren el acceso a metodologias hidrologicas y territoriales.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="tni-section">
+    <div class="tni-shell">
+      <div class="tni-method">
+        <span class="tni-overline">Metodo de trabajo</span>
+        <h2 class="tni-headline">Como intervenimos</h2>
+        <p class="tni-copy">Una pagina institucional profesional necesita mostrar proceso, no solo discurso. TerraNava puede presentarse con una secuencia clara de trabajo, desde el diagnostico hasta la transferencia de capacidades.</p>
+
+        <div class="tni-steps">
+          <article class="tni-step">
+            <strong>Paso 01</strong>
+            <h3>Lectura y diagnostico</h3>
+            <p>Caracterizacion del territorio, cuencas, actores, amenazas y condicionantes materiales.</p>
+          </article>
+          <article class="tni-step">
+            <strong>Paso 02</strong>
+            <h3>Asistencia tecnica</h3>
+            <p>Definicion de criterios, metodologias y apoyos para procesos de planificacion y gestion.</p>
+          </article>
+          <article class="tni-step">
+            <strong>Paso 03</strong>
+            <h3>Formacion</h3>
+            <p>Trabajo con equipos e instituciones para dejar capacidades instaladas y no solo informes.</p>
+          </article>
+          <article class="tni-step">
+            <strong>Paso 04</strong>
+            <h3>Instrumentos</h3>
+            <p>Generacion de productos, herramientas y soportes que permitan sostener la implementacion.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tni-section tni-band">
+    <div class="tni-shell">
+      <div class="tni-tool">
+        <div class="tni-tool-grid">
+          <div>
+            <span class="tni-overline">Herramienta institucional</span>
+            <h2 class="tni-headline">AquaRisk forma parte de TerraNava</h2>
+            <p class="tni-copy">AquaRisk debe verse como una expresion concreta del trabajo de la ONG: una plataforma abierta que concentra herramientas para analisis de riesgo de inundacion, delimitacion de cuencas y apoyo tecnico a procesos de decision. La pagina principal de TerraNava la enmarca y le da sentido institucional.</p>
+            <div class="tni-actions">
+              <a class="tni-btn tni-btn-primary" href="https://terranava.org/aquarisk/">Abrir AquaRisk</a>
+              <a class="tni-btn tni-btn-secondary" href="https://terranava.org/services/">Ver capacidades de TerraNava</a>
+            </div>
+          </div>
+
+          <aside class="tni-tool-panel">
+            <h3>Que ofrece AquaRisk</h3>
+            <ul>
+              <li>Herramientas hidrologicas para analisis de riesgo de inundaciones.</li>
+              <li>Curvas IDF, modelo SCS, balance hidrico y delimitacion de cuencas.</li>
+              <li>Acceso abierto para trabajo tecnico, formacion y cooperacion especializada.</li>
+              <li>Un puente entre investigacion aplicada y uso practico.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tni-section">
+    <div class="tni-shell">
+      <span class="tni-overline">Ambito de actuacion</span>
+      <h2 class="tni-headline">Con quien y donde trabaja TerraNava</h2>
+      <p class="tni-copy">El tono institucional mejora cuando la pagina deja claro el tipo de interlocucion que la organizacion puede sostener y el espacio geografico en el que se mueve con solvencia.</p>
+
+      <div class="tni-audience">
+        <article class="tni-audience-card">
+          <h3>Territorios y escalas</h3>
+          <p>TerraNava nace en Espa&ntilde;a con vocacion internacional. Puede acompa&ntilde;ar procesos en Europa y America Latina, especialmente cuando se requiere trabajo de cuenca, riesgo hidrico y fortalecimiento institucional.</p>
+          <div class="tni-tags">
+            <span class="tni-tag">Espa&ntilde;a</span>
+            <span class="tni-tag">America Latina</span>
+            <span class="tni-tag">Cuencas hidrograficas</span>
+            <span class="tni-tag">Cooperacion internacional</span>
+          </div>
+        </article>
+
+        <article class="tni-audience-card">
+          <h3>Interlocutores principales</h3>
+          <p>Administraciones publicas, equipos tecnicos, universidades, organizaciones territoriales, cooperacion especializada y actores que necesiten soporte serio en gestion del agua y riesgo de inundacion.</p>
+          <div class="tni-tags">
+            <span class="tni-tag">Administraciones</span>
+            <span class="tni-tag">Universidades</span>
+            <span class="tni-tag">Comunidades</span>
+            <span class="tni-tag">Equipos tecnicos</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="tni-section" style="padding-top:0">
+    <div class="tni-shell">
+      <div class="tni-cta">
+        <span class="tni-overline" style="color:rgba(255,255,255,.62)">Contacto institucional</span>
+        <h2 class="tni-headline">Una portada que presenta a la ONG con seriedad y orden</h2>
+        <p class="tni-copy">La propuesta institucional correcta es esta: TerraNava primero, su mision y capacidades despues, y AquaRisk presentado como una herramienta del ecosistema de la ONG. Esa jerarquia da mas credibilidad y proyecta mejor el perfil profesional del sitio.</p>
+        <div class="tni-actions">
+          <a class="tni-btn tni-btn-primary" href="https://terranava.org/contact/">Contactar TerraNava</a>
+          <a class="tni-btn tni-btn-secondary" href="https://terranava.org/about/">Sobre TerraNava</a>
+        </div>
+        <p class="tni-note">Si esta direccion te convence, el siguiente paso es convertir esta version en la portada oficial de terranava.org y dejar AquaRisk como herramienta destacada dentro del sitio institucional.</p>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- /wp:html -->

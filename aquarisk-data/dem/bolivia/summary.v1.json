@@ -1,0 +1,23 @@
+{
+  "version": "v1",
+  "generated_at": "2026-03-09T19:42:08.106Z",
+  "country": "Bolivia",
+  "record_count": 5,
+  "source_label": "Motor DEM piloto Bolivia",
+  "source_quality": "Derivado TerraNava v0 · geometría guía (sin DEM final)",
+  "intended_dem_source": "Copernicus DEM GLO-30",
+  "implemented_metrics": [
+    "area_km2",
+    "main_channel_length_km",
+    "main_channel_slope_pct",
+    "tc_estimate"
+  ],
+  "pending_metrics": [
+    "elevation_range",
+    "relief",
+    "longitudinal_profile",
+    "hypsometry",
+    "slope_map",
+    "HAND"
+  ]
+}

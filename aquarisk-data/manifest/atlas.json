@@ -1,0 +1,40 @@
+{
+  "regions": {
+    "eu": {
+      "hydrobasins": [
+        "/aquarisk-data/hydrobasins/eu/lev04.geojson",
+        "/aquarisk-data/hydrobasins/eu/lev05.geojson",
+        "/aquarisk-data/hydrobasins/eu/lev06.geojson",
+        "/aquarisk-data/hydrobasins/eu/lev07.geojson",
+        "/aquarisk-data/hydrobasins/eu/lev08.geojson"
+      ],
+      "hydrobasins_pmtiles": [
+        "/aquarisk-data/pmtiles/hydrobasins/eu/lev04.pmtiles",
+        "/aquarisk-data/pmtiles/hydrobasins/eu/lev05.pmtiles",
+        "/aquarisk-data/pmtiles/hydrobasins/eu/lev06.pmtiles",
+        "/aquarisk-data/pmtiles/hydrobasins/eu/lev07.pmtiles",
+        "/aquarisk-data/pmtiles/hydrobasins/eu/lev08.pmtiles"
+      ],
+      "hydrorivers": "/aquarisk-data/hydrorivers/eu_main.geojson",
+      "hydrorivers_pmtiles": "/aquarisk-data/pmtiles/hydrorivers/eu_main.pmtiles"
+    },
+    "sa": {
+      "hydrobasins": [
+        "/aquarisk-data/hydrobasins/sa/lev04.geojson",
+        "/aquarisk-data/hydrobasins/sa/lev05.geojson",
+        "/aquarisk-data/hydrobasins/sa/lev06.geojson",
+        "/aquarisk-data/hydrobasins/sa/lev07.geojson",
+        "/aquarisk-data/hydrobasins/sa/lev08.geojson"
+      ],
+      "hydrobasins_pmtiles": [
+        "/aquarisk-data/pmtiles/hydrobasins/sa/lev04.pmtiles",
+        "/aquarisk-data/pmtiles/hydrobasins/sa/lev05.pmtiles",
+        "/aquarisk-data/pmtiles/hydrobasins/sa/lev06.pmtiles",
+        "/aquarisk-data/pmtiles/hydrobasins/sa/lev07.pmtiles",
+        "/aquarisk-data/pmtiles/hydrobasins/sa/lev08.pmtiles"
+      ],
+      "hydrorivers": "/aquarisk-data/hydrorivers/sa_main.geojson",
+      "hydrorivers_pmtiles": "/aquarisk-data/pmtiles/hydrorivers/sa_main.pmtiles"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "version": "v1",
+  "country": "España",
+  "label": "Aguas subterráneas oficiales · España",
+  "status": "active",
+  "service_level": "L2",
+  "coverage_level": "Masas oficiales PHC 2022-2027 + estado cuantitativo y químico oficial",
+  "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+  "last_verified_at": "2026-03-12",
+  "masses_count": 804,
+  "masses_note": "804 masas oficiales de agua subterránea del ciclo PHC 2022-2027 con estado cuantitativo y químico asociado.",
+  "summary_note": "AquaRisk integra el mapa oficial de masas de agua subterránea de España y lo enriquece con estado cuantitativo y químico PHC 2022-2027 para lectura territorial defendible.",
+  "bbox": {
+    "minLon": -18.16083,
+    "minLat": 27.6378,
+    "maxLon": 4.30869,
+    "maxLat": 43.79017
+  },
+  "demarcation_counts": {
+    "CANTÁBRICO OCCIDENTAL": 20,
+    "CANTÁBRICO ORIENTAL": 20,
+    "CEUTA": 1,
+    "CUENCAS MEDITERRÁNEAS ANDALUZAS": 67,
+    "DISTRITO DE CUENCA FLUVIAL DE CATALUÑA": 44,
+    "DUERO": 64,
+    "EBRO": 105,
+    "EL HIERRO": 3,
+    "FUERTEVENTURA": 4,
+    "GALICIA-COSTA": 18,
+    "GRAN CANARIA": 10,
+    "GUADALETE Y BARBATE": 14,
+    "GUADALQUIVIR": 86,
+    "GUADIANA": 20,
+    "ISLAS BALEARES": 87,
+    "JÚCAR": 105,
+    "LA GOMERA": 5,
+    "LA PALMA": 5,
+    "LANZAROTE": 2,
+    "MELILLA": 3,
+    "MIÑO-SIL": 24,
+    "SEGURA": 63,
+    "TAJO": 26,
+    "TENERIFE": 4,
+    "TINTO, ODIEL Y PIEDRAS": 4
+  },
+  "formation_counts": {
+    "Acuíferos fracturados - altamente productivos": 10,
+    "Acuíferos fracturados - moderadamente productivos": 84,
+    "Acuíferos insignificantes - masa subterránea local y limitada": 62,
+    "Kárstica": 358,
+    "Porosa": 290
+  },
+  "quantitative_status_counts": {
+    "Bueno": 601,
+    "Malo": 203
+  },
+  "chemical_status_counts": {
+    "Bueno": 541,
+    "Malo": 263
+  },
+  "global_status_counts": {
+    "Bueno": 451,
+    "Malo": 353
+  },
+  "total_groundwater_area_km2": 371526.8,
+  "suggested_view": {
+    "center": {
+      "lat": 35.713985,
+      "lon": -6.92607
+    },
+    "zoom": 6,
+    "bounds": {
+      "minLon": -18.16083,
+      "minLat": 27.6378,
+      "maxLon": 4.30869,
+      "maxLat": 43.79017
+    }
+  }
+}

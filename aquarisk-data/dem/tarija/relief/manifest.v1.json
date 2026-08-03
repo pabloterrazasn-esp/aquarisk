@@ -1,0 +1,26 @@
+{
+  "version": "v1",
+  "layer": "tarija_relief",
+  "label": "Relieve Tarija (DEM)",
+  "country": "Bolivia",
+  "coverage_level": "Tarija regional",
+  "service_level": "L1",
+  "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+  "last_verified_at": "2026-03-10",
+  "tile_url": "/aquarisk-data/dem/tarija/relief/{z}/{x}/{y}.png",
+  "bounds": [-22.048002, -65.190310, -20.751012, -64.145904],
+  "min_zoom": 8,
+  "max_zoom": 10,
+  "opacity": 0.48,
+  "attribution": "SRTM skadi public domain derivatives served by TerraNava",
+  "source_label": "SRTM 30 m (skadi) remuestreado a 90 m para stack web Tarija",
+  "method": "Hillshade derivado TerraNava desde SRTM skadi recortado, reproyectado y remuestreado para lectura web.",
+  "period": "Topografia estatica",
+  "resolution": "90 m",
+  "recommended_use": "Contexto cartografico y lectura morfometrica regional.",
+  "limits": "No equivale por si solo a modelacion hidrologica ni mapa de amenaza.",
+  "notes": [
+    "Hillshade derivado TerraNava para lectura morfometrica regional y local.",
+    "No equivale por si solo a modelacion hidrologica ni mapa de amenaza."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "version": "v1",
+  "provider": "cnig",
+  "country": "spain",
+  "dataset": "mdt-premium",
+  "name": "espana-backbone-ejemplo",
+  "last_verified_at": "2026-03-11",
+  "source_priority": "oficial_primero_con_fallback_abierto_trazable",
+  "notes": [
+    "Manifiesto de ejemplo para DEMs oficiales o premium de Espana.",
+    "Sustituye las URLs y filenames por ficheros reales del CNIG/IGN u otra fuente oficial validada."
+  ],
+  "files": [
+    {
+      "url": "https://example.invalid/cnig/mdt/archivo-1.tif",
+      "filename": "archivo-1.tif",
+      "note": "Ejemplo de bloque DEM oficial"
+    },
+    {
+      "url": "https://example.invalid/cnig/mdt/archivo-2.tif",
+      "filename": "archivo-2.tif",
+      "note": "Ejemplo de bloque DEM oficial"
+    }
+  ]
+}

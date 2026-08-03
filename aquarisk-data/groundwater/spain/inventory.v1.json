@@ -1,0 +1,111 @@
+{
+  "version": "v1",
+  "country": "España",
+  "label": "Inventario AquaRisk · aguas subterráneas España",
+  "verified_at": "2026-03-12",
+  "policy": "oficial_primero_con_fallback_abierto_trazable",
+  "summary_note": "AquaRisk integra el mapa oficial de masas de agua subterránea de España y lo enriquece con estado cuantitativo y químico PHC 2022-2027 para lectura territorial defendible.",
+  "bbox": {
+    "minLon": -18.16083,
+    "minLat": 27.6378,
+    "maxLon": 4.30869,
+    "maxLat": 43.79017
+  },
+  "datasets": [
+    {
+      "key": "groundwater_masses_official",
+      "label": "Masas de agua subterránea oficiales",
+      "operator": "MITECO",
+      "status": "active",
+      "service_level": "L2",
+      "coverage_level": "España · PHC 2022-2027",
+      "access_mode": "official_arcgis_rest",
+      "sources": [
+        {
+          "id": "miteco_groundwater_masses_arcgis",
+          "label": "MITECO · Masas de agua subterránea PHC 2022-2027",
+          "role": "Geometría oficial de masas subterráneas para contexto territorial y soporte de informes.",
+          "priority": "official_primary",
+          "url": "https://sig.mapama.gob.es/arcgis/rest/services/25830/WMS_Agua/MapServer/58?f=pjson",
+          "status": "verified_http_200"
+        },
+        {
+          "id": "miteco_groundwater_quantitative_arcgis",
+          "label": "MITECO · Estado cuantitativo masas subterráneas PHC 2022-2027",
+          "role": "Clasificación oficial del estado cuantitativo por masa de agua subterránea.",
+          "priority": "official_primary",
+          "url": "https://sig.mapama.gob.es/arcgis/rest/services/25830/WMS_Agua/MapServer/70?f=pjson",
+          "status": "verified_http_200"
+        },
+        {
+          "id": "miteco_groundwater_chemical_arcgis",
+          "label": "MITECO · Estado químico masas subterráneas PHC 2022-2027",
+          "role": "Clasificación oficial del estado químico por masa de agua subterránea.",
+          "priority": "official_primary",
+          "url": "https://sig.mapama.gob.es/arcgis/rest/services/25830/WMS_Agua/MapServer/73?f=pjson",
+          "status": "verified_http_200"
+        }
+      ],
+      "service_url": "https://sig.mapama.gob.es/arcgis/rest/services/25830/WMS_Agua/MapServer?f=pjson",
+      "layers": {
+        "masses": 58,
+        "quantitative_status": 70,
+        "chemical_status": 73
+      },
+      "geojson": "/aquarisk-data/groundwater/spain/groundwater-masses.v1.geojson",
+      "intended_outputs": [
+        "contexto oficial de masas subterráneas",
+        "lectura territorial del estado cuantitativo y químico",
+        "soporte a informes y trazabilidad España"
+      ],
+      "limits": "No incluye series temporales piezométricas ni análisis hidrogeológico local de detalle; representa la delimitación y clasificación oficial PHC 2022-2027."
+    }
+  ],
+  "sources": [
+    {
+      "id": "miteco_groundwater_arcgis_service",
+      "label": "MITECO · ArcGIS REST WMS_Agua",
+      "role": "Servicio oficial con masas y estados de agua subterránea PHC usados por AquaRisk.",
+      "priority": "official_primary",
+      "url": "https://sig.mapama.gob.es/arcgis/rest/services/25830/WMS_Agua/MapServer?f=pjson",
+      "status": "verified_http_200"
+    },
+    {
+      "id": "miteco_groundwater_masses_arcgis",
+      "label": "MITECO · Masas de agua subterránea PHC 2022-2027",
+      "role": "Geometría oficial de masas subterráneas para contexto territorial y soporte de informes.",
+      "priority": "official_primary",
+      "url": "https://sig.mapama.gob.es/arcgis/rest/services/25830/WMS_Agua/MapServer/58?f=pjson",
+      "status": "verified_http_200"
+    },
+    {
+      "id": "miteco_groundwater_quantitative_arcgis",
+      "label": "MITECO · Estado cuantitativo masas subterráneas PHC 2022-2027",
+      "role": "Clasificación oficial del estado cuantitativo por masa de agua subterránea.",
+      "priority": "official_primary",
+      "url": "https://sig.mapama.gob.es/arcgis/rest/services/25830/WMS_Agua/MapServer/70?f=pjson",
+      "status": "verified_http_200"
+    },
+    {
+      "id": "miteco_groundwater_chemical_arcgis",
+      "label": "MITECO · Estado químico masas subterráneas PHC 2022-2027",
+      "role": "Clasificación oficial del estado químico por masa de agua subterránea.",
+      "priority": "official_primary",
+      "url": "https://sig.mapama.gob.es/arcgis/rest/services/25830/WMS_Agua/MapServer/73?f=pjson",
+      "status": "verified_http_200"
+    }
+  ],
+  "sample_fields": {
+    "masses": [
+      "cod_masa",
+      "nom_masa",
+      "nom_ddhh",
+      "area_masa",
+      "form_geo",
+      "internac",
+      "est_cu_desc",
+      "est_qu_desc",
+      "est_global"
+    ]
+  }
+}
